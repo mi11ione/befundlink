@@ -44,8 +44,8 @@ Also reachable: the audit room "Befundlink Audit" in Element (the audit anchors)
 
 | Test | You see |
 |---|---|
-| **M1** wrong address | The card: "Domain 'labor-kanaI.example' sieht aus wie die bekannte Domain 'labor-kanal.example'", plus a capital-letter warning. Petra Fremd gets a "blocked" page with no patient, document type or upload. Element: "[FEHLZUSTELLUNG ABGEFANGEN] … Zugriff von einer anderen Person (Petra Fremd) blockiert … über den Link an e\*\*\*@labor-kanai.example". Typing "Eva Brandl" without her PIN: "Diese Identität ist geschützt". |
-| **M3** wrong patient | The page: "Dieses Dokument betrifft nicht Maria Beispiel (geb. 12.03.1961). Es wurde sofort verworfen …". Element: "[FEHLZUSTELLUNG ABGEFANGEN] … Dokument betrifft eine andere Person … nicht abgelegt", without naming the other patient. HAPI gets only the `misdelivery caught` AuditEvent with the file's SHA-256. |
+| **M1** wrong address | The card: "Adresse prüfen: labor-kanaI.example (großes I) statt der bekannten labor-kanal.example (kleines l) – Tippfehler oder Täuschung?". Petra Fremd gets a "blocked" page with no patient, document type or upload. Element: "Fehlzustellung abgefangen · Laborbefund · Maria Beispiel · 12.03.1961", naming who tried. Typing "Eva Brandl" without her PIN: "Diese Identität ist geschützt". |
+| **M3** wrong patient | The page: "Falsches Dokument. Dieses Dokument betrifft nicht Maria Beispiel (geb. 12.03.1961): nicht gespeichert, nicht abgelegt, von niemandem gesehen." Element: "Fehlzustellung abgefangen · Laborbefund · Maria Beispiel · 12.03.1961", without naming the other patient. HAPI gets only the `misdelivery caught` AuditEvent with the file's SHA-256. |
 
 Each case writes a `misdelivery caught` AuditEvent; M1 and M2 also a failed `identity checked`. Read them with `!audit <KB-id>`, or `GET /fhir/AuditEvent?subtype=misdelivery-caught`. After 5 failed eID checks a link locks; `!freigeben <KB-id>` re-opens it.
 
@@ -53,7 +53,7 @@ Each case writes a `misdelivery caught` AuditEvent; M1 and M2 also a failed `ide
 
 After Eva Brandl has filed an answer, send her another request and sign in as **Eva Maria / Brandl / 104928**. The name fits the request, but the ID Austria identity is new, so before anything is shown:
 - the page says "Dr. Lena Hofer bestätigt zuerst Ihre Identität." and shows nothing;
-- Element shows "🔐 Neue ID-Austria-Identität für Dr. Eva Brandl (KB-…)" with the new person's birth year, the masked contact and the known person's history;
+- Element shows "Neue ID-Austria-Identität · Dr. Eva Brandl" with the new person's birth year, the masked contact and the known person's history;
 - `!identität <KB-id> ja` lets her answer, filed under **her own** Practitioner; `nein` keeps her out.
 
 The known Eva Brandl can answer meanwhile.
@@ -72,7 +72,7 @@ The known Eva Brandl can answer meanwhile.
 ```bash
 OBS=$(curl -s "localhost:8090/fhir/Observation?code=http://loinc.org|6301-6&_sort=-_lastUpdated&_count=1&_elements=id" | python3 -c "import json,sys;print(json.load(sys.stdin)['entry'][0]['resource']['id'])")
 curl -s localhost:8090/fhir/Observation/$OBS | python3 -c "import json,sys;o=json.load(sys.stdin);o['valueQuantity']['value']=2.9;print(json.dumps(o))" | curl -s -o /dev/null -X PUT -H 'Content-Type: application/fhir+json' --data-binary @- localhost:8090/fhir/Observation/$OBS
-make verify-provenance   # names the changed Observation; Element shows "[ACHTUNG] … verändert" in Dr. Hofer's room
+make verify-provenance   # names the changed Observation; Element shows "Befund nachträglich geändert" in Dr. Hofer's room
 ```
 
 ### Bot commands
@@ -270,7 +270,7 @@ The README's three gates, in detail:
 - The fuzz generator mutates the name (typo, order, umlaut, homoglyph, superset, other person), the birth date (swap, one digit, ambiguous, other), the identity (a colleague's eID), the sender line and the document type.
 - `tests/e2e/run.py` runs the corpus black-box through the live stack (email, eID with PINs, upload, HAPI, Matrix), then checks that blocked documents left no trace in HAPI, the DB, the disk, Matrix or the audit.
 - X09, the prompt injection, is blocked as `WRONG_PATIENT` and `OTHER_PATIENT_PRESENT`: no rule reads instructions.
-- **Blind documents:** three AI agents that never saw the test set or the code each wrote 30 documents in their own style and ran them live. Genuine documents filed: 7, 12, then 14 of 18 per set, the rest held for one tap; after the parser fixes each set prompted, all three pass offline. One miss, in the third set: a lab comment saying the tube carried another patient's name was filed for Maria. That pattern now blocks. All 90 are a regression set in [`tests/jury/fresh/`](../tests/jury/fresh/).
+- **Blind documents:** three AI agents that never saw the test set or the code each wrote 30 documents in their own style and ran them live. Genuine documents filed: 7, 12, then 14 of 18 per set, the rest held for a decision; after the parser fixes each set prompted, all three pass offline. One miss, in the third set: a lab comment saying the tube carried another patient's name was filed for Maria. That pattern now blocks. All 90 are a regression set in [`tests/jury/fresh/`](../tests/jury/fresh/).
 
 ---
 

@@ -2,13 +2,13 @@
 
 **The fax is banned for patient data. Its replacement is already in six million pockets.**<sup>[1]</sup>
 
-Dr. Hofer sends the lab one link. They answer with ID Austria, and a minute later the result is in the right patient's chart, as FHIR. The lab installs nothing and signs up for nothing.
+Dr. Hofer sends the lab one link. They answer with ID Austria, and seconds later the result is in the right patient's chart, as FHIR. The lab installs nothing and signs up for nothing.
 
-**Why now:** the fax ban took effect in January 2025, and the e-mail stopgap ends on 30 June 2027 because, in Parliament's words, the market has no suitable solution.<sup>[2]</sup> Filed by hand, one outside document in 50 lands in the wrong file.<sup>[3]</sup>
+**Why now:** the fax ban took effect in January 2025, and the e-mail stopgap ends on 30 June 2027 because, in Parliament's words, the market has no suitable solution.<sup>[2]</sup> Filed by hand, one outside document in 50 lands in the wrong file, usually another patient's.<sup>[3]</sup>
 
 - **Before sending,** a look-alike address (`labor-kanaI` for `labor-kanal`) is stopped.
 - **On opening,** only the person asked gets in. A forwarded link shows nothing, and Dr. Hofer learns who tried.
-- **On upload,** another patient's document bounces back before it is stored. A near-miss ("Marie" for Maria) waits for Dr. Hofer's one tap.
+- **On upload,** another patient's document bounces back before it is stored. A near-miss ("Marie" for Maria) waits for Dr. Hofer's decision.
 
 | Tested on the live system | Result |
 |---|---|
@@ -79,6 +79,8 @@ make demo        # Ctrl-C stops it
 | [fhirmap](fhirmap/) | parser, filing rules, FHIR builders, `prove()`, signed Provenance |
 | [tests](tests/) | 136 labelled documents, fuzzing, end-to-end runs, metrics |
 
+**Services and models:** Synapse and Element (Matrix), HAPI FHIR R4, the HL7 FHIR Validator 7.0.2, tx.fhir.org for terminology, Mailpit, and Claude Sonnet 5.5 for the optional photo intake. Each is replaceable: [versions](docs/ARCHITECTURE.md#services-used).
+
 **Per upload:**
 1. The patient rules decide: file, hold for Dr. Hofer, or block.
 2. The HL7 validator checks every resource.
@@ -117,7 +119,7 @@ At the clinic, next to its own Matrix homeserver, so the clinic stays the only c
 ## AI
 
 - **AI wrote the attacks,** including 90 documents written blind. Rules, not AI, decide every filing.
-- **Photo intake (optional):** two separate model readings must agree, then the same rules, validator and `prove()` apply. On 27 test photos: 0 filed wrong.
+- **Photo intake (optional):** two separate Claude Sonnet 5.5 readings must agree, then the same rules, validator and `prove()` apply. On 27 test photos: 0 filed wrong.
 
 ---
 
