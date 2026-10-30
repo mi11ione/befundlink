@@ -1,0 +1,110 @@
+{
+ "_mock": "SYNTHETIC demo personas of the simulated ID Austria. The PIN stands for confirming in the ID Austria app. Demo credentials only (published in the README demo section); never real people.",
+ "personas": [
+  {
+   "key": "brandl",
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "1979-05-14",
+   "pin": "549657"
+  },
+  {
+   "key": "kern",
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "1985-09-02",
+   "pin": "829022"
+  },
+  {
+   "key": "kollege",
+   "given": "Thomas",
+   "family": "Huber",
+   "birthdate": "1982-11-30",
+   "pin": "677481"
+  },
+  {
+   "key": "fremd",
+   "given": "Petra",
+   "family": "Fremd",
+   "birthdate": "1990-01-01",
+   "pin": "804560"
+  },
+  {
+   "key": "weber",
+   "given": "Anna",
+   "family": "Weber",
+   "birthdate": "1975-06-21",
+   "pin": "034387"
+  },
+  {
+   "key": "steiner",
+   "given": "Paul",
+   "family": "Steiner",
+   "birthdate": "1969-02-08",
+   "pin": "390727"
+  },
+  {
+   "key": "moser",
+   "given": "Julia",
+   "family": "Moser",
+   "birthdate": "1988-12-01",
+   "pin": "675698"
+  },
+  {
+   "key": "wagner",
+   "given": "Thomas",
+   "family": "Wagner",
+   "birthdate": "1972-04-17",
+   "pin": "173994"
+  },
+  {
+   "key": "brandl_middle",
+   "given": "Eva Maria",
+   "family": "Brandl",
+   "birthdate": "1979-05-14",
+   "pin": "104928"
+  },
+  {
+   "key": "eve_brandl",
+   "given": "Eve",
+   "family": "Brandl",
+   "birthdate": "1979-05-14",
+   "pin": "491876"
+  },
+  {
+   "key": "gruber",
+   "given": "Anna",
+   "family": "Gruber",
+   "birthdate": "1991-03-03",
+   "pin": "612754"
+  },
+  {
+   "key": "brandl_hyphen",
+   "given": "Eva-Maria",
+   "family": "Brandl",
+   "birthdate": "1979-05-14",
+   "pin": "392790"
+  },
+  {
+   "key": "brandl_huber",
+   "given": "Eva",
+   "family": "Brandl-Huber",
+   "birthdate": "1979-05-14",
+   "pin": "605731"
+  },
+  {
+   "key": "patient",
+   "given": "Maria",
+   "family": "Beispiel",
+   "birthdate": "1961-03-12",
+   "pin": "850449"
+  },
+  {
+   "key": "daughter",
+   "given": "Maria",
+   "family": "Beispiel",
+   "birthdate": "1990-06-15",
+   "pin": "586525"
+  }
+ ]
+}

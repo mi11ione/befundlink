@@ -1,0 +1,38 @@
+{
+  "resourceType": "Patient",
+  "id": "maria-beispiel",
+  "identifier": [
+    {
+      "system": "urn:example:klinikum-beispielstadt:mrn",
+      "value": "KB-000123"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "family": "Beispiel",
+      "given": ["Maria"]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+43 660 000 0199",
+      "use": "mobile"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1961-03-12",
+  "address": [
+    {
+      "line": ["Musterstraße 1"],
+      "city": "Beispielstadt",
+      "postalCode": "1000",
+      "country": "AT"
+    }
+  ],
+  "managingOrganization": {
+    "display": "Klinikum Beispielstadt"
+  }
+}

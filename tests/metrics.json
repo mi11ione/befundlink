@@ -1,0 +1,1618 @@
+{
+ "mock": false,
+ "generated": "2026-10-30 13:04:40 +0100",
+ "e2e_seconds": 153.8,
+ "effort": {
+  "installs": 0,
+  "accounts": 0,
+  "install_evidence": [],
+  "account_evidence": [],
+  "eid_credential_pages": [
+   "http://localhost:8000/eid/login?return=%2Fr%2Fzsvwrtzcscwrzzfzxksbkpxkcfzwcqsvjwgdztqbktczcwdhbhfvqtszwmbv%2Feid"
+  ],
+  "hosts_touched": [
+   "localhost:8000"
+  ],
+  "pages": 5,
+  "actions": [
+   [
+    "click",
+    "link in message"
+   ],
+   [
+    "click",
+    "continue"
+   ],
+   [
+    "eid",
+    "Eva Brandl"
+   ],
+   [
+    "click",
+    "continue"
+   ],
+   [
+    "file",
+    "lab-result-maria-beispiel.md"
+   ],
+   [
+    "click",
+    "send"
+   ]
+  ],
+  "machine_seconds": 0.033,
+  "klm": {
+   "total_s": 46.4,
+   "parts": {
+    "read message": 5.0,
+    "clicks": 10.6,
+    "ID Austria": 12.0,
+    "pick file": 5.2,
+    "read pages": 13.5
+   },
+   "pages": 5
+  },
+  "audit_seconds_link_to_answer": 0.0,
+  "audit_source": "HAPI AuditEvent",
+  "via": "bot"
+ },
+ "misdelivery": {
+  "M1": {
+   "caught": true,
+   "e2e_caught": true,
+   "audit_events": [
+    {
+     "who": "pseudonymous person (bPK hash)",
+     "what": "User Authentication / Identity checked / eID-Prüfung (ID Austria – Simulation, kein echtes ID Austria) für KB-7Q9KQF: NICHT BESTANDEN – Name '[redacted]' passt nicht zur angefragten Person 'Dr. Eva Brandl'.",
+     "when": "2026-10-30T12:53:12+01:00",
+     "outcome": "4",
+     "entities": [
+      "Task/ed6f67da-9b5c-5ed1-8736-a6d95690f5e6",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1037"
+    },
+    {
+     "who": "pseudonymous person (bPK hash)",
+     "what": "Security Alert / Misdelivery caught / Zugriff auf KB-7Q9KQF blockiert (mismatch): Name '[redacted]' passt nicht zur angefragten Person 'Dr. Eva Brandl'. Keine Patientendaten angezeigt, keine Antwort möglich. Link nach wiederholten Fehlversuchen gesperrt.",
+     "when": "2026-10-30T12:53:12+01:00",
+     "outcome": "8",
+     "entities": [
+      "Task/ed6f67da-9b5c-5ed1-8736-a6d95690f5e6",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1038"
+    }
+   ],
+   "matrix": "Fehlzustellung abgefangen · Laborbefund · Maria Beispiel · 12.03.1961\nZugriff von einer anderen Person (Petra Fremd) blockiert, angemeldet mit ID Austria über den Link an e***@labor-kanaI.example. Keine Patientendaten angezeigt. Dieser Link ist gesperrt; eine neue Anfrage an die richtige Adresse: !labor Brandl maria-beispiel eva.brandl@labor-kanal.example\nAnforderung an Dr. Eva Brandl (KB-7Q9KQF)\nProtokoll: !audit KB-7Q9KQF\n<p><font data-mx-color=\"#E30613\"><b>Fehlzustellung abgefangen</b></font> · Laborbefund · Maria Beispiel · 12.03.1961</p><p>Zugriff von einer anderen Person (Petra Fremd) blockiert, angemeldet mit ID Austria über den Link an <code>e***@labor-kanaI.example</code>. Keine Patientendaten angezeigt. Dieser Link ist gesperrt; eine neue Anfrage an die richtige Adresse: !labor Brandl maria-beispiel <code>eva.brandl@labor-kanal.example</code></p><p><sub>Anforderung an Dr. Eva Brandl (KB-7Q9KQF)</sub><br/><sub>Protokoll: !audit KB-7Q9KQF</sub></p>",
+   "detail": {
+    "warned_at_send": true,
+    "page_leaks": [],
+    "could_answer": false,
+    "via": "bot"
+   }
+  },
+  "M2": {
+   "caught": true,
+   "e2e_caught": true,
+   "audit_events": [
+    {
+     "who": "pseudonymous person (bPK hash)",
+     "what": "User Authentication / Identity checked / eID-Prüfung (ID Austria – Simulation, kein echtes ID Austria) für KB-7GZ3MM: NICHT BESTANDEN – Name '[redacted]' passt nicht zur angefragten Person 'Dr. Eva Brandl'.",
+     "when": "2026-10-30T12:53:12+01:00",
+     "outcome": "4",
+     "entities": [
+      "Task/84397947-0c18-5219-8a9d-10b8310471e5",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1042"
+    },
+    {
+     "who": "pseudonymous person (bPK hash)",
+     "what": "Security Alert / Misdelivery caught / Zugriff auf KB-7GZ3MM blockiert (mismatch): Name '[redacted]' passt nicht zur angefragten Person 'Dr. Eva Brandl'. Keine Patientendaten angezeigt, keine Antwort möglich. Link bleibt für die angefragte Person gültig.",
+     "when": "2026-10-30T12:53:12+01:00",
+     "outcome": "8",
+     "entities": [
+      "Task/84397947-0c18-5219-8a9d-10b8310471e5",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1043"
+    },
+    {
+     "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+     "what": "User Authentication / Identity checked / eID-Prüfung (ID Austria – Simulation, kein echtes ID Austria) für KB-7GZ3MM: BESTANDEN – Name passt zur angefragten Person 'Dr. Eva Brandl'.",
+     "when": "2026-10-30T12:53:12+01:00",
+     "outcome": "0",
+     "entities": [
+      "Task/84397947-0c18-5219-8a9d-10b8310471e5",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1045"
+    }
+   ],
+   "matrix": "Fehlzustellung abgefangen · Laborbefund · Maria Beispiel · 12.03.1961\nZugriff von einer anderen Person (Thomas Huber) blockiert, angemeldet mit ID Austria über den Link an e***@labor-kanal.example. Keine Patientendaten angezeigt. Der Link bleibt für Dr. Eva Brandl gültig.\nAnforderung an Dr. Eva Brandl (KB-7GZ3MM)\nProtokoll: !audit KB-7GZ3MM\n<p><font data-mx-color=\"#E30613\"><b>Fehlzustellung abgefangen</b></font> · Laborbefund · Maria Beispiel · 12.03.1961</p><p>Zugriff von einer anderen Person (Thomas Huber) blockiert, angemeldet mit ID Austria über den Link an <code>e***@labor-kanal.example</code>. Keine Patientendaten angezeigt. Der Link bleibt für Dr. Eva Brandl gültig.</p><p><sub>Anforderung an Dr. Eva Brandl (KB-7GZ3MM)</sub><br/><sub>Protokoll: !audit KB-7GZ3MM</sub></p>",
+   "detail": {
+    "colleague_filed": false,
+    "via": "bot"
+   }
+  },
+  "M3": {
+   "caught": true,
+   "e2e_caught": true,
+   "audit_events": [
+    {
+     "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+     "what": "User Authentication / Identity checked / eID-Prüfung (ID Austria – Simulation, kein echtes ID Austria) für KB-K9ZVYF: BESTANDEN – Name passt zur angefragten Person 'Dr. Eva Brandl'.",
+     "when": "2026-10-30T12:53:13+01:00",
+     "outcome": "0",
+     "entities": [
+      "Task/f03f71c3-e1b8-54d0-9c61-9a2a5dad2634",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1057"
+    },
+    {
+     "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+     "what": "Security Alert / Misdelivery caught / Antwort auf KB-K9ZVYF: Dokument betrifft eine andere Person (Name/Geburtsdatum stimmen nicht überein) – nicht abgelegt. Datei verworfen und nicht gespeichert (SHA-256 7e0a67cee8790c1f15acc3c7dc42256a0f833c420547059bd794f700ae4d6c8b); Absender informiert.",
+     "when": "2026-10-30T12:53:13+01:00",
+     "outcome": "8",
+     "entities": [
+      "Task/f03f71c3-e1b8-54d0-9c61-9a2a5dad2634",
+      "Patient/maria-beispiel"
+     ],
+     "purpose": [
+      "TREAT"
+     ],
+     "id": "1059"
+    }
+   ],
+   "matrix": "Fehlzustellung abgefangen · Laborbefund · Maria Beispiel · 12.03.1961\nDokument betrifft eine andere Person – Name und Geburtsdatum passen nicht zu Maria Beispiel. Nicht gespeichert, nicht abgelegt; Eva Brandl wurde informiert.\nAntwort von Eva Brandl, angemeldet mit ID Austria, auf KB-K9ZVYF\nProtokoll: !audit KB-K9ZVYF\n<p><font data-mx-color=\"#E30613\"><b>Fehlzustellung abgefangen</b></font> · Laborbefund · Maria Beispiel · 12.03.1961</p><p>Dokument betrifft eine andere Person – Name und Geburtsdatum passen nicht zu Maria Beispiel. Nicht gespeichert, nicht abgelegt; Eva Brandl wurde informiert.</p><p><sub>Antwort von Eva Brandl, angemeldet mit ID Austria, auf KB-K9ZVYF</sub><br/><sub>Protokoll: !audit KB-K9ZVYF</sub></p>",
+   "detail": {
+    "filed": false,
+    "other_patient_leaks": [],
+    "via": "bot"
+   }
+  },
+  "M2_then_brandl_filed": true,
+  "prefetch_then_filed": true,
+  "leaky_note_contained": true,
+  "namesake": {
+   "caught": true,
+   "review_before_reveal": true,
+   "nothing_shown": true,
+   "confirm_status": 200,
+   "answered_after_confirm": true,
+   "filed": true,
+   "error": null
+  },
+  "hold_decision": {
+   "caught": true,
+   "held": true,
+   "forged_actor_status": 403,
+   "no_headers_status": 403,
+   "accepted_status": 200,
+   "filed": true,
+   "decision_audited": true,
+   "error": null
+  },
+  "score": 3
+ },
+ "audit": {
+  "coverage": {
+   "request-sent": {
+    "who": "@lena.hofer:klinikum.example",
+    "what": "Patient Record / Request sent / Anforderung KB-53DR2M (Laborbefund) an Dr. Eva Brandl per E-Mail an Kontakt #b3ab8e3de253 gesendet; Link gültig bis 2026-11-06T12:53:09+01:00; Nachricht PII-geprüft (sauber). Register: Dr. Eva Brandl: in der ÖÄK Ärzteliste (MOCK) gefunden, Fach Medizinische und Chemische Labordiagnostik.",
+    "when": "2026-10-30T12:53:09+01:00",
+    "outcome": "0",
+    "entities": [
+     "Task/921c26bd-7205-587f-9d4e-f53f2d1aec15",
+     "Patient/maria-beispiel"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1006"
+   },
+   "link-opened": {
+    "who": "unbekannt (noch nicht identifiziert)",
+    "what": "Patient Record / Link opened / Link zu Anforderung KB-53DR2M geöffnet; nichts angezeigt außer der anfragenden Klinik.",
+    "when": "2026-10-30T12:53:09+01:00",
+    "outcome": "0",
+    "entities": [
+     "Task/921c26bd-7205-587f-9d4e-f53f2d1aec15",
+     "Patient/maria-beispiel"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1007"
+   },
+   "identity-checked": {
+    "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+    "what": "User Authentication / Identity checked / eID-Prüfung (ID Austria – Simulation, kein echtes ID Austria) für KB-53DR2M: BESTANDEN – Name passt zur angefragten Person 'Dr. Eva Brandl'.",
+    "when": "2026-10-30T12:53:09+01:00",
+    "outcome": "0",
+    "entities": [
+     "Task/921c26bd-7205-587f-9d4e-f53f2d1aec15",
+     "Patient/maria-beispiel"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1008"
+   },
+   "answer-sent": {
+    "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+    "what": "Patient Record / Answer sent / Antwort auf KB-53DR2M übermittelt (Datei, 564 Bytes, SHA-256 8690d33a1c2cd1e14a91c3338dd48413d72a6c34a8ae8122b8d3ad8d745cad3e).",
+    "when": "2026-10-30T12:53:09+01:00",
+    "outcome": "0",
+    "entities": [
+     "Task/921c26bd-7205-587f-9d4e-f53f2d1aec15",
+     "Patient/maria-beispiel"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1009"
+   },
+   "answer-filed": {
+    "who": "Eva Brandl (ID Austria – Simulation, bpk-hmac:4b1c4da087a15d5c400602e5c6b3b346)",
+    "what": "Import / Answer filed / Antwort auf KB-53DR2M für Patient/maria-beispiel abgelegt: 11 Ressourcen in einer Transaktion (DiagnosticReport/1010, Observation/1011, Observation/1012, Observation/1013, Observation/1014, Practitioner/1015, Practitioner/1016, PractitionerRole/1017, Organization/1018, Provenance/1019, Task/921c26bd-7205-587f-9d4e-f53f2d1aec15); HL7-Validator 0 Fehler; prove 4/4.",
+    "when": "2026-10-30T12:53:10+01:00",
+    "outcome": "0",
+    "entities": [
+     "Task/921c26bd-7205-587f-9d4e-f53f2d1aec15",
+     "Patient/maria-beispiel",
+     "DiagnosticReport/1010",
+     "Observation/1011",
+     "Observation/1012",
+     "Observation/1013",
+     "Observation/1014",
+     "Practitioner/1015",
+     "Practitioner/1016",
+     "PractitionerRole/1017",
+     "Organization/1018",
+     "Provenance/1019"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1020"
+   },
+   "misdelivery-caught": {
+    "who": "pseudonymous person (bPK hash)",
+    "what": "Security Alert / Misdelivery caught / Zugriff auf KB-7Q9KQF blockiert (mismatch): Name '[redacted]' passt nicht zur angefragten Person 'Dr. Eva Brandl'. Keine Patientendaten angezeigt, keine Antwort möglich. Link nach wiederholten Fehlversuchen gesperrt.",
+    "when": "2026-10-30T12:53:12+01:00",
+    "outcome": "8",
+    "entities": [
+     "Task/ed6f67da-9b5c-5ed1-8736-a6d95690f5e6",
+     "Patient/maria-beispiel"
+    ],
+    "purpose": [
+     "TREAT"
+    ],
+    "id": "1038"
+   }
+  },
+  "score": 6,
+  "source": "HAPI AuditEvent",
+  "events_total": 680,
+  "chain": {
+   "fhir": {
+    "ok": true,
+    "events": 679,
+    "chains": 1,
+    "edited": [],
+    "dangling_prev": [],
+    "forks": []
+   },
+   "rows": {
+    "ok": true,
+    "count": 733,
+    "problems": [],
+    "head": "2be8391747aa08ae15f1a85541985958083af611afa59c6d6db3ea1c8fb66880",
+    "keyed_rows": 733,
+    "window": "ids 1..733",
+    "key": true
+   },
+   "anchors": {
+    "ok": true,
+    "anchors": 2,
+    "mismatch": [],
+    "chain": "d5159a7c68700800",
+    "hapi": 1,
+    "matrix": 1,
+    "ignored_unauthenticated": 0
+   },
+   "service_verify": {
+    "ok": true,
+    "count": 733,
+    "problems": [],
+    "anchors": 1
+   },
+   "ok": true,
+   "detail": "FHIR: 679 events in 1 chain(s), intact; SQLite ids 1..733 (733 HMAC-keyed): intact; anchors 2 MAC-verified (1 HAPI, 1 Matrix; 0 ignored) match"
+  },
+  "tamper_test": {
+   "fhir": {
+    "ok": true,
+    "edited": "AuditEvent/1830",
+    "edit_detected": [
+     "AuditEvent/1830"
+    ],
+    "delete_detected": true
+   },
+   "rows": {
+    "ok": true,
+    "edited_id": 367,
+    "edit_detected": [
+     "id 367: stored hash != recomputed"
+    ],
+    "delete_detected": [
+     "gap before id 368",
+     "id 368: prev_hash != hash of predecessor"
+    ]
+   },
+   "ok": true
+  },
+  "purpose_treat": "679/680",
+  "misdelivery_outcome_8": "33/33"
+ },
+ "pii": {
+  "emails": 129,
+  "sms_links": 8,
+  "landing_pages": 144,
+  "violations": 0,
+  "violation_list": [],
+  "notices": [
+   "generic word: 'dokument'"
+  ]
+ },
+ "corpus": {
+  "n": 136,
+  "as_expected": 136,
+  "confusion": {
+   "FILE": {
+    "FILE": 64
+   },
+   "HOLD": {
+    "HOLD": 41
+   },
+   "BLOCK": {
+    "BLOCK": 31
+   }
+  },
+  "wrong_patient_filed": [],
+  "right_patient_held": [],
+  "should_not_file_but_filed": [],
+  "matrix_active_content": [],
+  "mismatches": [],
+  "fidelity": {
+   "cases": 64,
+   "cases_all_ok": 64,
+   "checks": {
+    "exactly one DiagnosticReport": "55/55",
+    "subject = requested Patient": "64/64",
+    "DiagnosticReport.code LOINC 11502-2": "55/55",
+    "category LAB": "55/55",
+    "presentedForm present": "55/55",
+    "attachment = original upload": "64/64",
+    "attachment contentType text/markdown": "64/64",
+    "attachment hash = base64 SHA-1 (R4)": "64/64",
+    "conclusion = lab comment (normalised)": "52/52",
+    "DiagnosticReport.status = final": "53/53",
+    "DiagnosticReport.effective (Vienna offset)": "55/55",
+    "DiagnosticReport.issued (Vienna offset)": "55/55",
+    "one Observation per row": "55/55",
+    "rows exactly as sent": "55/55",
+    "Provenance targets the report": "64/64",
+    "Provenance.target covers every filed resource": "64/64",
+    "Provenance names the sender": "2/2",
+    "Provenance has an informant (verified sender)": "64/64",
+    "Provenance.signature application/jose": "64/64",
+    "Provenance.policy marks the SIMULATED eID (eid-simulated, never the eIDAS LoA URI)": "64/64",
+    "Provenance.entity[source] = SHA-256 of upload (hex or RFC 6920 ni:)": "64/64",
+    "Provenance.signature covers content_sha256 of this upload": "64/64",
+    "Provenance.signature covers the targets (same number)": "64/64",
+    "Task for the request": "64/64",
+    "Task.status completed": "64/64",
+    "Task.for = Patient": "64/64",
+    "Task.output -> report": "64/64",
+    "filed in one transaction (one lastUpdated)": "64/64",
+    "every dateTime carries the Europe/Vienna offset": "64/64",
+    "no invented conclusion": "3/3",
+    "Provenance author = document signatory": "5/5",
+    "Provenance informant = eID-verified sender": "5/5",
+    "exactly one DocumentReference": "9/9",
+    "type LOINC 11490-0": "9/9",
+    "category 18842-5": "9/9",
+    "content attachment present": "9/9",
+    "context.period = stay": "9/9",
+    "DiagnosticReport.status = preliminary": "2/2"
+   },
+   "failures": {}
+  },
+  "privacy_violations": [],
+  "disk_checked": true,
+  "task_transitions_ok": "136/136",
+  "task_transition_failures": [],
+  "reports_delta_vs_filed": {
+   "hapi_delta": 64,
+   "filed_outcomes": 64,
+   "consistent": true
+  },
+  "seconds": 143.8
+ },
+ "timezone": {
+  "datetimes": 2162,
+  "violations": 0,
+  "examples": []
+ },
+ "privacy": {
+  "fhir_auditevent_contacts": {
+   "count": 0,
+   "examples": []
+  },
+  "audit_row_contacts": {
+   "count": 0,
+   "examples": [],
+   "rows": 733
+  },
+  "request_text_after_filing": {
+   "filed": 70,
+   "still_has_text": 0,
+   "open_with_text": 72
+  },
+  "file_permissions": {
+   "dir": "0o700",
+   "bad": [],
+   "checked": [
+    "idp_es256.pem 0o600",
+    "pgk.sqlite 0o600",
+    "pgk.sqlite-shm 0o600",
+    "pgk.sqlite-wal 0o600",
+    "service_es256.pem 0o600"
+   ]
+  },
+  "ok": true
+ },
+ "custody": {
+  "submissions": 136,
+  "hash_ok": 136,
+  "hash_mismatch": [],
+  "accepted": 135,
+  "refused_before_acceptance": [
+   "X05"
+  ],
+  "filed": 68,
+  "attribution_ok": 68,
+  "attribution_bad": [],
+  "namesake": {
+   "present": true,
+   "different_practitioner": true
+  },
+  "ok": true
+ },
+ "latency": {
+  "GET 8000/": {
+   "n": 7,
+   "p50": 0.002,
+   "p95": 0.023,
+   "max": 0.023
+  },
+  "GET 8000/api/audit": {
+   "n": 1126,
+   "p50": 0.004,
+   "p95": 0.03,
+   "max": 0.382
+  },
+  "GET 8000/eid/login": {
+   "n": 146,
+   "p50": 0.002,
+   "p95": 0.005,
+   "max": 0.01
+  },
+  "GET 8000/r/{token}": {
+   "n": 148,
+   "p50": 0.009,
+   "p95": 0.046,
+   "max": 0.058
+  },
+  "GET 8000/r/{token}/receipt.txt": {
+   "n": 138,
+   "p50": 0.004,
+   "p95": 0.013,
+   "max": 0.031
+  },
+  "GET 8000/sms": {
+   "n": 34,
+   "p50": 0.002,
+   "p95": 0.008,
+   "max": 0.015
+  },
+  "GET 8001/": {
+   "n": 7,
+   "p50": 0.001,
+   "p95": 0.01,
+   "max": 0.01
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24-Lq_-MmaUS4zAYyyG2e7LjlWV0bd_q3Q6jOjxkb2cxU": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%2427rvSEVm9m-J5tA5l7YV1ZbQbZqmGUCpFCTZbngD_5c": {
+   "n": 1,
+   "p50": 0.005,
+   "p95": 0.005,
+   "max": 0.005
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%2460i3e4EajuNnbICawoScw2Ehrqq75Ss3baFV6hzcBjA": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24IoMnfLBjGBE4DGJGbXAzrBlpBa2Hz8A13zEb-LPnvMQ": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24JyxengmlTQtcgI1R9ccbs2a_uaQWF0oz3UGhUAk7mrI": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24NE7XyMCTeOw0iG8qcp3yQM2Gjc2lHkluwyUfESIWsoA": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24SBUCdDyM6t_WVpBskgHX7QCHOgCfv1JIidclo3M961c": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24b8ZJbI35O0ThM8eIvxUwfNCPAIrT8rfflC3yK-j59C0": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24i3w4ydwjGOJ9tXtQyxxBrMLLx9w7Cfw63ObR1VFaD1o": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/event/%24pJ_37h9ruZPxQTTadskH5g-XGBL4kIUVUiDBKVK-DEM": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/messages": {
+   "n": 41,
+   "p50": 0.005,
+   "p95": 0.009,
+   "max": 0.013
+  },
+  "GET 8008/health": {
+   "n": 7,
+   "p50": 0.002,
+   "p95": 0.011,
+   "max": 0.011
+  },
+  "GET 8025/api/v1/info": {
+   "n": 7,
+   "p50": 0.002,
+   "p95": 0.241,
+   "max": 0.241
+  },
+  "GET 8025/api/v1/message/00ptoVeG89cmPdwOU6XIbu": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/0H28QtFg21euDz6jgqCMvz": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0IVt6RuDAqOKvj8sB4AgEY": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0NpoFQlrMrStUiNKsDulSx": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0QTU29ZpSMFQH1WJ3pHZG9": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/0WTSFe2lX7Kxc1Ac2QqM0T": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/0jlQ4Bp4Mbj79SD8HPNPyD": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/0kXvPFKQX5MGNC98XpAH4j": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/0puqg8XSRgj61OaUI77Sgs": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0pvxxKivNjm9BdonxQgVMO": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0vEtzEZiX7qUrPL35d2uhd": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/0waplEqzQG4xPxKlid8HJD": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/12Cwc978XVN0euAEprU1Mm": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1D4kBxgsELvMciZHXSC0UC": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1DJ98faGqJQzcJNXwisHYq": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1IvTFJbXnVQ6DRJe9zte1r": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1MHgeVsX79TKlEb7XuJbyY": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/1MJCSrDmXAajtrEEFPLCB2": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1OAT704VJFuTx0m76Gu4yN": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1SnTe8GupoBYChjrEQwGGM": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/1aNr20XatC8M4MhD1nFOeG": {
+   "n": 1,
+   "p50": 0.005,
+   "p95": 0.005,
+   "max": 0.005
+  },
+  "GET 8025/api/v1/message/1d7225a1yNNrDtrw4LIbeX": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1dfwb1AIcNMLjNT40SHb91": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1fLJejjj6kMBCDRV3OlHN3": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1gJc7kYltojsj2mfYv3zn9": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/1jmxypfSWKJwcf24h5wNXx": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1mSZ5JOltFQuiAUUDp18WX": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1pipbGLFMTX4vZZXOGSczB": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1tF4cvdAGa4lBqvXkgyagh": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1uLdFqClYhihEPxQK0EcHF": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1xeH51jxJ7pIdN23G4jxzy": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/1xuoAFnUQNoUd3T24csiic": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1yLnXf7DpKKHz4IjXuwEAr": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1ypXYPWEgUhRUsCicZEdiU": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/1z6iehwl2FVWkVaCbHF9uW": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/227bxe2qkW5RD1rOS6pl9p": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/22owUURCRnzcqrjolSUPV3": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/24DywD1DgyxaBcdfsJ52HH": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/24RdbBYcJU4nCf49vHcP3e": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/25Kf12jvftVkGDwvsQOJnI": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/28LVT81VSfw8T7ijECe9EP": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/28Rtwzzdu5CiIMHdQskviN": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/2BActNf1JsOZQ8uDOlVaNz": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/2FFZugzFYmzR4PDf2pCAcu": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/2GJXrG3L6hRxgylm2LOdPG": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/2IuhVGluIolIanFzDrEF3t": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/2SqWt0Ohpr3DR9ZyxVEPKD": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/2TyrKteq2vGevybb6qsteE": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/2Yc41pNNrQ6SDlGqt9Eiw2": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/2eUr03n0o2uLOHL28WXBlS": {
+   "n": 1,
+   "p50": 0.006,
+   "p95": 0.006,
+   "max": 0.006
+  },
+  "GET 8025/api/v1/message/2g9UO7cNhDz97ML3K0CYGd": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/2ynLelU3xrj1Bj6Scfakq1": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/31exbusqALYt0R76XOnptA": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/34i75i30aLysii261vzrCy": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/35HGUhvK2yEsurAWM32V5m": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/3B7HFhki3r6VoMKYBlWksN": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/3GrcoCInBmLBjdUVtu1zh0": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/3OmVxywZhQLNI5Fs42rl36": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/3iMTyphfZSQjtd1lfnnw3V": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/3jLpPEKCVTsbVgyAQtfBc7": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/3k39d5IpilZKv4A20Osevt": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/3kO4hROT6bRiaPmZXVCM3k": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/3ljH422Bq9idYPvvtsyhFE": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/3nVLOey700UjOeG7TCl6Op": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/3wph0urhbmouvYY6W2Uz3A": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/3wrovUsUhMF9OWJW9tG7xT": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/447ilPVF8sA3t6mgMk6aEo": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/4FmEBHV5FMa8Bj6JRsh7MK": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/4IQECBuLpHxARjLX0lFzmF": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/4MNlQ2GSzA0CaIBLp3Layw": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/4Pf2l72uDB53rqokDLbMr5": {
+   "n": 1,
+   "p50": 0.005,
+   "p95": 0.005,
+   "max": 0.005
+  },
+  "GET 8025/api/v1/message/4bQzsD2q3VY50XK4TFe4qC": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/4dPo3VSpTVJttk41HaFNv6": {
+   "n": 1,
+   "p50": 0.005,
+   "p95": 0.005,
+   "max": 0.005
+  },
+  "GET 8025/api/v1/message/4mRdNiSnvFGkbSyM4LhagI": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/4u7lE1yXIsE6Atv1gcM1v7": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/4uG1CZfy8Y1hyYppisr17f": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/4xl3kIReNMQ35G5Yrecrt2": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/53xL3z9ycETn7i1Pdaf4em": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/54b9sLWiRxJN6CQzE6SsEE": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/56JBpaGP5PxsfIUsdtS001": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/59I0KveffqwJUepmcoXJSj": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/5Bb5wFMy4pIjndpKI2d9O0": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5I3weUSwKEDmwzox00gvKa": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5IznxYiiS85kRtWasOrATF": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5LQIdUQt77DMsqiXlZ0m8p": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5LbHFTNxKVIfDdEmIAh1iP": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5Pmpsj8PAtAHNGkl3OgFnX": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5QKfsii140ezT0efYGDFs7": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5STNxhwN9MlZUdDxYRgEoV": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5SjZEczLKs628LCOBPsv6E": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5TKDA6UnNN7cKh9ebcPszd": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5UtcHJTpV6mMU6AulvbubI": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/5W8XEqvfc3n7Kg5rHitFPq": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5aclQZa2oGEY23p6OIRqoZ": {
+   "n": 1,
+   "p50": 0.004,
+   "p95": 0.004,
+   "max": 0.004
+  },
+  "GET 8025/api/v1/message/5bN9HcComCCD2jzQZSap8A": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5cjeCPC3oG64MKKmdIYjct": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5g7n8iUT8LXEb9Z5PCr8Lo": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5lALIg2PQkfchWOEGlSbs1": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5nveLKY2JDQeVSimdzjQOP": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/5sbS6tSzzhuYTOiILKRBpH": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5ubis73eHjI39HrdtzsX7d": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/5ztcrqhJXbPaNkWOaJB3Pw": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/60ICoB06h6vaq5AX6qEid9": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/640GyKczrajGifIoNnBEo0": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/65eZ82uuMmbhjjTiESFXcn": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6DYnp7fkLZCgHHELUFtZkz": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/6EZu11wSmx4TM7aC7AHnGs": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/6FWgFJCnvdRX8frKD42h4f": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6HairbApwsY8TP2fdP2cuP": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6RMSCkWhwzMMqskWU7tujt": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6SGOkF8M43VbOpQRVnY899": {
+   "n": 1,
+   "p50": 0.004,
+   "p95": 0.004,
+   "max": 0.004
+  },
+  "GET 8025/api/v1/message/6Xo99eXfGCL6qbana4H1AH": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6aK7J3LPQmFwGr3zyfhWmh": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/6axDNpqIYzIwZBIC3lbmS9": {
+   "n": 1,
+   "p50": 0.004,
+   "p95": 0.004,
+   "max": 0.004
+  },
+  "GET 8025/api/v1/message/6ioZUdRTQZk0qcbSAgQER1": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6jJOFk96SlYarSthpkuA8l": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/6qcmfWugKBAtPkAacUuAMc": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/6rlyRpG8ZC8TzA3L7J7HJZ": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/6ukCl3jMxxupQJrnpdwAQw": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/79gLJo96ytQZPT24r7BLia": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/7Ag7f3drIrVzyH3H5NIrpm": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/7HcH4MhxvD3AArk12FbFI6": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/7PENpU0CnHNNPUEQ221NUP": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/7R0MKc9KK8Hu1pMnIJRJEr": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/7S7EHGTy35MUkadUbyNOtN": {
+   "n": 1,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "GET 8025/api/v1/message/7TTjAZv1KT6h7sFfOvZhoA": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/7VHA32gatays2JeV92NYNo": {
+   "n": 1,
+   "p50": 0.003,
+   "p95": 0.003,
+   "max": 0.003
+  },
+  "GET 8025/api/v1/message/7VS1vbTOamRb2Ad9xs5bpN": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/message/7aGhQke39mg9ngFubSd5nZ": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "GET 8025/api/v1/search": {
+   "n": 258,
+   "p50": 0.002,
+   "p95": 0.009,
+   "max": 0.016
+  },
+  "GET 8090/fhir": {
+   "n": 1,
+   "p50": 0.578,
+   "p95": 0.578,
+   "max": 0.578
+  },
+  "GET 8090/fhir/AuditEvent": {
+   "n": 1,
+   "p50": 0.289,
+   "p95": 0.289,
+   "max": 0.289
+  },
+  "GET 8090/fhir/Basic": {
+   "n": 1,
+   "p50": 0.018,
+   "p95": 0.018,
+   "max": 0.018
+  },
+  "GET 8090/fhir/Binary": {
+   "n": 1,
+   "p50": 0.028,
+   "p95": 0.028,
+   "max": 0.028
+  },
+  "GET 8090/fhir/Bundle": {
+   "n": 1,
+   "p50": 0.005,
+   "p95": 0.005,
+   "max": 0.005
+  },
+  "GET 8090/fhir/Communication": {
+   "n": 1,
+   "p50": 0.018,
+   "p95": 0.018,
+   "max": 0.018
+  },
+  "GET 8090/fhir/DiagnosticReport": {
+   "n": 3,
+   "p50": 0.015,
+   "p95": 0.056,
+   "max": 0.056
+  },
+  "GET 8090/fhir/DocumentReference": {
+   "n": 3,
+   "p50": 0.013,
+   "p95": 0.028,
+   "max": 0.028
+  },
+  "GET 8090/fhir/List": {
+   "n": 1,
+   "p50": 0.01,
+   "p95": 0.01,
+   "max": 0.01
+  },
+  "GET 8090/fhir/MedicationStatement": {
+   "n": 1,
+   "p50": 0.02,
+   "p95": 0.02,
+   "max": 0.02
+  },
+  "GET 8090/fhir/Observation": {
+   "n": 1,
+   "p50": 0.184,
+   "p95": 0.184,
+   "max": 0.184
+  },
+  "GET 8090/fhir/Organization": {
+   "n": 1,
+   "p50": 0.02,
+   "p95": 0.02,
+   "max": 0.02
+  },
+  "GET 8090/fhir/Patient": {
+   "n": 1,
+   "p50": 0.02,
+   "p95": 0.02,
+   "max": 0.02
+  },
+  "GET 8090/fhir/Practitioner": {
+   "n": 1,
+   "p50": 0.019,
+   "p95": 0.019,
+   "max": 0.019
+  },
+  "GET 8090/fhir/PractitionerRole": {
+   "n": 1,
+   "p50": 0.018,
+   "p95": 0.018,
+   "max": 0.018
+  },
+  "GET 8090/fhir/Provenance": {
+   "n": 1,
+   "p50": 0.131,
+   "p95": 0.131,
+   "max": 0.131
+  },
+  "GET 8090/fhir/Task": {
+   "n": 33,
+   "p50": 0.009,
+   "p95": 0.023,
+   "max": 0.099
+  },
+  "GET 8090/fhir/metadata": {
+   "n": 7,
+   "p50": 0.095,
+   "p95": 0.228,
+   "max": 0.228
+  },
+  "POST 8000/api/eid/personas": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "POST 8000/api/requests": {
+   "n": 140,
+   "p50": 0.056,
+   "p95": 0.229,
+   "max": 0.333
+  },
+  "POST 8000/api/requests/{id}/confirm": {
+   "n": 10,
+   "p50": 0.043,
+   "p95": 0.174,
+   "max": 0.174
+  },
+  "POST 8000/api/requests/{id}/decision": {
+   "n": 4,
+   "p50": 0.002,
+   "p95": 0.002,
+   "max": 0.002
+  },
+  "POST 8000/eid/login": {
+   "n": 146,
+   "p50": 0.006,
+   "p95": 0.016,
+   "max": 0.032
+  },
+  "POST 8000/r/{token}/answer": {
+   "n": 138,
+   "p50": 0.021,
+   "p95": 0.09,
+   "max": 0.3
+  },
+  "POST 8000/r/{token}/eid": {
+   "n": 146,
+   "p50": 0.034,
+   "p95": 0.128,
+   "max": 0.313
+  },
+  "POST 8025/api/v1/send": {
+   "n": 1,
+   "p50": 0.001,
+   "p95": 0.001,
+   "max": 0.001
+  },
+  "PUT 8008/_matrix/client/v3/rooms/%21SWlcUHpwqdrmheYhRF%3Aklinikum.example/send/m.room.message/{id}": {
+   "n": 10,
+   "p50": 0.009,
+   "p95": 0.011,
+   "max": 0.011
+  }
+ },
+ "service_port": "8000",
+ "validator": {
+  "errors": 0,
+  "warnings": 1506,
+  "per_resource": {},
+  "tx": true,
+  "files": 1285,
+  "seconds": 24.3,
+  "by_type": {
+   "Task": 145,
+   "DiagnosticReport": 60,
+   "Observation": 281,
+   "DocumentReference": 10,
+   "Provenance": 70,
+   "AuditEvent": 680,
+   "Practitioner": 17,
+   "PractitionerRole": 13,
+   "Organization": 9
+  }
+ },
+ "reverify": {
+  "checked": 70,
+  "verified": 70,
+  "not_reverifiable": 0,
+  "exit": 0,
+  "ok": true,
+  "failed": [],
+  "this_run_failed": [],
+  "earlier_changed": [],
+  "ok_this_run": true
+ },
+ "human_timing": null,
+ "prove_gate": {
+  "documents": 67,
+  "corruptions": 2352,
+  "detected": 2352,
+  "undetected": [],
+  "exit": 0
+ },
+ "seconds": 27.9
+}

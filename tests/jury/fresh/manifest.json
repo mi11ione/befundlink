@@ -1,0 +1,481 @@
+{
+ "about": "Regression set: 30 documents written blind by an agent that never saw our format, plus variants. route: lab = Dr. Eva Brandl (Labor Kanalstraße, lab_result), rehab = Stefan Kern (Reha Waldblick, discharge_report), patient = Maria Beispiel herself (lab_result). Expected outcome of fhirmap.decide + parse (FILE only if the parse is fileable and prove() passes).",
+ "cases": [
+  {
+   "id": "F01",
+   "file": "docs/F01.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "DE table, 'Beispiel, Maria', decimal commas, sek, G/l"
+  },
+  {
+   "id": "F02",
+   "file": "docs/F02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "EN, results as a bullet list, ISO DOB on its own line"
+  },
+  {
+   "id": "F03",
+   "file": "docs/F03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Für: Frau Mag. Maria Beispiel, geboren am 12. März 1961' (no Patient: label), 'Referenz' column, '·' header fields"
+  },
+  {
+   "id": "F04",
+   "file": "docs/F04.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "LOINC 3209-0 has a wrong check digit (the author's typo; the system is right to hold)"
+  },
+  {
+   "id": "F04b",
+   "file": "docs/F04b.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "F04 with the code fixed: neg., folgt, n.b."
+  },
+  {
+   "id": "F05",
+   "file": "docs/F05.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "header as key/value table ('Name | Beispiel, Maria'), H2 subtitle names the type, 'Analyt' / 'Normbereich'"
+  },
+  {
+   "id": "F06",
+   "file": "docs/F06.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "blood count, 'Frau Mag.', 'Referenz' column"
+  },
+  {
+   "id": "F07",
+   "file": "docs/F07.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "EN, 'Beispiel, Maria (born 12.03.1961)'"
+  },
+  {
+   "id": "F08",
+   "file": "docs/F08.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "coagulation, 'Ref.-Bereich' column"
+  },
+  {
+   "id": "F09",
+   "file": "docs/F09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Patient/in: Beispiel Maria, *12.03.1961': surname first without a comma, exactly the requested tokens and the exact full DOB (RULES v4)"
+  },
+  {
+   "id": "F10",
+   "file": "docs/F10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Frau Mag. Maria Beispiel · geb. 1961-03-12'"
+  },
+  {
+   "id": "F11",
+   "file": "docs/F11.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Lipidstatus', everything as bullet lists, 'Freigabe: Dr. Eva Brandl' (was a false second report time)"
+  },
+  {
+   "id": "F12",
+   "file": "docs/F12.md",
+   "route": "patient",
+   "expected": "FILE",
+   "why": "the patient's own letter 'Meine Blutwerte', 'Wert | Ergebnis' columns, signature is the patient"
+  },
+  {
+   "id": "F13",
+   "file": "docs/F13.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Laboratory findings for **Maria Beispiel**, date of birth **12 March 1961**' sentence, two tables"
+  },
+  {
+   "id": "F14",
+   "file": "docs/F14.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "rehab letter, medication as a table"
+  },
+  {
+   "id": "F15",
+   "file": "docs/F15.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "'Patient: Beispiel, Maria · DOB 1961-03-12', 'Admission: … · Discharge: …'"
+  },
+  {
+   "id": "F16",
+   "file": "docs/F16.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "'# Rehabilitationszentrum Waldblick' + '## Ärztlicher Entlassungsbericht', bold name without label"
+  },
+  {
+   "id": "F17",
+   "file": "docs/F17.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "short rehab, bold inline sections, daughter mentioned without name/DOB"
+  },
+  {
+   "id": "F18",
+   "file": "docs/F18.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "SV-Nummer with DOB digits, footer"
+  },
+  {
+   "id": "B01",
+   "file": "docs/B01.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Max Beispiel"
+  },
+  {
+   "id": "B02",
+   "file": "docs/B02.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "the daughter: same name, other birth date"
+  },
+  {
+   "id": "B03",
+   "file": "docs/B03.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Johann Gruber"
+  },
+  {
+   "id": "B04",
+   "file": "docs/B04.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Elfriede Huber"
+  },
+  {
+   "id": "B05",
+   "file": "docs/B05.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Karl Steiner"
+  },
+  {
+   "id": "B06",
+   "file": "docs/B06.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Petra Lang"
+  },
+  {
+   "id": "H01",
+   "file": "docs/H01.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "'CC: Max Beispiel, geb. 01.01.1960': another person's data in the upload (author expected HOLD; BLOCK is the rule 4b answer)"
+  },
+  {
+   "id": "H02",
+   "file": "docs/H02.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "right name, birth year 1962"
+  },
+  {
+   "id": "H03",
+   "file": "docs/H03.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "right patient, but 'Labor Dr. Gruber & Partner, Linz' instead of Labor Kanalstraße: ORG_MISMATCH"
+  },
+  {
+   "id": "H04",
+   "file": "docs/H04.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Beispiel-Huber'"
+  },
+  {
+   "id": "H05",
+   "file": "docs/H05.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "'Beispel'"
+  },
+  {
+   "id": "H06",
+   "file": "docs/H06.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "'Begleitperson: Tochter Maria Beispiel, geb. 15.06.1990' (author expected HOLD; rule 4b)"
+  },
+  {
+   "id": "X03",
+   "file": "docs/X03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "diagnostic variant of F03"
+  },
+  {
+   "id": "X03b",
+   "file": "docs/X03b.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "diagnostic variant of F03"
+  },
+  {
+   "id": "X03c",
+   "file": "docs/X03c.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "diagnostic variant of F03"
+  },
+  {
+   "id": "X05",
+   "file": "docs/X05.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "F05 with 'Patient:' lines"
+  },
+  {
+   "id": "X09",
+   "file": "docs/X09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "F09 with 'Beispiel, Maria'"
+  },
+  {
+   "id": "X10",
+   "file": "docs/X10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "F10 with ', ' for ' · '"
+  },
+  {
+   "id": "X15",
+   "file": "docs/X15.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "F15 with ', ' for ' · '"
+  },
+  {
+   "id": "X16",
+   "file": "docs/X16.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "F16 without the bold"
+  },
+  {
+   "id": "V01",
+   "file": "docs/V01.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "kv table with a header row, 'Patientin | BEISPIEL, Maria', 'Messwert' / 'Ref.-Bereich', 'Befund freigegeben:'"
+  },
+  {
+   "id": "V02",
+   "file": "docs/V02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'## Patientendaten' with 'Name:' lines, bullets without colon '- Hämoglobin 13,2 g/dl [12–16]', signature"
+  },
+  {
+   "id": "V03",
+   "file": "docs/V03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "EN sentence 'Results for **Maria Beispiel** (born 1961-03-12)', 'Validated by Dr. …' without colon"
+  },
+  {
+   "id": "V04",
+   "file": "docs/V04.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Patient: **Mag. Maria Beispiel** • geb.', '|' between header fields, 'Analyt | Wert'"
+  },
+  {
+   "id": "V05",
+   "file": "docs/V05.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "'# Reha-Zentrum Waldblick' + '## Entlassungsbrief', 'Aufnahme: … · Entlassung: …', signature"
+  },
+  {
+   "id": "V06",
+   "file": "docs/V06.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "untitled discharge report ('Waldblick – Abschluss'), no stay, a medication table: the requested kind fits"
+  },
+  {
+   "id": "V07",
+   "file": "docs/V07.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "two patient lines, one with an ambiguous slash date 12/03/1961"
+  },
+  {
+   "id": "V07b",
+   "file": "docs/V07b.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "EN bullets '* Potassium: 4.1 mmol/L (ref. 3.5-5.1)', 'Authorised by:'"
+  },
+  {
+   "id": "V08",
+   "file": "docs/V08.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "kv table 'Name | Beispiel Maria': under 'Name:' the order is free (RULES v3, A35)"
+  },
+  {
+   "id": "V09",
+   "file": "docs/V09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Patient/in: BEISPIEL Maria, *12.03.1961': capitals mark the family name (A34)"
+  },
+  {
+   "id": "V10",
+   "file": "docs/V10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'# Gerinnungsstatus', 'Für: Maria Beispiel (geb. 12.03.1961)', 'Validiert von Dr. Eva Brandl.'"
+  },
+  {
+   "id": "S01",
+   "file": "docs/S01.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "second person in the tail of the patient line (was FILE before this change)"
+  },
+  {
+   "id": "S02",
+   "file": "docs/S02.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "'; Kopie an Max Beispiel, geb. …' in the patient line (was FILE before this change)"
+  },
+  {
+   "id": "S03",
+   "file": "docs/S03.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "sentence patient + 'Vorbefund von Max Beispiel, geb. …' elsewhere"
+  },
+  {
+   "id": "S04",
+   "file": "docs/S04.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "the only sentence names Max"
+  },
+  {
+   "id": "S05",
+   "file": "docs/S05.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "sentence patient + 'Begleitkind: * 15.06.1990': a second birth date with a label word before it counts as another person (rule 4b, unchanged)"
+  },
+  {
+   "id": "S06",
+   "file": "docs/S06.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "kv header table with a 'Begleitperson | Max Beispiel, geb. …' row"
+  },
+  {
+   "id": "S07",
+   "file": "docs/S07.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "'Patient: … · Geb.: … · CC: Max Beispiel, geb. …'"
+  },
+  {
+   "id": "S08",
+   "file": "docs/S08.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "bullet lab report for Max"
+  },
+  {
+   "id": "S09",
+   "file": "docs/S09.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "bold name line without a label for Max"
+  },
+  {
+   "id": "S10",
+   "file": "docs/S10.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Für:' sentence with the birth year 1962: DOB_NEAR"
+  },
+  {
+   "id": "S11",
+   "file": "docs/S11.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "bullet value '245.000 /µl': ambiguous number"
+  },
+  {
+   "id": "S12",
+   "file": "docs/S12.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "bullet lab report on the lab request"
+  },
+  {
+   "id": "S12r",
+   "file": "docs/S12r.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "the same bullet lab report on the discharge request: KIND_MISMATCH"
+  },
+  {
+   "id": "S13",
+   "file": "docs/S13.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "untitled rehab report with a stay and medication on the lab request: KIND_MISMATCH"
+  },
+  {
+   "id": "S14",
+   "file": "docs/S14.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Zentrallabor Nord' for Labor Kanalstraße: ORG_MISMATCH"
+  },
+  {
+   "id": "S15",
+   "file": "docs/S15.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Labor Kanalstr.' = Labor Kanalstraße"
+  },
+  {
+   "id": "S16",
+   "file": "docs/S16.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "bullet value with the unit '/GF': UNKNOWN_UNIT"
+  },
+  {
+   "id": "S17",
+   "file": "docs/S17.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "two different report times on one '·' line: MULTIPLE_REPORTS"
+  }
+ ]
+}

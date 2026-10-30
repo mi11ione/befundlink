@@ -1,0 +1,69 @@
+{
+  "package": "hl7.at.fhir.core.r4#2.0.0",
+  "validator": "validator_cli.jar, -version 4.0.1 -tx n/a",
+  "types": {
+    "DiagnosticReport": {
+      "files": 1,
+      "profile": "base R4 (no AT Core profile)",
+      "errors": 0,
+      "warnings": 0,
+      "error_messages": []
+    },
+    "DocumentReference": {
+      "files": 1,
+      "profile": "base R4 (no AT Core profile)",
+      "errors": 0,
+      "warnings": 0,
+      "error_messages": []
+    },
+    "Observation": {
+      "files": 4,
+      "profile": "base R4 (no AT Core profile)",
+      "errors": 0,
+      "warnings": 15,
+      "error_messages": []
+    },
+    "Organization": {
+      "files": 3,
+      "profile": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization",
+      "errors": 0,
+      "warnings": 1,
+      "error_messages": []
+    },
+    "Patient": {
+      "files": 1,
+      "profile": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
+      "errors": 0,
+      "warnings": 1,
+      "error_messages": []
+    },
+    "Practitioner": {
+      "files": 5,
+      "profile": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+      "errors": 0,
+      "warnings": 1,
+      "error_messages": []
+    },
+    "PractitionerRole": {
+      "files": 3,
+      "profile": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+      "errors": 0,
+      "warnings": 3,
+      "error_messages": []
+    },
+    "Provenance": {
+      "files": 2,
+      "profile": "base R4 (no AT Core profile)",
+      "errors": 0,
+      "warnings": 0,
+      "error_messages": []
+    },
+    "Task": {
+      "files": 2,
+      "profile": "base R4 (no AT Core profile)",
+      "errors": 0,
+      "warnings": 0,
+      "error_messages": []
+    }
+  }
+}

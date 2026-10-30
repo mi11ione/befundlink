@@ -1,0 +1,24 @@
+{
+  "default_server_config": {
+    "m.homeserver": {
+      "base_url": "http://localhost:8008",
+      "server_name": "klinikum.example"
+    }
+  },
+  "disable_custom_urls": true,
+  "disable_guests": true,
+  "disable_3pid_login": true,
+  "brand": "Befundlink",
+  "default_country_code": "AT",
+  "show_labs_settings": false,
+  "room_directory": {"servers": ["klinikum.example"]},
+  "setting_defaults": {
+    "UIFeature.registration": false,
+    "UIFeature.passwordReset": false,
+    "UIFeature.deactivate": false
+  },
+  "element_call": {"use_exclusively": false},
+  "features": {},
+  "embedded_pages": {"login_for_welcome": true},
+  "default_theme": "light"
+}

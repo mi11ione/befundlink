@@ -1,0 +1,97 @@
+# Local demo stack for Befundlink. Run from the repo root: `make up && make setup`.
+# Every port is published on host loopback only (127.0.0.1): nothing here is reachable from the LAN.
+# HAPI has no auth and no CORS; production needs SMART on FHIR/OAuth2 or mTLS in front of it.
+name: pgk-bridge
+
+services:
+  # One-shot: creates the registration shared secret and signing key in the volume (idempotent).
+  synapse-init:
+    image: matrixdotorg/synapse:v1.164.1
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >-
+        set -e;
+        [ -s /data/registration_shared_secret ] || head -c 32 /dev/urandom | od -An -tx1 | tr -d ' \n' > /data/registration_shared_secret;
+        [ -s /data/signing.key ] || generate_signing_key -o /data/signing.key;
+        mkdir -p /data/media_store;
+        chown -R 991:991 /data;
+        chown -R 65532:65532 /hapi-data
+    volumes:
+      - synapse-data:/data
+      - hapi-data:/hapi-data
+
+  synapse:
+    image: matrixdotorg/synapse:v1.164.1
+    depends_on:
+      synapse-init:
+        condition: service_completed_successfully
+    environment:
+      SYNAPSE_CONFIG_PATH: /config/homeserver.yaml
+    volumes:
+      - synapse-data:/data
+      - ./synapse/homeserver.yaml:/config/homeserver.yaml:ro
+      - ./synapse/log.config:/config/log.config:ro
+    ports:
+      - "127.0.0.1:8008:8008"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8008/health"]
+      interval: 2s
+      timeout: 2s
+      retries: 60
+      start_period: 2s
+
+  element:
+    image: vectorim/element-web:v1.12.33
+    volumes:
+      - ./element/config.json:/app/config.json:ro
+    ports:
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped
+
+  hapi:
+    image: hapiproject/hapi:v8.12.0-2
+    depends_on:
+      synapse-init:
+        condition: service_completed_successfully
+    volumes:
+      - hapi-data:/data
+      # pgk.AppendOnlyInterceptor (source in infra/hapi/src, rebuild: make hapi-interceptor)
+      - ./hapi/classes:/app/extra-classes:ro
+    environment:
+      # H2 on a volume (default is in-memory: a restart would lose every filed resource)
+      spring.datasource.url: jdbc:h2:file:/data/hapi;DB_CLOSE_ON_EXIT=FALSE
+      hapi.fhir.fhir_version: R4
+      hapi.fhir.server_address: http://localhost:8090/fhir/
+      # Searches must see freshly filed resources immediately (default caches for 60 s).
+      hapi.fhir.reuse_cached_search_results_millis: "0"
+      hapi.fhir.allow_external_references: "true"
+      # Append-only for audit integrity: no DELETE (any type), no $expunge, no delete-expunge,
+      # and AuditEvent is create-only (updates rejected by the interceptor). Reset = `make clean`.
+      hapi.fhir.delete_enabled: "false"
+      hapi.fhir.allow_multiple_delete: "false"
+      hapi.fhir.allow_cascading_deletes: "false"
+      hapi.fhir.delete_expunge_enabled: "false"
+      hapi.fhir.expunge_enabled: "false"
+      hapi.fhir.custom-interceptor-classes: pgk.AppendOnlyInterceptor
+      # The bundled application.yaml sets cors.allowed_origin ["*"] and CORS has no off switch:
+      # allow only HAPI's own origin, i.e. no cross-origin browser access (the service calls HAPI server-side).
+      hapi.fhir.cors.allowed_origin: http://localhost:8090
+    ports:
+      - "127.0.0.1:8090:8080"
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:v1.32.0
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "1"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "1"
+      MP_MAX_MESSAGES: "5000"
+    ports:
+      - "127.0.0.1:1025:1025"
+      - "127.0.0.1:8025:8025"
+    restart: unless-stopped
+
+volumes:
+  synapse-data:
+  hapi-data:

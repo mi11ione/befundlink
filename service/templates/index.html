@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% set wordmark = true %}
+{% block body %}
+<h1>Befundlink</h1>
+<ul class="list gap">
+<li><a href="/sms">Simulierte SMS</a></li>
+<li><a href="http://localhost:8025">Mailpit</a></li>
+<li><a href="/api/requests">Anforderungen (JSON)</a></li>
+<li><a href="/api/audit">Audit (JSON)</a></li>
+<li><a href="/docs">API</a></li>
+</ul>
+{% endblock %}

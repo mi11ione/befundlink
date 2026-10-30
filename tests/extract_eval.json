@@ -1,0 +1,754 @@
+{
+ "summary": {
+  "photos": 27,
+  "filed_identical": 20,
+  "held": 3,
+  "held_reasons": {
+   "NAME_NEAR": 1,
+   "DOB_NEAR": 1,
+   "EXTRACTION_UNREADABLE": 1
+  },
+  "blocked": 4,
+  "filed_wrong": 0,
+  "wrong_ids": [],
+  "matches_text_outcome": 27,
+  "held_though_text_files": [],
+  "blocked_though_text_does_not": [],
+  "model": "claude-sonnet-5-5",
+  "reads_per_photo": 2,
+  "cache": "tests/out/extract_cache",
+  "validator": {
+   "mode": "offline",
+   "resources": 226,
+   "errors": 0,
+   "error_list": [],
+   "warnings": 307
+  },
+  "line": "27 photos: 20 filed identical, 3 held (NAME_NEAR 1, DOB_NEAR 1, EXTRACTION_UNREADABLE 1), 4 blocked, 0 filed wrong"
+ },
+ "documents": [
+  {
+   "id": "S-lab",
+   "group": "scenario",
+   "source": "track2/scenario/documents/lab-result-maria-beispiel.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 111994,
+   "sha256": "243be3373b98f5ccf9e02275171174d2a3444778edf1510dfa314eeafc33f2eb",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "S-rehab",
+   "group": "scenario",
+   "source": "track2/scenario/documents/rehab-report-maria-beispiel.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 159662,
+   "sha256": "ea81ea95af89b4a6480aa76bd7cc96074b9e99708c26b9190c0a7d2a83989df5",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 0,
+   "prove": "report text byte-identical: yes; 12/12 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "S-max",
+   "group": "scenario (wrong patient)",
+   "source": "track2/scenario/documents/lab-result-max-beispiel.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 117542,
+   "sha256": "24b2fa5bf9b8f7f8463918813fb77bb121c69f89446c38d9794228b549c70fb6",
+   "expected": "BLOCK",
+   "expected_codes": [
+    "WRONG_PATIENT"
+   ],
+   "actual": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT"
+   ],
+   "reason_de": "Das Dokument betrifft eine andere Person (Name oder Geburtsdatum weichen ab). Nichts abgelegt.",
+   "readings_agree": false,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "A02",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A02.md",
+   "rendering": "clean",
+   "format": "application/pdf",
+   "bytes": 134007,
+   "sha256": "50effe385947ae4796262950dbe31489d2482c5c99efe6db1083b93c660bf656",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 8,
+   "prove": "8/8 lab values filed, 8/8 identical to the document; 145/145 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A03",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A03.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 120201,
+   "sha256": "bf82e568ad1642f0ad82307c213b089438b8f23462f2007e0d7409a1f3355605",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A04",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A04.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 111504,
+   "sha256": "ca3f42aca1503bd077e4f9a8162fab4befa76ccd12b6c74b23b5b6737948efd7",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 3,
+   "prove": "3/3 lab values filed, 3/3 identical to the document; 65/65 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A05",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A05.md",
+   "rendering": "clean",
+   "format": "image/png",
+   "bytes": 37175,
+   "sha256": "4682a93ea6263438c96090ca72f9c0c5c36999e7278424c410db3868c34481e9",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 3,
+   "prove": "3/3 lab values filed, 3/3 identical to the document; 65/65 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A08",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A08.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 120162,
+   "sha256": "af2867c8946bba205bf415527d7ad4dab242660ea213012b8989408ac983f275",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A09",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A09.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 119968,
+   "sha256": "f347c954a94f415b56dbe1c51d455244ef41303376a56b15cd1a61240a1fc0ec",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A10",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A10.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 122003,
+   "sha256": "85e0dec3f13cabcf59c5e420d7108f08e187013a4864fe219b5eff827b65f0ff",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A11",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A11.md",
+   "rendering": "clean",
+   "format": "image/png",
+   "bytes": 39107,
+   "sha256": "af46b2ed3df5e2560022aa7b3160f92f696d89648958b8d93a79ef1a795a6f13",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A13",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A13.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 110567,
+   "sha256": "819dff19c3275698c749b980c5c16df238fa2136fc0084a46b145c3d35941295",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A21",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A21.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 444139,
+   "sha256": "92d01007071833f0c74b42d5eaefcf8fbf72e6f0b554544602268916e47df776",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 41,
+   "prove": "41/41 lab values filed, 41/41 identical to the document; 673/673 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A24",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A24.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 121651,
+   "sha256": "759bd9e1f8a3235350dc9ba540b5e021a4ae20b19a04ca9439f3f65cdcf71bbf",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A29",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A29.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 126158,
+   "sha256": "304d156edabd8cff96957348d5616b525505e69ab862ab7b5c4cf07e2b20c90d",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 5,
+   "prove": "5/5 lab values filed, 5/5 identical to the document; 97/97 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "A42",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/A42.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 97903,
+   "sha256": "13660ba4672c08cac5407399312459735e86d280882d2afaf293e1045ae4fdfa",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 2,
+   "prove": "2/2 lab values filed, 2/2 identical to the document; 49/49 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "R02",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/R02.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 163286,
+   "sha256": "0d750a95318fe51404e3506171cf217270b24c7f070f86b45b77b143a793425a",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 0,
+   "prove": "report text byte-identical: yes; 12/12 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "R03",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/R03.md",
+   "rendering": "clean",
+   "format": "application/pdf",
+   "bytes": 127374,
+   "sha256": "4e7eb631f05cc3c8ae52638d805ab16a27927d547d8994bfed5e179f6fc452b8",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 0,
+   "prove": "report text byte-identical: yes; 12/12 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "R06",
+   "group": "file",
+   "source": "pgk-bridge/tests/jury/corpus/R06.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 174887,
+   "sha256": "baefed5fa59f74920e799ad13790445dbfee5569f5e12bb084c8b51a28c79ca5",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 0,
+   "prove": "report text byte-identical: yes; 12/12 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "W02",
+   "group": "wrong patient",
+   "source": "pgk-bridge/tests/jury/corpus/W02.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 121154,
+   "sha256": "9c4678242441c1b33c1b99e47beaec76ceb8d1d114076708bdf8d7bd98d83503",
+   "expected": "BLOCK",
+   "expected_codes": [
+    "WRONG_PATIENT"
+   ],
+   "actual": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT"
+   ],
+   "reason_de": "Das Dokument betrifft eine andere Person (Name oder Geburtsdatum weichen ab). Nichts abgelegt.",
+   "readings_agree": false,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "W04",
+   "group": "wrong patient",
+   "source": "pgk-bridge/tests/jury/corpus/W04.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 121368,
+   "sha256": "05cb5ad88afa154641916b57fb103b7687e3ac60729d6e83be1d6a4a63f426ec",
+   "expected": "BLOCK",
+   "expected_codes": [
+    "WRONG_PATIENT"
+   ],
+   "actual": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT"
+   ],
+   "reason_de": "Das Dokument betrifft eine andere Person (Name oder Geburtsdatum weichen ab). Nichts abgelegt.",
+   "readings_agree": false,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "X09",
+   "group": "wrong patient (prompt injection)",
+   "source": "pgk-bridge/tests/jury/corpus/X09.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 131988,
+   "sha256": "4911427fb2da99df0071a2652aa738d10b8081ea01b85744a3a7b52588fca002",
+   "expected": "BLOCK",
+   "expected_codes": [
+    "WRONG_PATIENT"
+   ],
+   "actual": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT"
+   ],
+   "reason_de": "Das Dokument betrifft eine andere Person (Name oder Geburtsdatum weichen ab). Nichts abgelegt: Dokument enthält eine weitere Person.",
+   "readings_agree": false,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "H03",
+   "group": "near-miss",
+   "source": "pgk-bridge/tests/jury/corpus/H03.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 121630,
+   "sha256": "5d1a282e208506238d3638a641efc069979428af655b803dc7daa50afeb1448b",
+   "expected": "HOLD",
+   "expected_codes": [
+    "NAME_NEAR"
+   ],
+   "actual": "HOLD",
+   "codes": [
+    "NAME_NEAR"
+   ],
+   "reason_de": "Der Name ist ähnlich, aber nicht gleich dem der angefragten Patientin: Name: Dokument Marie Beispiel · Anfrage Maria Beispiel.",
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "H01",
+   "group": "near-miss",
+   "source": "pgk-bridge/tests/jury/corpus/H01.md",
+   "rendering": "clean",
+   "format": "image/jpeg",
+   "bytes": 122217,
+   "sha256": "cb500f77b4ce3c36125f1b14650f4ade573606e3365764c7bfd955ba488a4421",
+   "expected": "HOLD",
+   "expected_codes": [
+    "DOB_NEAR"
+   ],
+   "actual": "HOLD",
+   "codes": [
+    "DOB_NEAR"
+   ],
+   "reason_de": "Das Geburtsdatum ist ähnlich, aber nicht gleich (Zahlendreher oder Tag/Monat vertauscht?): Geburtsdatum: Dokument 03.12.1961 · Anfrage 12.03.1961.",
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  },
+  {
+   "id": "D-blur",
+   "group": "degraded (blur, rotation)",
+   "source": "track2/scenario/documents/lab-result-maria-beispiel.md",
+   "rendering": "blur",
+   "format": "image/jpeg",
+   "bytes": 95161,
+   "sha256": "d95235d5a42428cf49d11b46cee8ba40d727a298bbf255c8edea5ab10d134190",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "D-contrast",
+   "group": "degraded (low contrast, rotation)",
+   "source": "pgk-bridge/tests/jury/corpus/A10.md",
+   "rendering": "contrast",
+   "format": "image/jpeg",
+   "bytes": 86373,
+   "sha256": "acc47f71924728829b286767d5816e4741c16ce49bb71bd083b39d344f3c09d1",
+   "expected": "FILE",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "reason_de": null,
+   "readings_agree": true,
+   "reading_diffs": [],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_equals_source": true,
+   "filed_vs_source_diffs": [],
+   "values": 4,
+   "prove": "4/4 lab values filed, 4/4 identical to the document; 81/81 checks equal; ALL EQUAL",
+   "prove_ok": true,
+   "filed_wrong": false
+  },
+  {
+   "id": "D-smudge",
+   "group": "smudged value (INR)",
+   "source": "track2/scenario/documents/lab-result-maria-beispiel.md",
+   "rendering": "smudge",
+   "format": "image/jpeg",
+   "bytes": 112726,
+   "sha256": "73679b06ee454fda669973c0d0e31a802c8d5d4f3d1a9d18e008a06cfceaa89f",
+   "expected": "HOLD",
+   "expected_codes": [
+    "OK"
+   ],
+   "actual": "HOLD",
+   "codes": [
+    "EXTRACTION_UNREADABLE"
+   ],
+   "reason_de": "KI-Lesung: INR (prothrombin time) unleserlich – bitte am Original prüfen.",
+   "readings_agree": false,
+   "reading_diffs": [
+    "INR (prothrombin time) unleserlich"
+   ],
+   "extractor_error": null,
+   "model": "claude-sonnet-5-5",
+   "filed_wrong": false
+  }
+ ]
+}

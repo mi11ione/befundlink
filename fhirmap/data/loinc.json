@@ -1,0 +1,1428 @@
+{
+ "10331-7": {
+  "display": "Rh [Type] in Blood",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "10839-9": {
+  "display": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "11490-0": {
+  "display": "Physician Discharge Summary",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "11502-2": {
+  "display": "Laboratory report",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "11506-3": {
+  "display": "Progress Note",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "11526-1": {
+  "display": "Pathology study",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "11558-4": {
+  "display": "pH of Blood",
+  "example_ucum": "[pH]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "[pH]"
+  ]
+ },
+ "13457-7": {
+  "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "13969-1": {
+  "display": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "14646-4": {
+  "display": "Cholesterol in HDL [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "14647-2": {
+  "display": "Cholesterol [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "14682-9": {
+  "display": "Creatinine [Moles/volume] in Serum or Plasma",
+  "example_ucum": "umol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "umol/L"
+  ]
+ },
+ "14920-3": {
+  "display": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+  "example_ucum": "pmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pmol/L"
+  ]
+ },
+ "14927-8": {
+  "display": "Triglyceride [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "14933-6": {
+  "display": "Urate [Moles/volume] in Serum or Plasma",
+  "example_ucum": "umol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "umol/L"
+  ]
+ },
+ "14979-9": {
+  "display": "aPTT in Platelet poor plasma by Coagulation assay",
+  "example_ucum": "s",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "s"
+  ]
+ },
+ "15074-8": {
+  "display": "Glucose [Moles/volume] in Blood",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "1558-6": {
+  "display": "Fasting glucose [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "1742-6": {
+  "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "1751-7": {
+  "display": "Albumin [Mass/volume] in Serum or Plasma",
+  "example_ucum": "g/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "g/dL"
+  ]
+ },
+ "1759-0": {
+  "display": "Albumin/Globulin [Mass Ratio] in Serum or Plasma",
+  "example_ucum": "{ratio}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "{ratio}"
+  ]
+ },
+ "17849-1": {
+  "display": "Reticulocytes/Erythrocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "17856-6": {
+  "display": "Hemoglobin A1c/Hemoglobin.total in Blood by HPLC",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "17861-6": {
+  "display": "Calcium [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "1798-8": {
+  "display": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "18262-6": {
+  "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "1834-1": {
+  "display": "Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "18748-4": {
+  "display": "Diagnostic imaging study",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "18842-5": {
+  "display": "Discharge Summary",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "1920-8": {
+  "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "1960-4": {
+  "display": "Bicarbonate [Moles/volume] in Arterial blood",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "1968-7": {
+  "display": "Bilirubin.direct [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "1975-2": {
+  "display": "Bilirubin.total [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "1988-5": {
+  "display": "C reactive protein [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/L"
+  ]
+ },
+ "1989-3": {
+  "display": "25-hydroxyvitamin D3 [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "2000-8": {
+  "display": "Calcium [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "2019-8": {
+  "display": "Carbon dioxide [Partial pressure] in Arterial blood",
+  "example_ucum": "mm[Hg]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mm[Hg]"
+  ]
+ },
+ "2028-9": {
+  "display": "Carbon dioxide, total [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "20454-5": {
+  "display": "Protein [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "2075-0": {
+  "display": "Chloride [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "2085-9": {
+  "display": "Cholesterol in HDL [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "2093-3": {
+  "display": "Cholesterol [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "2132-9": {
+  "display": "Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma",
+  "example_ucum": "pg/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pg/mL"
+  ]
+ },
+ "2157-6": {
+  "display": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "2160-0": {
+  "display": "Creatinine [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "22664-7": {
+  "display": "Urea [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "22748-8": {
+  "display": "Cholesterol in LDL [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "2276-4": {
+  "display": "Ferritin [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "2284-8": {
+  "display": "Folate [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "2324-2": {
+  "display": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "2339-0": {
+  "display": "Glucose [Mass/volume] in Blood",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "2345-7": {
+  "display": "Glucose [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "2498-4": {
+  "display": "Iron [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ug/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ug/dL"
+  ]
+ },
+ "2502-3": {
+  "display": "Iron saturation [Mass Fraction] in Serum or Plasma",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "2524-7": {
+  "display": "Lactate [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "2532-0": {
+  "display": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": true,
+  "status": "DISCOURAGED",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "25428-4": {
+  "display": "Glucose [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "2571-8": {
+  "display": "Triglyceride [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "2601-3": {
+  "display": "Magnesium [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "26464-8": {
+  "display": "Leukocytes [#/volume] in Blood",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "26515-7": {
+  "display": "Platelets [#/volume] in Blood",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "2703-7": {
+  "display": "Oxygen [Partial pressure] in Arterial blood",
+  "example_ucum": "mm[Hg]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mm[Hg]"
+  ]
+ },
+ "2756-5": {
+  "display": "pH of Urine",
+  "example_ucum": "[pH]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "[pH]"
+  ]
+ },
+ "2777-1": {
+  "display": "Phosphate [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "27811-9": {
+  "display": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "2823-3": {
+  "display": "Potassium [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "28570-0": {
+  "display": "Procedure Note",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "2885-2": {
+  "display": "Protein [Mass/volume] in Serum or Plasma",
+  "example_ucum": "g/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "g/dL"
+  ]
+ },
+ "2889-4": {
+  "display": "Protein [Mass/time] in 24 hour Urine",
+  "example_ucum": "g/(24.h)",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "g/(24.h)"
+  ]
+ },
+ "2947-0": {
+  "display": "Sodium [Moles/volume] in Blood",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "2951-2": {
+  "display": "Sodium [Moles/volume] in Serum or Plasma",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "3016-3": {
+  "display": "Thyrotropin [Units/volume] in Serum or Plasma",
+  "example_ucum": "m[IU]/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "m[IU]/L"
+  ]
+ },
+ "3024-7": {
+  "display": "Thyroxine (T4) free [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/dL"
+  ]
+ },
+ "3034-6": {
+  "display": "Transferrin [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "30341-2": {
+  "display": "Erythrocyte [Sedimentation Rate] in Blood",
+  "example_ucum": "mm/h",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mm/h"
+  ]
+ },
+ "3040-3": {
+  "display": "Lipase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "3051-0": {
+  "display": "Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma",
+  "example_ucum": "pg/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pg/mL"
+  ]
+ },
+ "30522-7": {
+  "display": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+  "example_ucum": "mg/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/L"
+  ]
+ },
+ "3084-1": {
+  "display": "Urate [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "3091-6": {
+  "display": "Urea [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "30934-4": {
+  "display": "Natriuretic peptide B [Mass/volume] in Serum or Plasma",
+  "example_ucum": "pg/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pg/mL"
+  ]
+ },
+ "3094-0": {
+  "display": "Urea nitrogen [Mass/volume] in Serum or Plasma",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "3173-2": {
+  "display": "aPTT in Blood by Coagulation assay",
+  "example_ucum": "s",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "s"
+  ]
+ },
+ "3184-9": {
+  "display": "Activated clotting time (ACT) of Blood by Coagulation assay",
+  "example_ucum": "s",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "s"
+  ]
+ },
+ "3209-4": {
+  "display": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "3243-3": {
+  "display": "Thrombin time",
+  "example_ucum": "s",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "s"
+  ]
+ },
+ "3255-7": {
+  "display": "Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "32623-1": {
+  "display": "Platelet [Entitic mean volume] in Blood by Automated count",
+  "example_ucum": "fL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "fL"
+  ]
+ },
+ "33762-6": {
+  "display": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
+  "example_ucum": "pg/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pg/mL"
+  ]
+ },
+ "33914-3": {
+  "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M",
+  "example_ucum": "mL/min/{1.73_m2}",
+  "inactive": true,
+  "status": "DISCOURAGED",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mL/min/{1.73_m2}"
+  ]
+ },
+ "33959-8": {
+  "display": "Procalcitonin [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ng/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/mL"
+  ]
+ },
+ "34105-7": {
+  "display": "Hospital Discharge Summary",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "34117-2": {
+  "display": "History and Physical Note",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "34133-9": {
+  "display": "Summary of Episode Note",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "34714-6": {
+  "display": "INR in Blood by Coagulation assay",
+  "example_ucum": "{INR}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "{INR}"
+  ]
+ },
+ "38483-4": {
+  "display": "Creatinine [Mass/volume] in Blood",
+  "example_ucum": "mg/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mg/dL"
+  ]
+ },
+ "39469-2": {
+  "display": "Cholesterol in LDL [Moles/volume] in Serum or Plasma by calculation",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "4537-7": {
+  "display": "Erythrocyte [Sedimentation Rate] in Blood by Westergren method",
+  "example_ucum": "mm/h",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mm/h"
+  ]
+ },
+ "4544-3": {
+  "display": "Hematocrit [Volume Fraction] of Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "4548-4": {
+  "display": "Hemoglobin A1c/Hemoglobin.total in Blood",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "46418-0": {
+  "display": "INR in Capillary blood by Coagulation assay",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "4679-7": {
+  "display": "Reticulocytes/Erythrocytes in Blood",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "48065-7": {
+  "display": "Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma",
+  "example_ucum": "ng{FEU}/mL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng{FEU}/mL",
+   "mg{FEU}/L"
+  ]
+ },
+ "48066-5": {
+  "display": "Fibrin D-dimer DDU [Mass/volume] in Platelet poor plasma",
+  "example_ucum": "ug/L{DDU}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ug/L{DDU}"
+  ]
+ },
+ "48642-3": {
+  "display": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M among non black population",
+  "example_ucum": "mL/min/{1.73_m2}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mL/min/{1.73_m2}"
+  ]
+ },
+ "48643-1": {
+  "display": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M among black population",
+  "example_ucum": "mL/min/{1.73_m2}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mL/min/{1.73_m2}"
+  ]
+ },
+ "5196-1": {
+  "display": "Hepatitis B virus surface Ag [Presence] in Serum or Plasma by Immunoassay",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "5770-3": {
+  "display": "Bilirubin.total [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "5794-3": {
+  "display": "Hemoglobin [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "5799-2": {
+  "display": "Leukocyte esterase [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "5802-4": {
+  "display": "Nitrite [Presence] in Urine by Test strip",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "5803-2": {
+  "display": "pH of Urine by Test strip",
+  "example_ucum": "[pH]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "[pH]"
+  ]
+ },
+ "5811-5": {
+  "display": "Specific gravity of Urine by Test strip",
+  "example_ucum": "{Spec_grav}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "{Spec_grav}"
+  ]
+ },
+ "5821-4": {
+  "display": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
+  "example_ucum": "/[HPF]",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "/[HPF]"
+  ]
+ },
+ "5894-1": {
+  "display": "Prothrombin time (PT) actual/Normal",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "5902-2": {
+  "display": "Prothrombin time (PT)",
+  "example_ucum": "s",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "s"
+  ]
+ },
+ "5905-5": {
+  "display": "Monocytes/Leukocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "59261-8": {
+  "display": "Hemoglobin A1c/Hemoglobin.total standardized per IFCC-RMP for CDT in Blood",
+  "example_ucum": "mmol/mol",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/mol"
+  ]
+ },
+ "60591-5": {
+  "display": "Patient summary Document",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "62238-1": {
+  "display": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M",
+  "example_ucum": "mL/min/{1.73_m2}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mL/min/{1.73_m2}"
+  ]
+ },
+ "6298-4": {
+  "display": "Potassium [Moles/volume] in Blood",
+  "example_ucum": "mmol/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mmol/L"
+  ]
+ },
+ "6301-6": {
+  "display": "INR in Platelet poor plasma by Coagulation assay",
+  "example_ucum": "{INR}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "{INR}"
+  ]
+ },
+ "6598-7": {
+  "display": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
+  "example_ucum": "ug/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ug/L",
+   "ng/mL"
+  ]
+ },
+ "6690-2": {
+  "display": "Leukocytes [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "67151-1": {
+  "display": "Troponin T.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
+  "example_ucum": "ng/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/L"
+  ]
+ },
+ "6768-6": {
+  "display": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+  "example_ucum": "U/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "U/L"
+  ]
+ },
+ "704-7": {
+  "display": "Basophils [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "706-2": {
+  "display": "Basophils/Leukocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "711-2": {
+  "display": "Eosinophils [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "713-8": {
+  "display": "Eosinophils/Leukocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "718-7": {
+  "display": "Hemoglobin [Mass/volume] in Blood",
+  "example_ucum": "g/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "g/dL"
+  ]
+ },
+ "731-0": {
+  "display": "Lymphocytes [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "736-9": {
+  "display": "Lymphocytes/Leukocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "742-7": {
+  "display": "Monocytes [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "751-8": {
+  "display": "Neutrophils [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "770-8": {
+  "display": "Neutrophils/Leukocytes in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "777-3": {
+  "display": "Platelets [#/volume] in Blood by Automated count",
+  "example_ucum": "10*3/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*3/uL"
+  ]
+ },
+ "785-6": {
+  "display": "MCH [Entitic mass] by Automated count",
+  "example_ucum": "pg",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "pg"
+  ]
+ },
+ "786-4": {
+  "display": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
+  "example_ucum": "g/dL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "g/dL"
+  ]
+ },
+ "787-2": {
+  "display": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
+  "example_ucum": "fL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "fL"
+  ]
+ },
+ "788-0": {
+  "display": "Erythrocyte [DistWidth] in Blood by Automated count",
+  "example_ucum": "%",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "%"
+  ]
+ },
+ "789-8": {
+  "display": "Erythrocytes [#/volume] in Blood by Automated count",
+  "example_ucum": "10*6/uL",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "10*6/uL"
+  ]
+ },
+ "883-9": {
+  "display": "ABO group [Type] in Blood",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "890-4": {
+  "display": "Blood group antibody screen [Presence] in Serum or Plasma",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "89579-7": {
+  "display": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
+  "example_ucum": "ng/L",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "ng/L"
+  ]
+ },
+ "94500-6": {
+  "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+  "example_ucum": null,
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": []
+ },
+ "98979-8": {
+  "display": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI 2021)/1.73 sq M",
+  "example_ucum": "mL/min/{1.73_m2}",
+  "inactive": false,
+  "status": "ACTIVE",
+  "version": "2.83",
+  "example_ucum_list": [
+   "mL/min/{1.73_m2}"
+  ]
+ }
+}

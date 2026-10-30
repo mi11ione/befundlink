@@ -1,0 +1,32 @@
+[project]
+name = "pgk-bridge"
+version = "0.1.0"
+description = "Request documents from outside the PGK Matrix network and file the answers as FHIR R4"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "jinja2>=3.1",
+    "httpx>=0.27",
+    "matrix-nio>=0.25",
+    "pydantic>=2.9",
+    "python-multipart>=0.0.12",
+    "itsdangerous>=2.2",
+    "aiohttp>=3.14.5",
+    "cryptography>=50.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "pillow>=13.0.0",
+    "pytest>=8.3",
+]
+
+[tool.uv]
+# Not an installable package: run everything from the repo root
+# (service/, bot/, fhirmap/ are importable because the root is on sys.path).
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "fhirmap/tests", "bot/tests", "service/tests"]

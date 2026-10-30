@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set wordmark = true %}
+{% block title %}SMS (Simulation){% endblock %}
+{% block body %}
+<h1>Simulierte SMS</h1>
+{% if messages %}<ul class="sms gap">
+{% for m in messages %}
+<li><p class="when">An {{ m.to_number }} · {{ m.when or m.at }}</p>
+{% if not m.lines %}<p>{{ m.text | urlize }}</p>{% else %}<p class="who">{{ m.who }}</p>
+<p>{{ m.what }}</p>
+<p>Anmeldung mit ID Austria: <a class="go" href="{{ m.link }}">{{ m.short }}</a></p>
+{% if m.tail %}<p class="muted">{{ m.tail }}</p>{% endif %}{% endif %}</li>
+{% endfor %}
+</ul>{% else %}<p class="muted gap">Keine SMS.</p>{% endif %}
+{% endblock %}

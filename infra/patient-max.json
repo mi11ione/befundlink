@@ -1,0 +1,23 @@
+{
+  "resourceType": "Patient",
+  "id": "max-beispiel",
+  "identifier": [
+    {
+      "system": "urn:example:klinikum-beispielstadt:mrn",
+      "value": "KB-000124"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "family": "Beispiel",
+      "given": ["Max"]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1960-01-01",
+  "managingOrganization": {
+    "display": "Klinikum Beispielstadt"
+  }
+}

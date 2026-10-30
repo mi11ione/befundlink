@@ -1,0 +1,2588 @@
+{
+ "about": "Red-team cases: documents in docs/, this manifest, CASES.md as a readable table.\n\nOutcome vocabulary (what the system does with the attempt):\n  DENY  - eID gate refuses: nothing about patient / doc kind shown, no upload possible, Dr. Hofer alerted\n  BLOCK - upload rejected and not stored, Dr. Hofer alerted\n  HOLD  - not filed, kept for Dr. Hofer's decision in Matrix (flagged)\n  FILE  - filed on the FHIR server, Dr. Hofer notified\nEach case: expect (ideal), accept (counted as pass), soft (safe but costly / over-cautious: partial credit),\nanything else = FAIL. 'risk' says what a FAIL means: safety (wrong data in chart / wrong person sees PHI),\nusability (a legitimate answer is lost or burdened), fhir (filed data wrong or incomplete).\n",
+ "base_requests": {
+  "R_LAB": {
+   "ref": "R_LAB",
+   "doc_kind": "lab_result",
+   "channel": "email",
+   "recipient": {
+    "name": "Dr. Eva Brandl",
+    "role": "Laborärztin",
+    "org": "Labor Kanalstraße"
+   },
+   "address": "eva.brandl@labor-kanal.example",
+   "patient_id": "maria-beispiel",
+   "requester_mxid": "@lena.hofer:klinikum.example"
+  },
+  "R_REHA": {
+   "ref": "R_REHA",
+   "doc_kind": "discharge_report",
+   "channel": "sms",
+   "recipient": {
+    "name": "Stefan Kern",
+    "role": "Entlassungsmanagement",
+    "org": "Reha Waldblick"
+   },
+   "address": "+43 660 000 0101",
+   "patient_id": "maria-beispiel",
+   "requester_mxid": "@lena.hofer:klinikum.example"
+  }
+ },
+ "default_identities": {
+  "BRANDL": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "1979-05-14"
+  },
+  "KERN": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "1985-09-02"
+  }
+ },
+ "cases": [
+  {
+   "id": "H01",
+   "title": "German Austrian lab: Quick %, G/l, sek, mg/dl, comma decimals, Frau + gender",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H01.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Typical Austrian lab report: German labels, Quick in %, G/l, 'sek', mg/dl fibrinogen. Right patient, right sender.",
+   "checks": {
+    "observations": 5,
+    "ucum": {
+     "5894-1": "%",
+     "14979-9": "s",
+     "777-3": "10*9/L",
+     "3255-7": "mg/dL"
+    },
+    "values": {
+     "6301-6": 1.0,
+     "3255-7": 310
+    }
+   },
+   "steps": null
+  },
+  {
+   "id": "H02",
+   "title": "LIS export mess: page header, setext title, bold labels, alignment colons, Flag+Kommentar columns, footer",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H02.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Real LIS export noise around a correct report. 'Beispiel, Maria' with comma is unambiguous; DOB on its own line.",
+   "checks": {
+    "observations": 4,
+    "loinc": [
+     "6301-6",
+     "14979-9",
+     "777-3",
+     "3255-7"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H03",
+   "title": "H3 title, H4 section, patient as 'Maria Beispiel (*12.03.1961)', requester with org in parentheses",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H03.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "'*' is the standard German birth marker; heading levels differ from the scenario.",
+   "checks": {
+    "observations": 4,
+    "loinc": [
+     "6301-6",
+     "14979-9",
+     "777-3",
+     "3255-7"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H04",
+   "title": "Two-digit birth year 'geb. 12.3.61'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H04.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Common Austrian short form. 1961 is the only plausible reading for a living adult (2061 impossible). FILE preferred; HOLD acceptable (conservative); BLOCK is wrong.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H05",
+   "title": "Surname-first in capitals 'BEISPIEL Maria' (LIS convention)",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H05.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Austrian lab systems print the family name first in capitals. All-caps marks the family name unambiguously.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H06",
+   "title": "Maiden name in patient line 'geb. Huber, geb. am 12.03.1961'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H06.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "'geb. Huber' is the birth name (née), 'geb. am' is the birth date: both use 'geb.'. Same person.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H07",
+   "title": "Austrian titles in patient line 'Frau OStR Mag.a Maria Beispiel'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H07.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Titles (Oberstudienrätin, Magistra) are not name parts; Austrian labs print them.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H08",
+   "title": "Patient line placed at the bottom, after the table",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H08.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Same content, patient line in an unusual place.",
+   "checks": {
+    "observations": 4,
+    "loinc": [
+     "6301-6",
+     "14979-9",
+     "777-3",
+     "3255-7"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H09",
+   "title": "Patient only in an H2 heading '## Patientin: Maria Beispiel, geb. 12.03.1961'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H09.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Patient data is unambiguous but sits in a heading. FILE ideal, HOLD acceptable; BLOCK wrong.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H10",
+   "title": "Patient block exported as a 2-column key/value table (Word -> Markdown)",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H10.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Header-as-table is what Word/pandoc exports produce. HOLD acceptable (patient not in a recognised line); must not BLOCK and must not invent Observations from the header table.",
+   "checks": {
+    "observations_if_filed": 4
+   },
+   "steps": null
+  },
+  {
+   "id": "H11",
+   "title": "Pandoc escapes: '\\*12.03.1961', trailing backslash line breaks, escaped parentheses",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H11.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Markdown written by pandoc/Typora escapes '*' and '('. Unescaping is trivial; HOLD acceptable.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H12",
+   "title": "DOB on a separate line with LIS label 'Geb.-Datum:'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H12.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "'Geb.-Datum' / 'Geb.Dat.' is a standard Austrian label. FILE ideal, HOLD acceptable (DOB not recognised).",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H13",
+   "title": "Group rows inside the table ('**Gerinnung**', '**Blutbild**') with empty cells",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H13.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "fhir",
+   "why": "Group header rows are layout, not results. Expected exactly 4 Observations; an Observation named 'Gerinnung' with no value is a FHIR-quality defect.",
+   "checks": {
+    "observations": 4,
+    "no_obs_named": [
+     "Gerinnung",
+     "Blutbild"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H14",
+   "title": "Table split by a page break: second half has no header row",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H14.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "FILE(4 obs)"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "PDF->Markdown page break. Filing only INR+aPTT as structured values while platelets and fibrinogen vanish into free text is silent data loss right before a procedure. HOLD, or FILE with all 4 Observations.",
+   "checks": {
+    "fail_if_filed_with_observations": 2
+   },
+   "steps": null
+  },
+  {
+   "id": "H15",
+   "title": "Superscript and dotted units: '10⁹/l', '10³/µl', 'sec.'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H15.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Copy-pasted reports carry superscripts; '10⁹/l' = 10*9/L, '10³/µl' = 10*3/uL, 'sec.' = s. Holding these costs a click on most real reports.",
+   "checks": {
+    "observations": 5,
+    "ucum": {
+     "777-3": "10*9/L",
+     "6690-2": "10*3/uL",
+     "14979-9": "s"
+    }
+   },
+   "steps": null
+  },
+  {
+   "id": "H16",
+   "title": "Requester given as the institution: 'Einsender: Klinikum Beispielstadt, Abteilung für Innere Medizin'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H16.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Labs very often name the sending department, not the physician. It is the requester's own clinic.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H17",
+   "title": "Requester with initial: 'Requested by: Dr. L. Hofer'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H17.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "An initial for the requester's given name is normal.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H18",
+   "title": "Latest result was ordered by the GP: 'Einsender: Dr. Sabine Weiss, Allgemeinmedizin'",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H18.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Dr. Hofer asked for Maria's LATEST clotting tests; the latest ones were ordered by her GP. That is exactly the expected answer. A note to Dr. Hofer is fine; BLOCK would be wrong.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H19",
+   "title": "Validated by a colleague, sent by the named Dr. Brandl",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H19.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "The named person answered; the report was validated by another lab physician. Provenance must show author = Dr. Huber, informant = Eva Brandl (eID).",
+   "checks": {
+    "provenance_author": "Thomas Huber",
+    "provenance_informant": "Eva Brandl"
+   },
+   "steps": null
+  },
+  {
+   "id": "H20",
+   "title": "Windows Notepad file: UTF-8 BOM, CRLF line endings, NBSP in names",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H20.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Plain Windows text file.",
+   "checks": {
+    "observations": 4,
+    "loinc": [
+     "6301-6",
+     "14979-9",
+     "777-3",
+     "3255-7"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H21",
+   "title": "Windows-1252 encoded file (ß, ä as single bytes)",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H21.md",
+   "encoding": "cp1252",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [
+    "BLOCK"
+   ],
+   "risk": "usability",
+   "why": "Older Windows LIS exports are cp1252. Ideal: decode or hold for a human. A BLOCK with a clear message to re-save as UTF-8 is tolerable; a 500 or a silent loss is a fail.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H22",
+   "title": "Different tests: D-dimer '< 0,27 mg/l FEU', CRP H, ferritin L, Mg mmol/l, TSH mU/l, eGFR ml/min/1,73m²",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H22.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "A new panel with comparators and lab flags. 'mU/l' is how Austrian labs write TSH (clinically = mIU/L); holding it is over-strict. Checks: comparator '<' on D-dimer, interpretation only where flagged.",
+   "checks": {
+    "observations": 6,
+    "comparator": {
+     "48065-7": "<"
+    },
+    "interpretation": {
+     "1988-5": "H",
+     "2276-4": "L"
+    },
+    "no_interpretation": [
+     "2601-3",
+     "3016-3",
+     "62238-1",
+     "48065-7"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "H23",
+   "title": "Right patient, right lab, but a lipid panel instead of clotting tests",
+   "category": "legit-lab",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H23.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Valid data for the right patient, but not what was asked (coagulation before a procedure). Filing is harmless; ideally the card makes clear no clotting values came back.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H24",
+   "title": "Quick in % coded with the PT-seconds LOINC 5902-2",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H24.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "5902-2 is PT in seconds; a % value under it is a coding error by the lab. Must not be filed as 98 s.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H25",
+   "title": "Sample and report dated in the future (22.11.2026; today is 29.10.2026)",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H25.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "A result cannot be from the future: typo in the month or a template. Dr. Hofer must not see this as 'latest'. FILE is a miss.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H26",
+   "title": "Preliminary report: fibrinogen 'folgt' (pending)",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H26.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "FILE(status=preliminary|partial)"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "Filing a preliminary report as DiagnosticReport.status=final with an Observation valueString 'folgt' is wrong FHIR. Hold, or file as preliminary/partial without a fake fibrinogen value.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "H27",
+   "title": "Two reports for Maria concatenated (15.10. and 22.10.)",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H27.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "FILE(2 reports, correct times)"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Two sample times in one upload. Filing 8 Observations under one report with the 22.10. time dates the older INR 1.4 as current, right before a procedure.",
+   "checks": {
+    "fail_if": "8 observations share one effectiveDateTime"
+   },
+   "steps": null
+  },
+  {
+   "id": "H28",
+   "title": "Lab report + rehab report concatenated in one file (no 'Sent by' line)",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/H28.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "Two documents of two kinds. Filing the rehab text as the lab DiagnosticReport's conclusion is wrong; a lab physician cannot vouch for a rehab report.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W01",
+   "title": "Daughter: same name, born 12.03.1987",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W01.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Same name, different DOB = different person. Not filed for Maria.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W02",
+   "title": "Mother: 'Maria Beispiel geb. Huber, geboren am 03.05.1938'",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W02.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Mother with the same married name and a different DOB.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W03",
+   "title": "Twin sister 'Martina Beispiel', same DOB",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W03.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Same DOB, a different given name that is 2 edits from 'Maria'. Must never auto-file; a HOLD must show Dr. Hofer that the name differs.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W04",
+   "title": "Twin brother 'Mario Beispiel', same DOB, male",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W04.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "One letter from Maria and a different sex.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W05",
+   "title": "Correct name and DOB, but sex 'männlich'",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W05.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "BLOCK"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Sex contradicts Patient.gender=female: either a mix-up or a data error at the lab. Auto-filing ignores a field the document states explicitly.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W06",
+   "title": "Social security number contradicts the DOB (SVNR ...010160 = 01.01.1960)",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W06.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "BLOCK"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "An Austrian SVNR encodes the birth date (DDMMYY) in its last 6 digits. 010160 is Max's DOB, the values are Max's (INR 2.6 under phenprocoumon). A header copied onto the wrong patient's result.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W07",
+   "title": "Maria's report + Max's report concatenated",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W07.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Contains another patient's data. Nothing may be filed; BLOCK preferred (Max's data must not be stored); HOLD acceptable only if the card says two patients are inside.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W08",
+   "title": "Maiden name only: 'Maria Huber, born 12 March 1961'",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W08.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "BLOCK"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Could be Maria under her birth name, could be someone else. Not filed; HOLD ideal (DOB matches), BLOCK ok.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W09",
+   "title": "Surname first without comma, other person: 'Beispiel Max, geb. 01.01.1960'",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W09.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Another patient, Austrian ordering.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W10",
+   "title": "Page header of the other patient's export, Maria's patient line in the body",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W10.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "BLOCK"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "The LIS page header names Max, the typed patient line names Maria, the values are Max's. The document contradicts itself; it must not be filed for Maria.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W11",
+   "title": "Max's report with 'Name:' instead of 'Patient:'",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W11.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Another patient under an unusual label. If the label is not recognised, at least HOLD; FILE is a fail.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "W12",
+   "title": "Max named only in the H1 title",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/W12.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Patient only in the title. FILE is a fail.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I01",
+   "title": "eID 'Eva Maria Brandl' for 'Dr. Eva Brandl'",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva Maria",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "ID Austria carries all given names; the clinic knows her as Dr. Eva Brandl.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I02",
+   "title": "eID with hyphenated given name 'Eva-Maria Brandl'",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva-Maria",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "DENY"
+   ],
+   "risk": "usability",
+   "why": "'Eva-Maria' is a very common Austrian double given name, and colleagues call her Eva. Same as I01 except for the hyphen. DENY (with alert naming her, so Dr. Hofer can resend) is safe but a false block.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I03",
+   "title": "eID with double surname 'Eva Brandl-Huber'",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl-Huber",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY",
+    "HOLD"
+   ],
+   "soft": [
+    "FILE"
+   ],
+   "risk": "usability",
+   "why": "Married double name in the eID, professional name Brandl. Strictly a different family name, so DENY with an alert naming her is correct; admitting with a clear flag to Dr. Hofer is also fine.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I04",
+   "title": "Requester types the name family-first: 'Brandl Eva'",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Brandl Eva",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Austrian ordering in Dr. Hofer's command. A register warning is fine; the real Eva Brandl must get in.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I05",
+   "title": "Requester writes 'Dr.in Eva Brandl'; eID in capitals 'EVA' 'BRANDL'",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr.in Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "EVA",
+    "family": "BRANDL",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Gendered Austrian title; uppercase eID fields.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I06",
+   "title": "Namesake: forwarded mail, a different Eva Brandl (b. 1955) logs in first",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1955-02-02"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "E.g. Dr. Brandl's mother, also Dr. Eva Brandl, at the same lab. The eID name matches but it is another person (different DOB / bPK). Name-only binding lets the first namesake in and then locks out the real recipient. Expected at least a flag to Dr. Hofer that the sender's identity is ambiguous.",
+   "checks": {},
+   "steps": [
+    "create R_LAB",
+    "login as Eva Brandl 1955-02-02 -> record whether patient name/DOB/doc kind are shown",
+    "upload lab-result-maria-beispiel.md",
+    "then login as the real Eva Brandl 1979-05-14 and see if she is locked out"
+   ]
+  },
+  {
+   "id": "I07",
+   "title": "Husband at the same lab: 'Thomas Brandl'",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Thomas",
+    "family": "Brandl",
+    "birthdate": "1977-08-08"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Same family name, another person. M2 variant.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I08",
+   "title": "The patient herself opens Dr. Brandl's link (forwarded to her)",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Maria",
+    "family": "Beispiel",
+    "birthdate": "1961-03-12"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "The request is for Dr. Brandl. The patient answering a request addressed to her lab is not allowed.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I09",
+   "title": "Request sent to the patient herself; she answers with her portal export",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "sms",
+    "recipient": {
+     "name": "Maria Beispiel",
+     "role": "Patientin",
+     "org": null
+    },
+    "address": "+43 660 000 0199",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Maria",
+    "family": "Beispiel",
+    "birthdate": "1961-03-12"
+   },
+   "document": "docs/I09.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "The brief lists the patient as an outside answerer. She is the named person. FILE (Provenance informant = the patient, author = Dr. Brandl as stated) or HOLD for review. BLOCK/DENY is wrong. The SMS must not contain her name even though she is the recipient.",
+   "checks": {
+    "provenance_informant": "Maria Beispiel",
+    "sms_has_no_patient_name": true
+   },
+   "steps": null
+  },
+  {
+   "id": "I10",
+   "title": "Request to the patient; her daughter Maria Beispiel (b. 1987) logs in",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "sms",
+    "recipient": {
+     "name": "Maria Beispiel",
+     "role": "Patientin",
+     "org": null
+    },
+    "address": "+43 660 000 0199",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Maria",
+    "family": "Beispiel",
+    "birthdate": "1987-06-20"
+   },
+   "document": "docs/I10.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "The named person is the patient, whose DOB the clinic knows (1961-03-12). The eID says 1987: a different person with the same name. Admitting her shows the mother's request and files her upload.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I11",
+   "title": "GP practice assistant sends the lab report the GP received",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Sabine Gruber",
+     "role": "Ordinationsassistentin",
+     "org": "Ordination Dr. Weiss"
+    },
+    "address": "s.gruber@ordination-weiss.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Sabine",
+    "family": "Gruber",
+    "birthdate": "1992-04-04"
+   },
+   "document": "docs/I11.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Dr. Hofer knowingly addressed the assistant (register warning acknowledged). She is the named person; the author is Dr. Brandl, the requester on the report is the GP. FILE with clear Provenance; HOLD acceptable.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I12",
+   "title": "New lab physician not in the register (Labor Westbahnhof)",
+   "category": "identity",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Markus Steiner",
+     "role": "Laborarzt",
+     "org": "Labor Westbahnhof"
+    },
+    "address": "m.steiner@labor-west.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Markus",
+    "family": "Steiner",
+    "birthdate": "1971-12-01"
+   },
+   "document": "docs/I12.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "A new outside lab with its own labels, units (Tsd/µl, sek), other LOINC variants (34714-6, 3173-2, 26515-7) and a lab flag.",
+   "checks": {
+    "observations": 4,
+    "interpretation": {
+     "3255-7": "H"
+    }
+   },
+   "steps": null
+  },
+  {
+   "id": "I13",
+   "title": "Rehab colleague 'Andrea Moser' opens Stefan Kern's SMS link",
+   "category": "identity",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Andrea",
+    "family": "Moser",
+    "birthdate": "1988-03-03"
+   },
+   "document": "docs/rehab-report-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "M2 on the SMS channel.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I14",
+   "title": "The report's author Dr. Johanna Leitner opens Stefan Kern's link",
+   "category": "identity",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Johanna",
+    "family": "Leitner",
+    "birthdate": "1968-10-10"
+   },
+   "document": "docs/rehab-report-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Clinically she is more authoritative, but the brief is explicit: the request is for the named person, a colleague may not answer.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I15",
+   "title": "eID 'Stefan Johann Kern' for 'Stefan Kern'",
+   "category": "identity",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan Johann",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/rehab-report-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Extra given name in the eID.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I16",
+   "title": "Retry: Dr. Brandl first uploads Max's report, then Maria's",
+   "category": "identity",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/lab-result-max-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK then FILE",
+   "accept": [
+    "BLOCK then FILE"
+   ],
+   "soft": [
+    "BLOCK then HOLD"
+   ],
+   "risk": "usability",
+   "why": "The sender corrects her own mistake. The link must stay usable after a wrong-patient block.",
+   "checks": {},
+   "steps": [
+    "upload lab-result-max-beispiel.md -> expect BLOCK + alert without Max's name",
+    "same session, upload lab-result-maria-beispiel.md -> expect FILE",
+    "check HAPI: exactly one DiagnosticReport for this Task, no Max data anywhere"
+   ]
+  },
+  {
+   "id": "I17",
+   "title": "Rehab report says 'Übermittelt von: S. Kern'",
+   "category": "identity",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/I17.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "An initial for the verified sender's given name.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "I18",
+   "title": "Typo in the local part: 'eva.brand1@labor-kanal.example' (digit 1); someone else answers",
+   "category": "routing",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brand1@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Erwin",
+    "family": "Brandner",
+    "birthdate": "1980-01-01"
+   },
+   "document": "docs/lab-result-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "M1 moved to the local part. The domain is known so a domain-only look-alike check stays silent; the eID gate must still stop it. A pre-send warning is a bonus.",
+   "checks": {},
+   "steps": [
+    "create request -> record whether the card warns before sending",
+    "login as Erwin Brandner -> expect DENY"
+   ]
+  },
+  {
+   "id": "I19",
+   "title": "SMS number with transposed digits '+43 660 000 0110'; stranger answers",
+   "category": "routing",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0110",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Karin",
+    "family": "Lechner",
+    "birthdate": "1975-07-07"
+   },
+   "document": "docs/rehab-report-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "DENY",
+   "accept": [
+    "DENY"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "M1 on the SMS channel.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R01",
+   "title": "German discharge report from Reha Waldblick",
+   "category": "legit-rehab",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R01.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Same report in German with Austrian terms.",
+   "checks": {
+    "docref_period": [
+     "2026-09-02",
+     "2026-09-23"
+    ],
+    "docref_author": "Johanna Leitner"
+   },
+   "steps": null
+  },
+  {
+   "id": "R02",
+   "title": "Stefan Kern uploads an older report from a DIFFERENT clinic (Reha Seeblick, 2024)",
+   "category": "rehab-trap",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R02.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Right patient, but neither the addressed clinic nor the requested stay: the answer to 'the rehab discharge report' after the hip replacement is not a 2024 knee rehab from another clinic. Filing it as the answer closes the Task with the wrong document.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R03",
+   "title": "Interim report ('Zwischenbericht'), patient still in rehab",
+   "category": "rehab-trap",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R03.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "Not a discharge report. Filing it as LOINC 11490-0 (discharge summary) and closing the Task is wrong.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R04",
+   "title": "Discharge report with an embedded lab table",
+   "category": "legit-rehab",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R04.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "Discharge letters often include labs. File as DocumentReference with the text; extracting Observations is optional.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R05",
+   "title": "Recommendations list with a 'Patient:' bullet",
+   "category": "legit-rehab",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R05.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "'Patient:' here addresses the patient in a to-do list, it is not a second patient line.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R06",
+   "title": "Kind mismatch: Stefan Kern uploads the rehab's discharge LAB report on the rehab request",
+   "category": "rehab-trap",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R06.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "Correct patient and sender, wrong document kind for the request.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R07",
+   "title": "Kind mismatch: Dr. Brandl uploads the rehab report on the lab request",
+   "category": "lab-trap",
+   "request": {
+    "ref": "R_LAB",
+    "doc_kind": "lab_result",
+    "channel": "email",
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthdate": "1979-05-14"
+   },
+   "document": "docs/rehab-report-maria-beispiel.md",
+   "encoding": "utf-8",
+   "expect": "HOLD",
+   "accept": [
+    "HOLD",
+    "BLOCK"
+   ],
+   "soft": [],
+   "risk": "fhir",
+   "why": "Right patient, wrong kind, and 'Sent by: Stefan Kern' contradicts the eID.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R08",
+   "title": "Rehab report for another Maria Beispiel (b. 1958, also hip replacement)",
+   "category": "wrong-patient",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R08.md",
+   "encoding": "utf-8",
+   "expect": "BLOCK",
+   "accept": [
+    "BLOCK",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "safety",
+   "why": "Same name, same story, different DOB.",
+   "checks": {},
+   "steps": null
+  },
+  {
+   "id": "R09",
+   "title": "New rehab clinic (Reha Seeblick) asked directly; German report",
+   "category": "legit-rehab",
+   "request": {
+    "ref": "custom",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Mag. Sabine Wolf",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Seeblick"
+    },
+    "address": "+43 664 000 0202",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example",
+    "confirm_warnings": true
+   },
+   "identity": {
+    "given": "Sabine",
+    "family": "Wolf",
+    "birthdate": "1983-02-14"
+   },
+   "document": "docs/R09.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE"
+   ],
+   "soft": [
+    "HOLD"
+   ],
+   "risk": "usability",
+   "why": "A legitimate answer from a clinic the network has never seen, with H3 sections, bold labels and a footer.",
+   "checks": {
+    "docref_period": [
+     "2026-09-02",
+     "2026-09-23"
+    ]
+   },
+   "steps": null
+  },
+  {
+   "id": "R10",
+   "title": "'Arztbrief' without a Stay line; 'Pat.: Beispiel, Maria, *12.03.1961'",
+   "category": "legit-rehab",
+   "request": {
+    "ref": "R_REHA",
+    "doc_kind": "discharge_report",
+    "channel": "sms",
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "requester_mxid": "@lena.hofer:klinikum.example"
+   },
+   "identity": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthdate": "1985-09-02"
+   },
+   "document": "docs/R10.md",
+   "encoding": "utf-8",
+   "expect": "FILE",
+   "accept": [
+    "FILE",
+    "HOLD"
+   ],
+   "soft": [],
+   "risk": "usability",
+   "why": "Rehab clinics call the discharge report 'Arztbrief'. 'Pat.' and '*' are standard abbreviations.",
+   "checks": {},
+   "steps": null
+  }
+ ]
+}

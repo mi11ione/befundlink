@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="stop"><h1>Diese Anfrage ist nicht für Sie.</h1></div>
+<p class="lead">Sie sind als <b>{{ eid_name }}</b> angemeldet. Wenn Sie in Vertretung antworten oder Ihr Name sich geändert hat, bitten Sie {{ requester_name }} um eine neue Anfrage.</p>
+{% endblock %}
+{% block foot %}<footer class="foot"><p>Referenz <span class="ref">{{ ref }}</span>{% if phone %} · <span class="nw">Rückfragen {{ phone }}</span>{% endif %}</p></footer>{% endblock %}

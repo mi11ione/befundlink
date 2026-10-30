@@ -1,0 +1,41 @@
+{
+  "_comment": "PGK members as FHIR resources (PUT by infra/setup.py; the service builds the same from service/data/registers.json and checks they agree)",
+  "resources": [
+    {
+      "resourceType": "Practitioner",
+      "id": "lena-hofer",
+      "active": true,
+      "identifier": [
+        {
+          "system": "https://pgk-bridge.example/fhir/sid/matrix-id",
+          "value": "@lena.hofer:klinikum.example"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "text": "Dr. Lena Hofer",
+          "family": "Hofer",
+          "given": [
+            "Lena"
+          ],
+          "prefix": [
+            "Dr."
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "klinikum-beispielstadt",
+      "active": true,
+      "identifier": [
+        {
+          "system": "https://pgk-bridge.example/fhir/org-id",
+          "value": "klinikum-beispielstadt"
+        }
+      ],
+      "name": "Klinikum Beispielstadt"
+    }
+  ]
+}

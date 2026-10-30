@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% set parts = msg.split(' / ', 1) %}
+{% block body %}
+{% if parts[0]|length < 60 %}<h1>{{ parts[0] }}</h1>{% else %}<p class="statement">{{ parts[0] }}</p>{% endif %}
+{% if link_url %}<p class="gap"><a class="btn alt" href="{{ link_url }}">{{ link_text }}</a></p>{% endif %}
+{% endblock %}
+{% block foot %}{% if ref %}<footer class="foot"><p>Referenz <span class="ref">{{ ref }}</span>{% if phone %} · <span class="nw">Rückfragen {{ phone }}</span>{% endif %}</p></footer>{% endif %}{% endblock %}

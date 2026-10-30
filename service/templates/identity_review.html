@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>{{ requester_name }} bestätigt zuerst Ihre Identität.</h1>
+<p class="lead">Anfragen an diesen Namen hat bisher eine andere ID-Austria-Identität beantwortet. Darum wurde Ihnen noch nichts angezeigt. Nach der Freigabe öffnen Sie den Link bitte erneut.</p>
+{% endblock %}
+{% block foot %}<footer class="foot"><p>Referenz <span class="ref">{{ ref }}</span>{% if phone %} · <span class="nw">Rückfragen {{ phone }}</span>{% endif %}</p></footer>{% endblock %}

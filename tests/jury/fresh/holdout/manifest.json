@@ -1,0 +1,327 @@
+{
+ "about": "Second regression set: the blind holdout (30 documents written by an agent that saw nothing of ours; expectations frozen before the run) plus own variants Y01–Y16. Routes as in ../manifest.json.",
+ "cases": [
+  {
+   "id": "L01",
+   "file": "docs/L01.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (\"Beispiel, Maria\", 12.03.1961), German table, decimal commas, en-dash ranges, \"G/l\" platelets."
+  },
+  {
+   "id": "L02",
+   "file": "docs/L02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient, ISO DOB, English bullet list, LOINC inline, 10^12/L erythrocytes."
+  },
+  {
+   "id": "L03",
+   "file": "docs/L03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (12.3.1961 without leading zero), no LOINC column, \"sek\" unit, Quick %, fibrinogen in mg/dl."
+  },
+  {
+   "id": "L04",
+   "file": "docs/L04.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (\"*12.03.1961\"), \"< 5\" comparator, \"neg.\", \"folgt\", Teilbefund; pending/qualitative rows must not become numbers."
+  },
+  {
+   "id": "L05",
+   "file": "docs/L05.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient written \"BEISPIEL Maria, geb. 12.03.61\" (2-digit year, only 1961 is plausible); \"> 90\" eGFR."
+  },
+  {
+   "id": "L06",
+   "file": "docs/L06.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (English \"12 Mar 1961\"), \"< 200\" / \"> 45\" one-sided ranges, two HbA1c units."
+  },
+  {
+   "id": "L07",
+   "file": "docs/L07.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (\"Frau Maria Beispiel\", \"12. März 1961\"), \"bis 35\" upper-only ranges, German month abbreviation."
+  },
+  {
+   "id": "L08",
+   "file": "docs/L08.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (ISO DOB), \"≤ 0,50\" range, \"mg/l FEU\", \"< 0,10\" Anti-Xa without LOINC."
+  },
+  {
+   "id": "L09",
+   "file": "docs/L09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient, dotted key-value list, ranges in parentheses, TPO \"folgt\"."
+  },
+  {
+   "id": "L10",
+   "file": "docs/L10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (US \"March 12, 1961\"), 10^3/µL units."
+  },
+  {
+   "id": "L11",
+   "file": "docs/L11.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient (\"(geb. 12.03.1961)\"), urine dipstick \"neg.\" rows, pH without unit."
+  },
+  {
+   "id": "L12",
+   "file": "docs/L12.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient in a letter \"Betreff\" line (\"geboren am 12. März 1961\"), \"bis\" ranges, salutation and footer."
+  },
+  {
+   "id": "R01",
+   "file": "docs/R01.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient, ICD-coded diagnoses, medication table, all four sections."
+  },
+  {
+   "id": "R02",
+   "file": "docs/R02.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient, English, Admission/Discharge ISO dates."
+  },
+  {
+   "id": "R03",
+   "file": "docs/R03.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient \"Beispiel Maria, geb. am 12.3.1961\", \"vom 2. bis 23. September 2026\", plain-text sections, 1-0-1 schema; mentions a second physician (author not patient)."
+  },
+  {
+   "id": "R04",
+   "file": "docs/R04.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient as \"Betrifft: Frau Maria Beispiel\", Arztbrief with Anamnese/Procedere."
+  },
+  {
+   "id": "R05",
+   "file": "docs/R05.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient \"*12.03.1961\", terse abbreviations, \"02.–23.09.2026\"."
+  },
+  {
+   "id": "R06",
+   "file": "docs/R06.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "DOB '12/03/1961': day/month order cannot be told -> DOB_AMBIGUOUS, quoted on the card (the author expected FILE; it stays a HOLD)"
+  },
+  {
+   "id": "O01",
+   "file": "docs/O01.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Other patient Johann Gruber, 04.07.1955."
+  },
+  {
+   "id": "O02",
+   "file": "docs/O02.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Other patient Herbert Maier, 1948-11-30."
+  },
+  {
+   "id": "O03",
+   "file": "docs/O03.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Other patient Anna Novak, 1975-02-19 (English)."
+  },
+  {
+   "id": "O04",
+   "file": "docs/O04.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Max Beispiel *01.01.1960 in a new list layout."
+  },
+  {
+   "id": "O05",
+   "file": "docs/O05.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Other patient Elisabeth Wagner, 17 May 1952."
+  },
+  {
+   "id": "O06",
+   "file": "docs/O06.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Other patient Lukas Hofbauer, 23.08.1988 (male, young)."
+  },
+  {
+   "id": "N01",
+   "file": "docs/N01.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "Right name, birth date 12.03.1962 (one year off): typo or a different person; must not file silently (BLOCK also acceptable)."
+  },
+  {
+   "id": "N02",
+   "file": "docs/N02.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "\"Marie\" for Maria, right DOB."
+  },
+  {
+   "id": "N03",
+   "file": "docs/N03.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "\"Beyspiel\" for Beispiel, right DOB."
+  },
+  {
+   "id": "N04",
+   "file": "docs/N04.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Right patient on page 1, but a second patient (Johann Gruber) with his own values on page 2: must not file his INR 2,7 for Maria (HOLD also acceptable)."
+  },
+  {
+   "id": "N05",
+   "file": "docs/N05.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "Right patient, but issued by a different lab (Labordiagnostik Mödling-Süd, Dr. Karl Pichler) than the requested Labor Kanalstraße / Dr. Brandl."
+  },
+  {
+   "id": "N06",
+   "file": "docs/N06.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "Extra given name \"Maria Theresia Beispiel\", right DOB."
+  },
+  {
+   "id": "Y01",
+   "file": "docs/Y01.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Nachname, Vorname: Beispiel, Maria' + 'Geb.-Datum ____ 12.03.1961'"
+  },
+  {
+   "id": "Y02",
+   "file": "docs/Y02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Familienname:' + 'Vorname:' lines, plain-line title + 'Gerinnungsbefund'"
+  },
+  {
+   "id": "Y03",
+   "file": "docs/Y03.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "subject 'Laborbefund Ihres Patienten Herrn Max Beispiel, geb. …': the subject reading finds Max"
+  },
+  {
+   "id": "Y04",
+   "file": "docs/Y04.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "subject line for Maria with birth year 1962: DOB_NEAR, the name is not quoted with subject words"
+  },
+  {
+   "id": "Y05",
+   "file": "docs/Y05.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Beispiel Maria, geb. 12.03.61': a two-digit year is not an exact full DOB, the order swap stays NEAR"
+  },
+  {
+   "id": "Y06",
+   "file": "docs/Y06.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Beispiel Maria Theresia': an extra token stays NEAR"
+  },
+  {
+   "id": "Y07",
+   "file": "docs/Y07.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Beispiel Maria, *13.03.1961': order swap + DOB one digit off"
+  },
+  {
+   "id": "Y08",
+   "file": "docs/Y08.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "dotted leaders naming Max Beispiel"
+  },
+  {
+   "id": "Y09",
+   "file": "docs/Y09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Probe: Citratblut, entnommen 23.10.2026 07:40', 'Befundet: 23.10.26 10:15'"
+  },
+  {
+   "id": "Y10",
+   "file": "docs/Y10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Abnahme: 23.10.24 07:40': two-digit year more than 2 years back is left unparsed (no sample time)"
+  },
+  {
+   "id": "Y11",
+   "file": "docs/Y11.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Bulleted results: '- INR 1,0 - Referenz 0,8-1,2', '- Hb 13,2 g/dl – Referenz 12–16'; comment ends at the greeting"
+  },
+  {
+   "id": "Y12",
+   "file": "docs/Y12.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "comment ends at a dash line; 'Freigegeben: Dr. Eva Brandl' is the validator"
+  },
+  {
+   "id": "Y13",
+   "file": "docs/Y13.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "plain title + 'Entlassungsbrief', 'Name, Vorname: Beispiel Maria', 'Aufenthaltsdauer: 02.–23.09.2026 (21 Tage)', plain 'Medikation bei Entlassung:', 'gez.'"
+  },
+  {
+   "id": "Y14",
+   "file": "docs/Y14.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'DOB: 12/03/1961' on its own line: DOB_AMBIGUOUS"
+  },
+  {
+   "id": "Y15",
+   "file": "docs/Y15.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "the L09 thyroid report sent on the discharge request: KIND_MISMATCH"
+  },
+  {
+   "id": "Y16",
+   "file": "docs/Y16.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Ref. interval' column: structured ranges"
+  }
+ ]
+}

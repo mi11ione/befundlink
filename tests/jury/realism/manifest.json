@@ -1,0 +1,1021 @@
+[
+ {
+  "id": "C01",
+  "file": "C01-lab-en-commas-gl.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Scenario format exported from an Austrian LIS: decimal commas and G/l are how the lab writes it; nothing is ambiguous.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C02",
+  "file": "C02-lab-de-austrian-full-header.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Typical Austrian Gerinnungsbefund (Quick %, INR, aPTT in sek, Fibrinogen mg/dl, Material, Auftragsnummer, accreditation footer); exactly what a lab sends.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C03",
+  "file": "C03-lab-de-kumulativ.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Kumulativbefund with the previous value in an extra column and a comment row inside the table: standard LIS output; the current value is unambiguous.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C04",
+  "file": "C04-lab-de-pathological-flags.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Abnormal coagulation results with the lab's own flags (+, *) in an unlabelled flag column: the most urgent kind of answer, must reach Dr. Hofer at once WITH the flags.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "flag column has no header: lab flags may be silently dropped",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C05",
+  "file": "C05-lab-de-special-values.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Pre-procedure panel with comparators, neg., 'siehe Kommentar' and a haemolysed potassium: all normal lab vocabulary; the text values must survive as text, never as numbers.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C06",
+  "file": "C06-lab-de-preliminary-folgt.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Vorläufiger Befund: INR/aPTT are final, fibrinogen 'folgt'. Labs send partial results before a procedure; file as preliminary, the pending row must not become a 'final' value 'folgt'.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "DiagnosticReport/Observation status is always 'final'; 'folgt' may be filed as a final valueString",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C07",
+  "file": "C07-lab-validated-by-colleague.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Report validated by the duty physician (OA Dr. Mayr) and sent by Dr. Brandl, the addressee: author and sender legitimately differ, as on any lab with shifts.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C08",
+  "file": "C08-lab-einsender-gp.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "The latest clotting test was ordered by the GP, so Einsender is Dr. Huber, not Dr. Hofer. That is the normal case for 'send me the latest result'; right patient, right lab physician.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "REQUESTER_MISMATCH -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C09",
+  "file": "C09-lab-de-caps-family-first.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Austrian LIS header 'BEISPIEL Maria' (family name in capitals, first, no comma) with exact DOB: unambiguous to every Austrian reader.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "NAME_NEAR (word order without comma) -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C10",
+  "file": "C10-lab-de-name-label-header.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Header block 'Name: / Geb.-Datum: / SVNR:' is the single most common Austrian lab-report layout.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "'Name' and 'Geb.-Datum' are not recognised labels -> PATIENT_MISSING -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C11",
+  "file": "C11-lab-converted-html-br.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Exported via an HTML/Word-to-Markdown converter: '<br>' inside a table cell and '&lt;' entities. Harmless formatting, not active content.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "ACTIVE_CONTENT_SUSPECT ('<br>') -> HOLD; '&lt;0,27' may be filed as a text value",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C12",
+  "file": "C12-lab-logo-and-http-footer.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Converted letterhead keeps the logo reference and the lab's old http:// result-portal link in the footer: no executable content, nothing is fetched.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "Markdown image / http link -> ACTIVE_CONTENT_SUSPECT -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C13",
+  "file": "C13-lab-windows1252-export.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Older LIS and Windows Notepad save as Windows-1252 (ß, ä, µ, en dash). The content is a perfect report; at most the sender should get a clear 'bitte als UTF-8 speichern', and it must not raise a misdelivery alert.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "not UTF-8 -> BLOCK UNREADABLE + [BLOCKIERT] alert in Dr. Hofer's room",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C14",
+  "file": "C14-lab-two-digit-year.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "'geb. 12.03.61' is how many LIS print the DOB; for a living adult 61 can only be 1961, and it matches.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "two-digit year rejected -> PATIENT_INCOMPLETE -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C15",
+  "file": "C15-lab-no-loinc-column.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Most Austrian lab printouts carry no LOINC codes. Values, units and ranges are complete; file with the lab's own test names (code.text), never with guessed codes.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C16",
+  "file": "C16-reha-de-pva-full.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Full Austrian rehab discharge letter (Diagnosen with ICD-10, Verlauf, assessments, medication table, Empfehlungen), written by the medical director, transmitted by discharge management.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C17",
+  "file": "C17-reha-zuweiser-orthopaedics.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Rehab was referred by the orthopaedic department, so 'Zuweiser' names OA Dr. Gruber; Dr. Hofer now requests the report. Normal, not a mismatch.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "'Zuweiser' parsed as requester -> REQUESTER_MISMATCH -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C18",
+  "file": "C18-reha-with-lab-and-assessment-tables.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Rehab letters routinely include 'Laborwerte bei Entlassung' (BSG as 12/25) and an assessment table in Punkte. The document is a text report; its tables are not a lab filing.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "lab-row findings of embedded tables (unit 'Punkte', BSG '12/25') may still HOLD a discharge report",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C19",
+  "file": "C19-reha-letter-betrifft.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "Classic Arztbrief layout: address block, 'Betrifft: Frau Maria Beispiel, geb. ...', salutation and closing. That is how Austrian rehab clinics actually write.",
+  "would_annoy_if_held": true,
+  "predicted_risk": "'Betrifft' is not a patient label -> PATIENT_MISSING -> HOLD",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C20",
+  "file": "C20-reha-sent-by-patient.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Maria Beispiel, Patientin (new outside person, not in any register)",
+   "contact": "+43 660 000 0199",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Maria",
+   "family": "Beispiel",
+   "birthdate": "1961-03-12 (new persona)"
+  },
+  "expected": "FILE",
+  "justification": "The rehab clinic does not answer, so Dr. Hofer asks the patient for her copy. She adds a friendly line on top. 'Vom Patienten mitgebracht' is a normal provenance; file it with the patient as informant.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C21",
+  "file": "C21-lab-new-lab-not-in-register.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Karin Wallner, Laborärztin, Labor Dr. Wallner & Partner (not in register)",
+   "contact": "k.wallner@labor-wallner.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Karin",
+   "family": "Wallner",
+   "birthdate": "1970-05-05 (new persona)"
+  },
+  "expected": "FILE",
+  "justification": "A different lab with its own English export layout (Ordered by / Collected / Released by). Dr. Hofer confirmed the register warning with !ja; the answer itself is clean.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C22",
+  "file": "C22-reha-new-clinic-sms.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Mag. Ulrike Strasser, Entlassungsmanagement, Reha Bad Sonnberg (not in register)",
+   "contact": "+43 664 000 0202",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Ulrike",
+   "family": "Strasser",
+   "birthdate": "1979-09-09 (new persona)"
+  },
+  "expected": "FILE",
+  "justification": "Another rehab clinic in the scenario's English format; the sender's academic title appears only in the request, not in the eID.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C23",
+  "file": "C23-lab-old-result-2024.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "The lab's latest coagulation result for Maria is from March 2024. It is true and for the right patient, so file it, but the card must make the date impossible to miss before a procedure.",
+  "would_annoy_if_held": false,
+  "predicted_risk": "card shows the sample time as a raw ISO string; staleness easy to miss",
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C24",
+  "file": "C24-lab-two-sections-coag-cbc.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "FILE",
+  "justification": "One Befund with two panels under headings (Gerinnung, Blutbild), T/l and G/l units: the normal shape of a pre-op lab.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "FILE",
+   "codes": [
+    "OK"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C25",
+  "file": "C25-lab-corrected-report.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Befundkorrektur replacing an earlier report (INR 1,0 corrected to 1,3). If the first version is in the chart, a human must retire it; filing a second 'final' report side by side leaves two INRs.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "CORRECTION_REVIEW"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C26",
+  "file": "C26-lab-platelets-thousands-dot.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "'245.000 /µl' (old German notation) is clear to a human but is the same string as 245.0; holding once for a human is acceptable, filing 245 /µl would be dangerous.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "VALUE_AMBIGUOUS"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C27",
+  "file": "C27-trap-max-de-style.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "BLOCK",
+  "justification": "M3 in Austrian layout ('BEISPIEL, Max, männlich'): another person, his INR 2,6 under phenprocoumon must never reach Maria's chart.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT",
+    "SEX_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C28",
+  "file": "C28-trap-namesake-other-dob.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "BLOCK",
+  "justification": "A second Maria Beispiel (born 1958, on warfarin) exists in the lab's database; the lab picked the wrong one. Same name, clearly different DOB.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "WRONG_PATIENT"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C29",
+  "file": "C29-trap-daughter-same-name.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "The daughter, also Maria Beispiel, born 12.03.1991 (one digit off). Elevated fibrinogen in pregnancy. Must not be filed automatically; a human must see it.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "DOB_NEAR"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C30",
+  "file": "C30-trap-sammelbefund-two-patients.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "BLOCK",
+  "justification": "A batch export (nursing-home round) with Maria AND another resident in one file. Even if Maria's part is right, filing the file puts Johann Muster's data into her chart; it must not be fileable at all.",
+  "would_annoy_if_held": false,
+  "predicted_risk": "one SAME + one DIFFERENT patient line -> PATIENT_CONFLICT = HOLD, which a clinician could override with !ablegen",
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C31",
+  "file": "C31-trap-double-surname.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "'Maria Beispiel-Huber' with the right DOB: could be Maria after marriage, could be someone else. A human must decide.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "NAME_NEAR"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C32",
+  "file": "C32-trap-reha-request-gets-lab.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Stefan Kern uploads the rehab clinic's in-house lab printout instead of the discharge report (wrong file from the same patient folder). Right patient, wrong document.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "KIND_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C33",
+  "file": "C33-trap-no-result-available.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "The honest real-world answer 'we have no recent coagulation result for her'. Nothing to file as lab values, but Dr. Hofer must learn it now (ideally the Task closes with this reason).",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "KIND_UNKNOWN"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C34",
+  "file": "C34-trap-sex-mismatch.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Name and DOB match, but the LIS record says 'männlich': a classic sign of a merged or mis-registered record (Maria is female). Should be looked at by a human.",
+  "would_annoy_if_held": false,
+  "predicted_risk": "sex is parsed but not compared -> FILE",
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "SEX_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C35",
+  "file": "C35-trap-platelets-lowercase-gl.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Case lost in conversion: 'g/l' for platelets (should be G/l). Gram per litre is physically wrong for a count; a human must confirm 245 G/l.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "LOINC_UNIT_DIMENSION"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C36",
+  "file": "C36-trap-quick-wrong-loinc.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Brandl",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Quick in % coded with 5902-2 (PT in seconds), a common LIS mapping error. Filing it would label a percentage as seconds.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "LOINC_UNIT_DIMENSION"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C37",
+  "file": "C37-trap-sent-by-secretary.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Stefan",
+   "family": "Kern",
+   "birthdate": "seeded persona"
+  },
+  "expected": "HOLD",
+  "justification": "Uploaded with Stefan Kern's eID, but the document says 'Gesendet von: Andrea Moser, Sekretariat'. Probably harmless (she typed it), but it contradicts the verified sender, so a glance is fair.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "HOLD",
+   "codes": [
+    "SENDER_CONTRADICTS_EID"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C38",
+  "file": "C38-deny-substitute-colleague.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Sabine",
+   "family": "Roth",
+   "birthdate": "1975-02-02 (new persona)",
+   "note": "Dr. Brandl's deputy while she is on leave"
+  },
+  "expected": "DENY",
+  "justification": "Dr. Brandl is on holiday and her deputy answers 'i. V.'. Real labs do this daily, but the brief says a colleague may not answer for the named person: no view, no upload, Dr. Hofer told who tried.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "EID_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C39",
+  "file": "C39-deny-married-name-eid.md",
+  "request": {
+   "doc_kind": "lab",
+   "recipient": "Dr. Eva Brandl, Laborärztin, Labor Kanalstraße",
+   "contact": "eva.brandl@labor-kanal.example",
+   "channel": "email"
+  },
+  "identity": {
+   "given": "Eva",
+   "family": "Wimmer",
+   "birthdate": "1972-04-04 (new persona)",
+   "note": "the same Dr. Eva Brandl after marriage; ID Austria already shows the new name"
+  },
+  "expected": "DENY",
+  "justification": "The real addressee, but her eID carries her new surname. The service cannot prove it is her, so deny. The page must tell her what to do (call the clinic / ask for a new request) instead of only 'does not match'.",
+  "would_annoy_if_held": true,
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "EID_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ },
+ {
+  "id": "C40",
+  "file": "C40-deny-sms-shared-phone.md",
+  "request": {
+   "doc_kind": "reha",
+   "recipient": "Stefan Kern, Entlassungsmanagement, Reha Waldblick",
+   "contact": "+43 660 000 0101",
+   "channel": "sms"
+  },
+  "identity": {
+   "given": "Andrea",
+   "family": "Moser",
+   "birthdate": "1985-06-06 (new persona)",
+   "note": "secretary; the discharge-management mobile lies on her desk"
+  },
+  "expected": "DENY",
+  "justification": "SMS goes to a shared department mobile and the secretary opens it. The possession factor is satisfied, the person is not: deny and tell Dr. Hofer who tried.",
+  "would_annoy_if_held": false,
+  "offline_prediction": {
+   "outcome": "BLOCK",
+   "codes": [
+    "EID_MISMATCH"
+   ],
+   "source": "fhirmap.decide() run offline on the file, PGK_LOINC_ONLINE=0; not the live system"
+  }
+ }
+]

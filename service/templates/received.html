@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set step = 3 %}
+{% block head %}{% if state == 'processing' %}<meta http-equiv="refresh" content="2;url={{ status_url }}">{% endif %}{% endblock %}
+{% block body %}
+<h1>Danke.</h1>
+{% if declined %}
+<p class="lead">Ihre Rückmeldung „kein passender Befund“ ist {% if receipt %}an {{ receipt.to }} übermittelt{% else %}angekommen{% endif %}.</p>
+{% elif state == 'processing' %}
+<p class="lead">Ihre Antwort ist eingegangen und wird geprüft …</p>
+<p class="muted">Die Seite aktualisiert sich selbst. Sie können sie auch schließen.</p>
+{% else %}
+<p class="lead">Ihre Antwort wurde erhalten{% if receipt %} und an {{ receipt.to }} übermittelt{% endif %}. Sie müssen nichts weiter tun.</p>
+{% endif %}
+{% if receipt %}
+<h2 class="gap">Eingangsbestätigung</h2>
+<dl class="rows">
+<div><dt>Referenz</dt><dd class="ref">{{ receipt.ref }}</dd></div>
+<div><dt>Eingegangen</dt><dd>{{ receipt.at }}</dd></div>
+{% if not receipt.declined %}<div><dt>SHA-256</dt><dd class="sha">{% for i in range(0, receipt.sha256|length, 8) %}<span>{{ receipt.sha256[i:i + 8] }}</span>{% endfor %}</dd></div>{% endif %}
+</dl>
+<a class="btn alt" href="{{ receipt_url }}">Eingangsbestätigung speichern</a>
+{% endif %}
+{% endblock %}
+{% block foot %}{% if not receipt %}<footer class="foot"><p>Referenz <span class="ref">{{ ref }}</span></p></footer>{% endif %}{% endblock %}

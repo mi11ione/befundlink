@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set step = 1 %}
+{% block title %}Anmeldung mit ID Austria (Simulation){% endblock %}
+{% block body %}
+<h1>Anmeldung mit <span class="nw">ID Austria</span> (Simulation)</h1>
+<p class="muted">Im Echtbetrieb führt dieser Schritt zur echten ID Austria.</p>
+{% if error %}<div class="stop" role="alert"><p>{{ error }}</p></div>{% endif %}
+<form method="post" action="/eid/login" class="gap">
+  <input type="hidden" name="return" value="{{ ret }}">
+  <div class="field"><label for="given">Vorname(n)</label><input id="given" name="given" required value="{{ form.given or '' }}" autocomplete="off"></div>
+  <div class="field"><label for="family">Nachname</label><input id="family" name="family" required value="{{ form.family or '' }}" autocomplete="off"></div>
+  <div class="field"><label for="birthdate">Geburtsdatum</label><input id="birthdate" name="birthdate" type="date" value="{{ form.birthdate or '' }}"></div>
+  <div class="field"><label for="pin">PIN (6 Ziffern)</label>
+  <input id="pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off"></div>
+  <p class="gap"><button type="submit" class="btn">Anmelden</button></p>
+</form>
+{% endblock %}

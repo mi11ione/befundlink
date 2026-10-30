@@ -1,0 +1,93 @@
+{
+ "_mock": "MOCK REGISTERS - synthetic entries for the hackathon scenario only. Adapter: replace with the real lookups.",
+ "aerzteliste": {
+  "label": "ÖÄK Ärzteliste (MOCK)",
+  "source": "Mock of the public Ärzteliste of the Österreichische Ärztekammer (§ 27 ÄrzteG 1998), https://www.aerztekammer.at",
+  "entries": [
+   {
+    "id": "OEAEK-MOCK-0001",
+    "name": "Dr. Eva Brandl",
+    "specialty": "Medizinische und Chemische Labordiagnostik",
+    "org": "Labor Kanalstraße"
+   },
+   {
+    "id": "OEAEK-MOCK-0002",
+    "name": "Dr. Johanna Leitner",
+    "specialty": "Physikalische Medizin und allgemeine Rehabilitation",
+    "org": "Reha Waldblick"
+   },
+   {
+    "id": "OEAEK-MOCK-0003",
+    "name": "Dr. Lena Hofer",
+    "specialty": "Innere Medizin",
+    "org": "Klinikum Beispielstadt"
+   }
+  ]
+ },
+ "gda_index": {
+  "label": "GDA-Index / eHealth-Verzeichnisdienst (MOCK)",
+  "source": "Mock of the eHealth-Verzeichnisdienst / ELGA GDA-Index (GTelG 2012), https://www.elga.gv.at",
+  "entries": [
+   {
+    "id": "GDA-MOCK-1001",
+    "name": "Labor Kanalstraße",
+    "type": "Labor",
+    "domains": [
+     "labor-kanal.example"
+    ],
+    "staff": [
+     {
+      "name": "Dr. Eva Brandl",
+      "role": "Laborärztin",
+      "contact": "eva.brandl@labor-kanal.example"
+     }
+    ]
+   },
+   {
+    "id": "GDA-MOCK-1002",
+    "name": "Reha Waldblick",
+    "type": "Rehabilitationszentrum",
+    "domains": [
+     "reha-waldblick.example"
+    ],
+    "staff": [
+     {
+      "name": "Stefan Kern",
+      "role": "Entlassungsmanagement",
+      "contact": "+43 660 000 0101"
+     },
+     {
+      "name": "Dr. Johanna Leitner",
+      "role": "Ärztliche Leitung"
+     }
+    ]
+   },
+   {
+    "id": "GDA-MOCK-1000",
+    "name": "Klinikum Beispielstadt",
+    "type": "Krankenanstalt",
+    "domains": [
+     "klinikum.example"
+    ],
+    "staff": []
+   }
+  ]
+ },
+ "network": {
+  "label": "PGK-Verzeichnis (Mitglieder)",
+  "members": [
+   {
+    "mxid": "@lena.hofer:klinikum.example",
+    "name": "Dr. Lena Hofer",
+    "org": "Klinikum Beispielstadt",
+    "department": "Innere Medizin"
+   }
+  ]
+ },
+ "clinic": {
+  "name": "Klinikum Beispielstadt",
+  "callback_phone": "+43 1 000 00 00",
+  "callback_label": "Sekretariat Innere Medizin",
+  "_mock": "demo number (synthetic)"
+ }
+}

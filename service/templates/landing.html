@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% set step = 1 %}
+{% block body %}
+{% if notice %}<p class="note">{{ notice }}</p>{% endif %}
+<h1>Anfrage von<br>{{ requester_name }}</h1>
+{% if department %}<p class="pre">{{ department }}</p>{% endif %}
+<p class="gap">Den Inhalt sehen Sie nach der Anmeldung – zum Schutz der Patientendaten.</p>
+<form method="get" action="/eid/login"><input type="hidden" name="return" value="{{ ret }}"><button type="submit" class="btn">Mit ID Austria anmelden</button></form>
+<p class="small muted below">Kein Konto, keine Installation – nur die <span class="nw">ID-Austria-App</span>.</p>
+{% endblock %}
+{% block foot %}{% if phone %}<footer class="foot"><p class="nw">Rückfragen {{ phone }}</p></footer>{% endif %}{% endblock %}

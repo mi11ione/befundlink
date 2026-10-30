@@ -1,0 +1,8408 @@
+{
+ "version": 2,
+ "outcomes": [
+  "FILE",
+  "HOLD",
+  "BLOCK"
+ ],
+ "counts": {
+  "FILE": 64,
+  "HOLD": 41,
+  "BLOCK": 31
+ },
+ "n": 136,
+ "cases": [
+  {
+   "id": "A01",
+   "group": "A",
+   "title": "Scenario lab result (verbatim)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Request 1 as given in the brief.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": null,
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [
+    "Eva Brandl"
+   ],
+   "note": null,
+   "file": "A01.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A02",
+   "group": "A",
+   "title": "Full blood count (8 rows)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Other panel, same format.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-100001",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": null,
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 6.8,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Erythrocytes",
+     "loinc": "789-8",
+     "flag": null,
+     "comparator": null,
+     "value": 4.5,
+     "ucum": [
+      "10*12/L"
+     ],
+     "low": 3.9,
+     "high": 5.2
+    },
+    {
+     "test": "Hematocrit",
+     "loinc": "4544-3",
+     "flag": null,
+     "comparator": null,
+     "value": 40.0,
+     "ucum": [
+      "%"
+     ],
+     "low": 36.0,
+     "high": 46.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "MCV",
+     "loinc": "787-2",
+     "flag": null,
+     "comparator": null,
+     "value": 89.0,
+     "ucum": [
+      "fL"
+     ],
+     "low": 80.0,
+     "high": 100.0
+    },
+    {
+     "test": "MCH",
+     "loinc": "785-6",
+     "flag": null,
+     "comparator": null,
+     "value": 29.3,
+     "ucum": [
+      "pg"
+     ],
+     "low": 27.0,
+     "high": 33.0
+    },
+    {
+     "test": "MCHC",
+     "loinc": "786-4",
+     "flag": null,
+     "comparator": null,
+     "value": 33.0,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 32.0,
+     "high": 36.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A02.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A03",
+   "group": "A",
+   "title": "Electrolytes, sample after the DST change",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "27 Oct 2026 is CET: effective time must carry +01:00, not +02:00.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-107920",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Sodium",
+     "loinc": "2951-2",
+     "flag": null,
+     "comparator": null,
+     "value": 139.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 135.0,
+     "high": 145.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": "2823-3",
+     "flag": null,
+     "comparator": null,
+     "value": 4.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    },
+    {
+     "test": "Chloride",
+     "loinc": "2075-0",
+     "flag": null,
+     "comparator": null,
+     "value": 102.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 98.0,
+     "high": 107.0
+    },
+    {
+     "test": "Calcium",
+     "loinc": "2000-8",
+     "flag": null,
+     "comparator": null,
+     "value": 2.35,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 2.15,
+     "high": 2.55
+    }
+   ],
+   "times": {
+    "effective": "2026-10-27T07:30:00+01:00",
+    "issued": "2026-10-27T10:05:00+01:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A03.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A04",
+   "group": "A",
+   "title": "CRP and PCT below the detection limit",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "'< 0.5' is a valid result: valueQuantity.comparator '<'.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-115839",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "CRP",
+     "loinc": "1988-5",
+     "flag": null,
+     "comparator": "<",
+     "value": 0.5,
+     "ucum": [
+      "mg/dL"
+     ],
+     "high": 0.5
+    },
+    {
+     "test": "Procalcitonin",
+     "loinc": "33959-8",
+     "flag": null,
+     "comparator": "<",
+     "value": 0.05,
+     "ucum": [
+      "ng/mL"
+     ],
+     "high": 0.5
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 7.1,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A05",
+   "group": "A",
+   "title": "Creatinine in µmol/L, eGFR '> 90'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "µmol/L -> UCUM umol/L; '> 90' -> comparator.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-123758",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Creatinine",
+     "loinc": "14682-9",
+     "flag": null,
+     "comparator": null,
+     "value": 78.0,
+     "ucum": [
+      "umol/L"
+     ],
+     "low": 45.0,
+     "high": 84.0
+    },
+    {
+     "test": "eGFR (CKD-EPI)",
+     "loinc": "62238-1",
+     "flag": null,
+     "comparator": ">",
+     "value": 90.0,
+     "ucum": [
+      "mL/min/{1.73_m2}"
+     ],
+     "low": 60.0
+    },
+    {
+     "test": "Urea",
+     "loinc": "3091-6",
+     "flag": null,
+     "comparator": null,
+     "value": 32.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 17.0,
+     "high": 43.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A05.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A06",
+   "group": "A",
+   "title": "HbA1c from another lab and another lab physician (email)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Other outside person; nothing hard-coded to Brandl.",
+   "ctx": "weber",
+   "eid": "weber",
+   "canary": "26-131677",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "HbA1c",
+     "loinc": "4548-4",
+     "flag": null,
+     "comparator": null,
+     "value": 5.6,
+     "ucum": [
+      "%"
+     ],
+     "low": 4.0,
+     "high": 6.0
+    },
+    {
+     "test": "HbA1c (IFCC)",
+     "loinc": "59261-8",
+     "flag": null,
+     "comparator": null,
+     "value": 38.0,
+     "ucum": [
+      "mmol/mol"
+     ],
+     "low": 20.0,
+     "high": 42.0
+    },
+    {
+     "test": "Glucose, fasting",
+     "loinc": "1558-6",
+     "flag": null,
+     "comparator": null,
+     "value": 94.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 70.0,
+     "high": 100.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-28T07:45:00+01:00",
+    "issued": "2026-10-28T13:00:00+01:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A06.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Anna Weber",
+     "role": "Fachärztin für Labormedizin",
+     "org": "Labor Mitte"
+    },
+    "channel": "email",
+    "address": "anna.weber@labor-mitte.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Anna",
+    "family": "Weber",
+    "birthDate": "1975-06-21"
+   }
+  },
+  {
+   "id": "A07",
+   "group": "A",
+   "title": "Missing units on dimensioned analytes, lab result by SMS",
+   "expect": "HOLD",
+   "reasons": [
+    "UNIT_MISSING"
+   ],
+   "why": "HbA1c 5.4 without a unit could be % or mmol/mol: never assume a unit (INR, dimensionless, still files).",
+   "ctx": "steiner",
+   "eid": "steiner",
+   "canary": "26-139596",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "A07.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Paul Steiner",
+     "role": "Laborarzt",
+     "org": "Zentrallabor Nord"
+    },
+    "channel": "sms",
+    "address": "+43 664 000 0202",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Paul",
+    "family": "Steiner",
+    "birthDate": "1969-02-08"
+   }
+  },
+  {
+   "id": "A08",
+   "group": "A",
+   "title": "Textual results (blood group, antibody screen, PCR)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Text results go into valueString/valueCodeableConcept.text.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-147515",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "ABO group",
+     "loinc": "883-9",
+     "flag": null,
+     "text": "A",
+     "ucum": null
+    },
+    {
+     "test": "Rh(D) type",
+     "loinc": "10331-7",
+     "flag": null,
+     "text": "positive",
+     "ucum": null
+    },
+    {
+     "test": "Antibody screen",
+     "loinc": "890-4",
+     "flag": null,
+     "text": "negative",
+     "ucum": null
+    },
+    {
+     "test": "SARS-CoV-2 RNA (PCR)",
+     "loinc": "94500-6",
+     "flag": null,
+     "text": "not detected",
+     "ucum": null
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A08.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A09",
+   "group": "A",
+   "title": "German numeric dates (12.03.1961, 22.10.2026, 08:10)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Day-first dotted date is unambiguous.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-155434",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A09.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A10",
+   "group": "A",
+   "title": "Fully German report, '12. März 1961', decimal commas",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "German labels, months and decimal commas.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-163353",
+   "conclusion": "Alle Werte im Referenzbereich.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A10.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A11",
+   "group": "A",
+   "title": "Extra columns incl. a stated Flag column",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Extra columns are ignored; H/L only because the lab states it.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-171272",
+   "conclusion": "CRP and leukocytes raised, haemoglobin low.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "CRP",
+     "loinc": "1988-5",
+     "flag": null,
+     "comparator": null,
+     "value": 48.0,
+     "ucum": [
+      "mg/L"
+     ],
+     "high": 5.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": "H",
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": "L",
+     "comparator": null,
+     "value": 10.1,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": "2823-3",
+     "flag": "L",
+     "comparator": null,
+     "value": 3.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A11.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A12",
+   "group": "A",
+   "title": "Columns reordered (LOINC first)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Columns are matched by header, not position.",
+   "ctx": "weber",
+   "eid": "weber",
+   "canary": "26-179191",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": null,
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 6.8,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Erythrocytes",
+     "loinc": "789-8",
+     "flag": null,
+     "comparator": null,
+     "value": 4.5,
+     "ucum": [
+      "10*12/L"
+     ],
+     "low": 3.9,
+     "high": 5.2
+    },
+    {
+     "test": "Hematocrit",
+     "loinc": "4544-3",
+     "flag": null,
+     "comparator": null,
+     "value": 40.0,
+     "ucum": [
+      "%"
+     ],
+     "low": 36.0,
+     "high": 46.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A12.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Anna Weber",
+     "role": "Fachärztin für Labormedizin",
+     "org": "Labor Mitte"
+    },
+    "channel": "email",
+    "address": "anna.weber@labor-mitte.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Anna",
+    "family": "Weber",
+    "birthDate": "1975-06-21"
+   }
+  },
+  {
+   "id": "A13",
+   "group": "A",
+   "title": "No LOINC column",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Filed with code.text only; a LOINC code is never guessed.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-187110",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Sodium",
+     "loinc": null,
+     "flag": null,
+     "comparator": null,
+     "value": 139.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 135.0,
+     "high": 145.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": null,
+     "flag": null,
+     "comparator": null,
+     "value": 4.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    },
+    {
+     "test": "Chloride",
+     "loinc": null,
+     "flag": null,
+     "comparator": null,
+     "value": 102.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 98.0,
+     "high": 107.0
+    },
+    {
+     "test": "Calcium",
+     "loinc": null,
+     "flag": null,
+     "comparator": null,
+     "value": 2.35,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 2.15,
+     "high": 2.55
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A13.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A14",
+   "group": "A",
+   "title": "ISO birth date",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "1961-03-12.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-195029",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A14.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A15",
+   "group": "A",
+   "title": "US-style 'March 12, 1961'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Month spelled out: unambiguous.",
+   "ctx": "steiner",
+   "eid": "steiner",
+   "canary": "26-202948",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A15.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Paul Steiner",
+     "role": "Laborarzt",
+     "org": "Zentrallabor Nord"
+    },
+    "channel": "sms",
+    "address": "+43 664 000 0202",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Paul",
+    "family": "Steiner",
+    "birthDate": "1969-02-08"
+   }
+  },
+  {
+   "id": "A16",
+   "group": "A",
+   "title": "Name in capitals",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Case is not identity.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-210867",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A16.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A17",
+   "group": "A",
+   "title": "Accent variant 'María'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Acute accent dropped/added by systems: same person.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-218786",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A17.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A18",
+   "group": "A",
+   "title": "'Family, Given' with comma",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "The comma marks family-first explicitly.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-226705",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A18.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A19",
+   "group": "A",
+   "title": "Salutation and title 'Frau Mag.a'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Titles and salutations are not name parts.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-234624",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A19.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A20",
+   "group": "A",
+   "title": "Non-breaking space in the name",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Whitespace variant from a word processor.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-242543",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A20.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A21",
+   "group": "A",
+   "title": "Long panel (41 rows)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Size within limits; every row filed.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-250462",
+   "conclusion": "Routine pre-operative panel.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": null,
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 6.8,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Erythrocytes",
+     "loinc": "789-8",
+     "flag": null,
+     "comparator": null,
+     "value": 4.5,
+     "ucum": [
+      "10*12/L"
+     ],
+     "low": 3.9,
+     "high": 5.2
+    },
+    {
+     "test": "Hematocrit",
+     "loinc": "4544-3",
+     "flag": null,
+     "comparator": null,
+     "value": 40.0,
+     "ucum": [
+      "%"
+     ],
+     "low": 36.0,
+     "high": 46.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "MCV",
+     "loinc": "787-2",
+     "flag": null,
+     "comparator": null,
+     "value": 89.0,
+     "ucum": [
+      "fL"
+     ],
+     "low": 80.0,
+     "high": 100.0
+    },
+    {
+     "test": "MCH",
+     "loinc": "785-6",
+     "flag": null,
+     "comparator": null,
+     "value": 29.3,
+     "ucum": [
+      "pg"
+     ],
+     "low": 27.0,
+     "high": 33.0
+    },
+    {
+     "test": "MCHC",
+     "loinc": "786-4",
+     "flag": null,
+     "comparator": null,
+     "value": 33.0,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 32.0,
+     "high": 36.0
+    },
+    {
+     "test": "Sodium",
+     "loinc": "2951-2",
+     "flag": null,
+     "comparator": null,
+     "value": 139.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 135.0,
+     "high": 145.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": "2823-3",
+     "flag": null,
+     "comparator": null,
+     "value": 4.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    },
+    {
+     "test": "Chloride",
+     "loinc": "2075-0",
+     "flag": null,
+     "comparator": null,
+     "value": 102.0,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 98.0,
+     "high": 107.0
+    },
+    {
+     "test": "Calcium",
+     "loinc": "2000-8",
+     "flag": null,
+     "comparator": null,
+     "value": 2.35,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 2.15,
+     "high": 2.55
+    },
+    {
+     "test": "Creatinine",
+     "loinc": "14682-9",
+     "flag": null,
+     "comparator": null,
+     "value": 78.0,
+     "ucum": [
+      "umol/L"
+     ],
+     "low": 45.0,
+     "high": 84.0
+    },
+    {
+     "test": "eGFR (CKD-EPI)",
+     "loinc": "62238-1",
+     "flag": null,
+     "comparator": ">",
+     "value": 90.0,
+     "ucum": [
+      "mL/min/{1.73_m2}"
+     ],
+     "low": 60.0
+    },
+    {
+     "test": "Urea",
+     "loinc": "3091-6",
+     "flag": null,
+     "comparator": null,
+     "value": 32.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 17.0,
+     "high": 43.0
+    },
+    {
+     "test": "ALT",
+     "loinc": "1742-6",
+     "flag": null,
+     "comparator": null,
+     "value": 22.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 0.0,
+     "high": 35.0
+    },
+    {
+     "test": "AST",
+     "loinc": "1920-8",
+     "flag": null,
+     "comparator": null,
+     "value": 25.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 0.0,
+     "high": 35.0
+    },
+    {
+     "test": "GGT",
+     "loinc": "2324-2",
+     "flag": null,
+     "comparator": null,
+     "value": 18.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 0.0,
+     "high": 40.0
+    },
+    {
+     "test": "Bilirubin, total",
+     "loinc": "1975-2",
+     "flag": null,
+     "comparator": null,
+     "value": 0.6,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 0.1,
+     "high": 1.2
+    },
+    {
+     "test": "Albumin",
+     "loinc": "1751-7",
+     "flag": null,
+     "comparator": null,
+     "value": 4.2,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 3.5,
+     "high": 5.2
+    },
+    {
+     "test": "Alkaline phosphatase",
+     "loinc": "6768-6",
+     "flag": null,
+     "comparator": null,
+     "value": 70.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 35.0,
+     "high": 105.0
+    },
+    {
+     "test": "LDH",
+     "loinc": "2532-0",
+     "flag": null,
+     "comparator": null,
+     "value": 180.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 0.0,
+     "high": 250.0
+    },
+    {
+     "test": "HbA1c",
+     "loinc": "4548-4",
+     "flag": null,
+     "comparator": null,
+     "value": 5.6,
+     "ucum": [
+      "%"
+     ],
+     "low": 4.0,
+     "high": 6.0
+    },
+    {
+     "test": "HbA1c (IFCC)",
+     "loinc": "59261-8",
+     "flag": null,
+     "comparator": null,
+     "value": 38.0,
+     "ucum": [
+      "mmol/mol"
+     ],
+     "low": 20.0,
+     "high": 42.0
+    },
+    {
+     "test": "Glucose, fasting",
+     "loinc": "1558-6",
+     "flag": null,
+     "comparator": null,
+     "value": 94.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 70.0,
+     "high": 100.0
+    },
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    },
+    {
+     "test": "TSH",
+     "loinc": "3016-3",
+     "flag": null,
+     "comparator": null,
+     "value": 1.8,
+     "ucum": [
+      "mU/L",
+      "m[IU]/L"
+     ],
+     "low": 0.27,
+     "high": 4.2
+    },
+    {
+     "test": "Cholesterol, total",
+     "loinc": "2093-3",
+     "flag": null,
+     "comparator": null,
+     "value": 182.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 0.0,
+     "high": 200.0
+    },
+    {
+     "test": "HDL cholesterol",
+     "loinc": "2085-9",
+     "flag": null,
+     "comparator": null,
+     "value": 58.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 45.0
+    },
+    {
+     "test": "LDL cholesterol (calc.)",
+     "loinc": "13457-7",
+     "flag": null,
+     "comparator": null,
+     "value": 104.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 0.0,
+     "high": 116.0
+    },
+    {
+     "test": "Triglycerides",
+     "loinc": "2571-8",
+     "flag": null,
+     "comparator": null,
+     "value": 98.0,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 0.0,
+     "high": 150.0
+    },
+    {
+     "test": "Uric acid",
+     "loinc": "3084-1",
+     "flag": null,
+     "comparator": null,
+     "value": 4.9,
+     "ucum": [
+      "mg/dL"
+     ],
+     "low": 2.4,
+     "high": 5.7
+    },
+    {
+     "test": "Total protein",
+     "loinc": "2885-2",
+     "flag": null,
+     "comparator": null,
+     "value": 7.1,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 6.4,
+     "high": 8.3
+    },
+    {
+     "test": "Ferritin",
+     "loinc": "2276-4",
+     "flag": null,
+     "comparator": null,
+     "value": 64.0,
+     "ucum": [
+      "ng/mL"
+     ],
+     "low": 13.0,
+     "high": 150.0
+    },
+    {
+     "test": "Vitamin B12",
+     "loinc": "2132-9",
+     "flag": null,
+     "comparator": null,
+     "value": 412.0,
+     "ucum": [
+      "pg/mL"
+     ],
+     "low": 197.0,
+     "high": 771.0
+    },
+    {
+     "test": "Folate",
+     "loinc": "2284-8",
+     "flag": null,
+     "comparator": null,
+     "value": 8.1,
+     "ucum": [
+      "ng/mL"
+     ],
+     "low": 3.9
+    },
+    {
+     "test": "Creatine kinase",
+     "loinc": "2157-6",
+     "flag": null,
+     "comparator": null,
+     "value": 96.0,
+     "ucum": [
+      "U/L"
+     ],
+     "low": 0.0,
+     "high": 170.0
+    },
+    {
+     "test": "CRP",
+     "loinc": "1988-5",
+     "flag": null,
+     "comparator": null,
+     "value": 2.1,
+     "ucum": [
+      "mg/L"
+     ],
+     "high": 5.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A21.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A22",
+   "group": "A",
+   "title": "Patient line repeated in the footer (consistent)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Two lines that agree are not a conflict.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-258381",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A22.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A23",
+   "group": "A",
+   "title": "German label 'Patientin', 'geb. 12.03.1961'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "German patient-line variant.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-266300",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A23.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A24",
+   "group": "A",
+   "title": "Out-of-range values, no flag column",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Values filed as sent; no derived H/L interpretation.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-274219",
+   "conclusion": "CRP and leukocytes raised, haemoglobin and potassium low.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "CRP",
+     "loinc": "1988-5",
+     "flag": null,
+     "comparator": null,
+     "value": 48.0,
+     "ucum": [
+      "mg/L"
+     ],
+     "high": 5.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": null,
+     "comparator": null,
+     "value": 10.1,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": "2823-3",
+     "flag": null,
+     "comparator": null,
+     "value": 3.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A24.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A25",
+   "group": "A",
+   "title": "'Requested by' without title",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Same requester; titles ignored.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-282138",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A25.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A26",
+   "group": "A",
+   "title": "Bold markup around results",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Markdown emphasis is not part of the value.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-290057",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A26.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A27",
+   "group": "A",
+   "title": "CRLF line endings and a UTF-8 BOM",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Windows export.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-297976",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A27.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A28",
+   "group": "A",
+   "title": "No 'Requested by' line",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Absence is not a contradiction.",
+   "ctx": "weber",
+   "eid": "weber",
+   "canary": "26-305895",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A28.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Anna Weber",
+     "role": "Fachärztin für Labormedizin",
+     "org": "Labor Mitte"
+    },
+    "channel": "email",
+    "address": "anna.weber@labor-mitte.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Anna",
+    "family": "Weber",
+    "birthDate": "1975-06-21"
+   }
+  },
+  {
+   "id": "A29",
+   "group": "A",
+   "title": "Units G/L, T/L, µmol/L",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "G/L is giga per litre (10*9/L), not gram; T/L = 10*12/L; µmol/L = umol/L.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-313814",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": null,
+     "comparator": null,
+     "value": 6.8,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Erythrocytes",
+     "loinc": "789-8",
+     "flag": null,
+     "comparator": null,
+     "value": 4.5,
+     "ucum": [
+      "10*12/L"
+     ],
+     "low": 3.9,
+     "high": 5.2
+    },
+    {
+     "test": "Creatinine",
+     "loinc": "14682-9",
+     "flag": null,
+     "comparator": null,
+     "value": 78.0,
+     "ucum": [
+      "umol/L"
+     ],
+     "low": 45.0,
+     "high": 84.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A29.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A30",
+   "group": "A",
+   "title": "Validated by a colleague, sent by the named lab physician",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Sender = eID-verified Brandl (informant); validator = asserted author. Author != sender is legitimate.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-321733",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [
+    "Karl Huber",
+    "Eva Brandl"
+   ],
+   "note": null,
+   "file": "A30.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A31",
+   "group": "A",
+   "title": "Quotes, backslashes and template syntax in the comment",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Escaping test: must survive JSON, HTML and Matrix rendering.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-329652",
+   "conclusion": "Note: \"fasting\" sample \\ ref. {{lab.id}} ${HOME} 50% <= limit.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A31.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A32",
+   "group": "A",
+   "title": "Birth date on its own line",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "'Date of birth:' line next to the patient line.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-337571",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A32.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "R01",
+   "group": "R",
+   "title": "Scenario rehab report (verbatim, SMS)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Request 2: written by Dr. Leitner, sent by the verified Stefan Kern (author != sender).",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": null,
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [
+    "Johanna Leitner",
+    "Stefan Kern"
+   ],
+   "note": null,
+   "file": "R01.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "R02",
+   "group": "R",
+   "title": "Other rehab clinic, other discharge manager (email)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Other outside person.",
+   "ctx": "moser",
+   "eid": "moser",
+   "canary": "RW-345490",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [
+    "Markus Feld",
+    "Julia Moser"
+   ],
+   "note": null,
+   "file": "R02.md",
+   "request": {
+    "recipient": {
+     "name": "Julia Moser",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Seeblick"
+    },
+    "channel": "email",
+    "address": "julia.moser@reha-seeblick.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Julia",
+    "family": "Moser",
+    "birthDate": "1988-12-01"
+   }
+  },
+  {
+   "id": "R03",
+   "group": "R",
+   "title": "German Entlassungsbericht",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "German labels, 'Übermittelt von' = sender.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-353409",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "R03.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "R04",
+   "group": "R",
+   "title": "Hospital discharge letter written by the recipient",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Author = sender = named person.",
+   "ctx": "wagner",
+   "eid": "wagner",
+   "canary": "RW-361328",
+   "conclusion": null,
+   "period": [
+    "2026-10-14",
+    "2026-10-19"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "R04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Thomas Wagner",
+     "role": "Stationsarzt",
+     "org": "Klinikum Nordstadt"
+    },
+    "channel": "email",
+    "address": "thomas.wagner@klinikum-nordstadt.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Thomas",
+    "family": "Wagner",
+    "birthDate": "1972-04-17"
+   }
+  },
+  {
+   "id": "R05",
+   "group": "R",
+   "title": "No 'Sent by' line, no medication section",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "The sender is established by the eID, not by the text; the author is asserted.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-369247",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [
+    "Johanna Leitner",
+    "Stefan Kern"
+   ],
+   "note": null,
+   "file": "R05.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "R06",
+   "group": "R",
+   "title": "Medication as a table",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Discharge text attached as-is.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-377166",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "R06.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "W01",
+   "group": "W",
+   "title": "Scenario Max Beispiel result (verbatim) = M3",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Document names another person; Max's INR 2.6 must never reach Maria's chart.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "phenprocoumon",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W01.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W02",
+   "group": "W",
+   "title": "Different name, same birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Name differs beyond a slip.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-385085",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W02.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W03",
+   "group": "W",
+   "title": "Same name, different birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Namesake: DOB differs beyond a slip.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-393004",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W03.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W04",
+   "group": "W",
+   "title": "Max vs Maria, same family name and DOB",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "'Max' is not a typo of 'Maria'.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-400923",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W05",
+   "group": "W",
+   "title": "Max Beispiel in German format",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "M3 in German layout.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-408842",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W05.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W06",
+   "group": "W",
+   "title": "Rehab report for another patient (SMS)",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Wrong patient on the SMS path.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-416761",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W06.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "W07",
+   "group": "W",
+   "title": "Same given name, other family name",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Family name differs.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-424680",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W07.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H01",
+   "group": "H",
+   "title": "Day and month swapped (3 December 1961)",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_NEAR"
+   ],
+   "why": "Swap is the classic entry error, but never a match: Dr. Hofer decides.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-432599",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H01.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H02",
+   "group": "H",
+   "title": "Day and month swapped, ISO 1961-12-03",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_NEAR"
+   ],
+   "why": "Same, ISO form.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-440518",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H02.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H03",
+   "group": "H",
+   "title": "One-letter typo 'Marie'",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "No fuzzy auto-file.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-448437",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H03.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H04",
+   "group": "H",
+   "title": "Missing letter 'Bespiel'",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "Deletion typo.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-456356",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H05",
+   "group": "H",
+   "title": "Reversed order without comma 'Beispiel Maria', exact DOB",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v4: exactly the requested name tokens in another order plus the exact full birth date (Austrian LIS print).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-464275",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "H05.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H06",
+   "group": "H",
+   "title": "Umlaut variant 'Märia'",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "ä is a distinct letter (ICAO 9303: ae), unlike an accent.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-472194",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H06.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H07",
+   "group": "H",
+   "title": "Cyrillic 'а' inside 'Maria' (homoglyph)",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "Mixed script is either damage or an attack: looks equal, is not equal.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-480113",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H07.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H08",
+   "group": "H",
+   "title": "Hyphenated surname 'Beispiel-Huber'",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "Superset of the name (marriage?): ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-488032",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H08.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H09",
+   "group": "H",
+   "title": "Extra given name 'Maria Theresia'",
+   "expect": "HOLD",
+   "reasons": [
+    "NAME_NEAR"
+   ],
+   "why": "Patient resource has no second given name.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-495951",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H09.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H10",
+   "group": "H",
+   "title": "Patient line missing",
+   "expect": "HOLD",
+   "reasons": [
+    "PATIENT_MISSING"
+   ],
+   "why": "Nothing to check against: never auto-file.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-503870",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H10.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H11",
+   "group": "H",
+   "title": "Patient line without birth date",
+   "expect": "HOLD",
+   "reasons": [
+    "PATIENT_INCOMPLETE"
+   ],
+   "why": "Name alone is not identity.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-511789",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H11.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H12",
+   "group": "H",
+   "title": "Patient line without name",
+   "expect": "HOLD",
+   "reasons": [
+    "PATIENT_INCOMPLETE"
+   ],
+   "why": "DOB alone is not identity.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-519708",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H12.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H13",
+   "group": "H",
+   "title": "Age instead of birth date",
+   "expect": "HOLD",
+   "reasons": [
+    "PATIENT_INCOMPLETE"
+   ],
+   "why": "'65 years' is not a birth date.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-527627",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H13.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H14",
+   "group": "H",
+   "title": "Second patient line names another person (Maria and Max)",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "Another person's data is in the upload: never fileable, not even by decision (v3).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-535546",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H14.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H15",
+   "group": "H",
+   "title": "Two patient lines, same name, DOB differs",
+   "expect": "HOLD",
+   "reasons": [
+    "PATIENT_CONFLICT"
+   ],
+   "why": "Internally inconsistent.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-543465",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H15.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H16",
+   "group": "H",
+   "title": "Ambiguous numeric date 12/03/1961",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_AMBIGUOUS"
+   ],
+   "why": "Slash date with day and month <= 12 can be read both ways: never guessed.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-551384",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H16.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H17",
+   "group": "H",
+   "title": "One-digit DOB slip (13 March 1961)",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_NEAR"
+   ],
+   "why": "One digit off: probably a typo, ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-559303",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H17.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H18",
+   "group": "H",
+   "title": "Another person's patient line hidden in an HTML comment",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "The raw text is checked, not the rendering; a hidden second person is BLOCK (v3).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-567222",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H18.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H19",
+   "group": "H",
+   "title": "'Requested by' another doctor (Einsender is information)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v3: the Einsender is shown on the card, not a hold (often the ordering ward, not the requester).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-575141",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "H19.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H20",
+   "group": "H",
+   "title": "'Sent by' a colleague while Kern's eID uploads",
+   "expect": "HOLD",
+   "reasons": [
+    "SENDER_CONTRADICTS_EID"
+   ],
+   "why": "The text claims another sender than the verified one.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-583060",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H20.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "H21",
+   "group": "H",
+   "title": "Rehab report uploaded to a lab request",
+   "expect": "HOLD",
+   "reasons": [
+    "KIND_MISMATCH"
+   ],
+   "why": "Not what was asked for.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "RW-590979",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H21.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H22",
+   "group": "H",
+   "title": "Lab report uploaded to a rehab request (SMS)",
+   "expect": "HOLD",
+   "reasons": [
+    "KIND_MISMATCH"
+   ],
+   "why": "Not what was asked for.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "26-598898",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H22.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "H23",
+   "group": "H",
+   "title": "Empty results table",
+   "expect": "HOLD",
+   "reasons": [
+    "NO_RESULTS"
+   ],
+   "why": "A lab report without values: ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-606817",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H23.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H24",
+   "group": "H",
+   "title": "Unknown unit '/GF'",
+   "expect": "HOLD",
+   "reasons": [
+    "UNKNOWN_UNIT"
+   ],
+   "why": "No defensible UCUM code: never invent one.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-614736",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H24.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H25",
+   "group": "H",
+   "title": "LOINC with a wrong check digit (6301-5)",
+   "expect": "HOLD",
+   "reasons": [
+    "LOINC_CHECKDIGIT"
+   ],
+   "why": "Mod-10 check digit fails.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-622655",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H25.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H26",
+   "group": "H",
+   "title": "Platelets in 'g/L' (gram) instead of 'G/L'",
+   "expect": "HOLD",
+   "reasons": [
+    "LOINC_UNIT_DIMENSION"
+   ],
+   "why": "777-3 is a count per volume; a mass unit contradicts it.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-630574",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H26.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H27",
+   "group": "H",
+   "title": "Impossible birth date 31.02.1961",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_UNPARSEABLE"
+   ],
+   "why": "Not a date.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-638493",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H27.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H28",
+   "group": "H",
+   "title": "Rehab: 'Beispiel Maria' family-first without comma, exact DOB",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v4: same rule on the SMS path.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-646412",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H28.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "I01",
+   "group": "I",
+   "title": "Colleague's eID on Brandl's request (forward)",
+   "expect": "BLOCK",
+   "reasons": [
+    "EID_MISMATCH"
+   ],
+   "why": "A colleague may not answer for the named person (brief).",
+   "ctx": "brandl",
+   "eid": "kollege",
+   "canary": "26-654331",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "I01.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Thomas",
+    "family": "Huber",
+    "birthDate": "1982-11-30"
+   }
+  },
+  {
+   "id": "I02",
+   "group": "I",
+   "title": "eID 'Eve Brandl' on Dr. Eva Brandl's request",
+   "expect": "BLOCK",
+   "reasons": [
+    "EID_MISMATCH"
+   ],
+   "why": "Identity is binary: no fuzzy eID.",
+   "ctx": "brandl",
+   "eid": "eve_brandl",
+   "canary": "26-662250",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "I02.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eve",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I03",
+   "group": "I",
+   "title": "Kern's colleague answers by SMS",
+   "expect": "BLOCK",
+   "reasons": [
+    "EID_MISMATCH"
+   ],
+   "why": "Forward on the SMS path.",
+   "ctx": "kern",
+   "eid": "gruber",
+   "canary": "RW-670169",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "I03.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Anna",
+    "family": "Gruber",
+    "birthDate": "1991-03-03"
+   }
+  },
+  {
+   "id": "I04",
+   "group": "I",
+   "title": "eID carries a middle name (Eva Maria Brandl)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Dr. Hofer knows the name in use; the legal name may add given names.",
+   "ctx": "brandl_sued",
+   "eid": "brandl_middle",
+   "canary": "26-678088",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "I04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße Zweigstelle Süd"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva Maria",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I05",
+   "group": "I",
+   "title": "eID with a hyphenated given name (Eva-Maria Brandl)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Hyphens split tokens: 'Eva' is one of the eID given names.",
+   "ctx": "brandl_west",
+   "eid": "brandl_hyphen",
+   "canary": "26-686007",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "I05.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße Zweigstelle West"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva-Maria",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I06",
+   "group": "I",
+   "title": "eID family name 'Brandl-Huber' on Dr. Eva Brandl's request",
+   "expect": "BLOCK",
+   "reasons": [
+    "EID_MISMATCH"
+   ],
+   "why": "Family name must appear exactly in the requested name: 'Huber' does not.",
+   "ctx": "brandl",
+   "eid": "brandl_huber",
+   "canary": "26-693926",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "I06.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl-Huber",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I07",
+   "group": "I",
+   "title": "Request typed family-first ('Brandl Eva'), eID Eva Brandl",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Typed order of the requested name does not matter for identity.",
+   "ctx": "brandl_rev",
+   "eid": "brandl",
+   "canary": "26-701845",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "I07.md",
+   "request": {
+    "recipient": {
+     "name": "Brandl Eva",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I08",
+   "group": "I",
+   "title": "Patient as recipient, the same-named daughter answers",
+   "expect": "BLOCK",
+   "reasons": [
+    "EID_MISMATCH"
+   ],
+   "why": "Requested name = the Patient's: the eID birth date must equal Patient.birthDate.",
+   "ctx": "patient",
+   "eid": "daughter",
+   "canary": "26-709764",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "I08.md",
+   "request": {
+    "recipient": {
+     "name": "Maria Beispiel",
+     "role": "Patientin",
+     "org": ""
+    },
+    "channel": "email",
+    "address": "mb-4471@mail.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Maria",
+    "family": "Beispiel",
+    "birthDate": "1990-06-15"
+   }
+  },
+  {
+   "id": "I09",
+   "group": "I",
+   "title": "Patient as recipient, the patient herself answers",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Name and birth date of the eID equal the Patient: the strongest binding.",
+   "ctx": "patient",
+   "eid": "patient",
+   "canary": "26-717683",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [
+    "Maria Beispiel"
+   ],
+   "note": null,
+   "file": "I09.md",
+   "request": {
+    "recipient": {
+     "name": "Maria Beispiel",
+     "role": "Patientin",
+     "org": ""
+    },
+    "channel": "email",
+    "address": "mb-4471@mail.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Maria",
+    "family": "Beispiel",
+    "birthDate": "1961-03-12"
+   }
+  },
+  {
+   "id": "X01",
+   "group": "X",
+   "title": "Script tag in the patient name",
+   "expect": "BLOCK",
+   "reasons": [
+    "ACTIVE_CONTENT"
+   ],
+   "why": "Active content is an attack signal.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-725602",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X01.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X02",
+   "group": "X",
+   "title": "Script tag in the comment",
+   "expect": "BLOCK",
+   "reasons": [
+    "ACTIVE_CONTENT"
+   ],
+   "why": "Must never render or file.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-733521",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X02.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X03",
+   "group": "X",
+   "title": "img onerror in a result cell",
+   "expect": "BLOCK",
+   "reasons": [
+    "ACTIVE_CONTENT"
+   ],
+   "why": "Event-handler injection.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-741440",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X03.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X04",
+   "group": "X",
+   "title": "javascript: link",
+   "expect": "BLOCK",
+   "reasons": [
+    "ACTIVE_CONTENT"
+   ],
+   "why": "Script URL in a Markdown link.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-749359",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X04.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X05",
+   "group": "X",
+   "title": "2 MiB document",
+   "expect": "BLOCK",
+   "reasons": [
+    "OVERSIZE"
+   ],
+   "why": "Above the 1 MB upload limit; must be refused quickly.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-757278",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X05.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X06",
+   "group": "X",
+   "title": "Empty file (0 bytes)",
+   "expect": "BLOCK",
+   "reasons": [
+    "EMPTY"
+   ],
+   "why": "Nothing to check.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": null,
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X06.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X07",
+   "group": "X",
+   "title": "Binary upload (PNG bytes)",
+   "expect": "BLOCK",
+   "reasons": [
+    "ENCODING_UNREADABLE"
+   ],
+   "why": "Not text in UTF-8, Windows-1252 or Latin-1.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": null,
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X07.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X11",
+   "group": "X",
+   "title": "Whitespace-only upload (spaces, tabs, CRLF, NBSP, BOM)",
+   "expect": "BLOCK",
+   "reasons": [
+    "EMPTY"
+   ],
+   "why": "No content after stripping whitespace = an empty upload.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": null,
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X11.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X08",
+   "group": "X",
+   "title": "NUL and control characters in the name",
+   "expect": "BLOCK",
+   "reasons": [
+    "UNREADABLE"
+   ],
+   "why": "Control characters are never text.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-765197",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X08.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X09",
+   "group": "X",
+   "title": "Prompt injection for an LLM, document is Max's",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT",
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "Only the patient line counts; prose cannot re-assign the patient.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-773116",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X09.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X10",
+   "group": "X",
+   "title": "100 kB patient name",
+   "expect": "BLOCK",
+   "reasons": [
+    "WRONG_PATIENT"
+   ],
+   "why": "Garbage name; must not hang the parser.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-781035",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X10.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X12",
+   "group": "X",
+   "title": "Benign <b> converter tag in the comment",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v3: attribute-free b/strong/i/br/... are normalised.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-788954",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "X12.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X13",
+   "group": "X",
+   "title": "<img src=x> without a handler",
+   "expect": "HOLD",
+   "reasons": [
+    "ACTIVE_CONTENT_SUSPECT"
+   ],
+   "why": "Image tags can beacon: ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-796873",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X13.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X14",
+   "group": "X",
+   "title": "Markdown image with an https target",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v3: https images are an EXTERNAL_RESOURCE note.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-804792",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "X14.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X15",
+   "group": "X",
+   "title": "http (not https) link",
+   "expect": "HOLD",
+   "reasons": [
+    "ACTIVE_CONTENT_SUSPECT"
+   ],
+   "why": "Plain-http target: ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-812711",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X15.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A33",
+   "group": "A",
+   "title": "https link in the footer",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "https links are fine.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-820630",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A33.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A34",
+   "group": "A",
+   "title": "ALL-CAPS family name first ('BEISPIEL Maria')",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Caps mark the family name (AT LIS convention).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-828549",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A34.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A35",
+   "group": "A",
+   "title": "'Name:' family-first plus 'Geb.-Datum:' and 'Geschlecht:' lines",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Under 'Name:' the order is free; sex agrees.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-836468",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A35.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A36",
+   "group": "A",
+   "title": "'Betrifft:' line with a date",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Betrifft: is a patient label.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-844387",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A36.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A37",
+   "group": "A",
+   "title": "Two-digit birth year 12.03.61",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "The only past expansion (1961) equals the request.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-852306",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A37.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A38",
+   "group": "A",
+   "title": "Austrian title of office 'OStR'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Titles of office are not name parts.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-860225",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A38.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A39",
+   "group": "A",
+   "title": "Windows-1252 upload (German report with umlauts)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Decoded as Windows-1252 with an ENCODING_FALLBACK warning.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-868144",
+   "conclusion": "Alle Werte im Referenzbereich.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": true,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A39.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A40",
+   "group": "A",
+   "title": "HTML entities and benign tags (&amp;, <br>, <sup>)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Converter leftovers are normalised.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-876063",
+   "conclusion": "Gerinnung & Thrombozyten unauffällig. Kontrolle in 3^2 Tagen nicht nötig.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A40.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A41",
+   "group": "A",
+   "title": "Relative link and bare http/mailto text",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Relative links and inert bare http/mailto text are notes, not holds.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-883982",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A41.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A42",
+   "group": "A",
+   "title": "Textual 'neg.' / 'pos.' results",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Filed as text exactly as written.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-891901",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "Antibody screen",
+     "loinc": "890-4",
+     "flag": null,
+     "text": "neg.",
+     "ucum": null
+    },
+    {
+     "test": "Rh(D) type",
+     "loinc": "10331-7",
+     "flag": null,
+     "text": "pos.",
+     "ucum": null
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A42.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A43",
+   "group": "A",
+   "title": "Corrected report (Korrigierter Befund)",
+   "expect": "HOLD",
+   "reasons": [
+    "CORRECTION_REVIEW"
+   ],
+   "why": "A correction must not sit next to the original: Dr. Hofer files it as a new version of the original.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-899820",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "A43.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A44",
+   "group": "A",
+   "title": "Addendum (Nachtrag)",
+   "expect": "HOLD",
+   "reasons": [
+    "CORRECTION_REVIEW"
+   ],
+   "why": "An addendum amends a filed report: same review.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-907739",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "A44.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A45",
+   "group": "A",
+   "title": "Preliminary report (vorläufiger Befund)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Filed with status preliminary.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-915658",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": "preliminary",
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A45.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A46",
+   "group": "A",
+   "title": "Pending row ('folgt')",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Report preliminary; the pending Observation is 'registered' without a value.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-923577",
+   "conclusion": "Fibrinogen folgt.",
+   "period": null,
+   "status": "preliminary",
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "pending": true,
+     "value_absent": true,
+     "ucum": null,
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A46.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A47",
+   "group": "A",
+   "title": "'nicht bestimmbar (hämolytisch)'",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Final; dataAbsentReason error with a note.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-931496",
+   "conclusion": "Probe hämolytisch.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "absent": "error",
+     "value_absent": true,
+     "ucum": null,
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A47.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A48",
+   "group": "A",
+   "title": "Lab flags in an unlabelled column (+ / -)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "+ -> H, - -> L, with the lab's text.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-939415",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "CRP",
+     "loinc": "1988-5",
+     "flag": null,
+     "comparator": null,
+     "value": 48.0,
+     "ucum": [
+      "mg/L"
+     ],
+     "high": 5.0
+    },
+    {
+     "test": "Leukocytes",
+     "loinc": "6690-2",
+     "flag": "H",
+     "comparator": null,
+     "value": 13.2,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 4.0,
+     "high": 10.0
+    },
+    {
+     "test": "Hemoglobin",
+     "loinc": "718-7",
+     "flag": "L",
+     "comparator": null,
+     "value": 10.1,
+     "ucum": [
+      "g/dL"
+     ],
+     "low": 12.0,
+     "high": 16.0
+    },
+    {
+     "test": "Potassium",
+     "loinc": "2823-3",
+     "flag": "L",
+     "comparator": null,
+     "value": 3.2,
+     "ucum": [
+      "mmol/L"
+     ],
+     "low": 3.5,
+     "high": 5.1
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A48.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "R07",
+   "group": "R",
+   "title": "Discharge report with a table (stays text)",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Tables inside discharge reports are text.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-947334",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [
+    "Johanna Leitner",
+    "Stefan Kern"
+   ],
+   "note": null,
+   "file": "R07.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "R08",
+   "group": "R",
+   "title": "'Patient:' bullet inside a section, without a date",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "Not a patient line: prose inside a section (v3).",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-955253",
+   "conclusion": null,
+   "period": [
+    "2026-09-02",
+    "2026-09-23"
+   ],
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "R08.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "W08",
+   "group": "W",
+   "title": "Page header names another person ('BEISPIEL Max · *01.01.1960')",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "A second person anywhere in the upload.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-963172",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W08.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W09",
+   "group": "W",
+   "title": "SVNR encodes another birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "SVNR_MISMATCH"
+   ],
+   "why": "The SVNR's DDMMYY (010160) is not the Patient's (120361).",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-971091",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W09.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W10",
+   "group": "W",
+   "title": "Title names another person with a birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "Even in the title.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-979010",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W10.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W11",
+   "group": "W",
+   "title": "Prose names another person with a birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "A second person anywhere (v3), also in a sentence.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-986929",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W11.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W12",
+   "group": "W",
+   "title": "Lab comment: tube labelled for another person ('Beispiel, Max, 01.01.1960')",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "v4 (holdout3 N3): the tube-label form needs no 'geb.'; another person's values.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-994848",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W12.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "W13",
+   "group": "W",
+   "title": "A table cell names another person with a birth date",
+   "expect": "BLOCK",
+   "reasons": [
+    "OTHER_PATIENT_PRESENT"
+   ],
+   "why": "v4: table cells are part of the document too.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1002767",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "W13.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H38",
+   "group": "H",
+   "title": "The lab doubts the sample's identity ('Verwechslung nicht ausgeschlossen')",
+   "expect": "HOLD",
+   "reasons": [
+    "IDENTITY_DOUBT"
+   ],
+   "why": "v4: a labelling / mix-up doubt is never filed without a human, even without a second name.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1010686",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H38.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "A49",
+   "group": "A",
+   "title": "The sample label is confirmed ('korrekt beschriftet, Identität per Armband bestätigt')",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "v4: a confirmation is not a doubt.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1018605",
+   "conclusion": "Probe korrekt beschriftet, Identität per Armband bestätigt. Werte unauffällig.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "A49.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "I10",
+   "group": "I",
+   "title": "SVNR with a bad check digit but the right date",
+   "expect": "FILE",
+   "reasons": [
+    "OK"
+   ],
+   "why": "A typo in the number: warning only.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1026524",
+   "conclusion": "All values are within the reference range.",
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": [
+    {
+     "test": "INR (prothrombin time)",
+     "loinc": "6301-6",
+     "flag": null,
+     "comparator": null,
+     "value": 1.0,
+     "ucum": null,
+     "low": 0.8,
+     "high": 1.2
+    },
+    {
+     "test": "aPTT",
+     "loinc": "14979-9",
+     "flag": null,
+     "comparator": null,
+     "value": 31.0,
+     "ucum": [
+      "s"
+     ],
+     "low": 25.0,
+     "high": 37.0
+    },
+    {
+     "test": "Platelets",
+     "loinc": "777-3",
+     "flag": null,
+     "comparator": null,
+     "value": 245.0,
+     "ucum": [
+      "10*9/L"
+     ],
+     "low": 150.0,
+     "high": 400.0
+    },
+    {
+     "test": "Fibrinogen",
+     "loinc": "3255-7",
+     "flag": null,
+     "comparator": null,
+     "value": 3.1,
+     "ucum": [
+      "g/L"
+     ],
+     "low": 2.0,
+     "high": 4.0
+    }
+   ],
+   "times": {
+    "effective": "2026-10-22T08:10:00+02:00",
+    "issued": "2026-10-22T11:40:00+02:00"
+   },
+   "provenance": [],
+   "note": null,
+   "file": "I10.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H29",
+   "group": "H",
+   "title": "Sex in the document differs ('Geschlecht: männlich')",
+   "expect": "HOLD",
+   "reasons": [
+    "SEX_MISMATCH"
+   ],
+   "why": "Name and DOB agree but sex does not: ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1034443",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H29.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H30",
+   "group": "H",
+   "title": "Two reports in one upload",
+   "expect": "HOLD",
+   "reasons": [
+    "MULTIPLE_REPORTS"
+   ],
+   "why": "Each report must be sent on its own.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1042362",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H30.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H31",
+   "group": "H",
+   "title": "Table split by a page break",
+   "expect": "HOLD",
+   "reasons": [
+    "TABLE_SPLIT"
+   ],
+   "why": "Rows outside the parsed table are not filed.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1050281",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H31.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H32",
+   "group": "H",
+   "title": "Sample date in the future",
+   "expect": "HOLD",
+   "reasons": [
+    "FUTURE_DATE"
+   ],
+   "why": "More than 2 h ahead.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1058200",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H32.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H33",
+   "group": "H",
+   "title": "Discharge report from another clinic than asked",
+   "expect": "HOLD",
+   "reasons": [
+    "ORG_MISMATCH"
+   ],
+   "why": "Kern was asked for Reha Waldblick's report; this one is from Reha Seeblick.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-1066119",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H33.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "H34",
+   "group": "H",
+   "title": "Stale discharge report (stay ended 2024)",
+   "expect": "HOLD",
+   "reasons": [
+    "STALE_REPORT"
+   ],
+   "why": "Ended more than 365 days ago.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-1074038",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H34.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "H35",
+   "group": "H",
+   "title": "Zwischenbericht (interim report)",
+   "expect": "HOLD",
+   "reasons": [
+    "REPORT_INTERIM"
+   ],
+   "why": "The stay is not finished.",
+   "ctx": "kern",
+   "eid": "kern",
+   "canary": "RW-1081957",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H35.md",
+   "request": {
+    "recipient": {
+     "name": "Stefan Kern",
+     "role": "Entlassungsmanagement",
+     "org": "Reha Waldblick"
+    },
+    "channel": "sms",
+    "address": "+43 660 000 0101",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "discharge_report"
+   },
+   "uploader": {
+    "given": "Stefan",
+    "family": "Kern",
+    "birthDate": "1985-09-02"
+   }
+  },
+  {
+   "id": "H36",
+   "group": "H",
+   "title": "Two-digit year whose only past expansion is not the request (12.03.62)",
+   "expect": "HOLD",
+   "reasons": [
+    "DOB_AMBIGUOUS"
+   ],
+   "why": "A two-digit year is accepted only if it EQUALS the request.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1089876",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H36.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "H37",
+   "group": "H",
+   "title": "Result cell flag and Flag column disagree",
+   "expect": "HOLD",
+   "reasons": [
+    "FLAG_CONFLICT"
+   ],
+   "why": "Which flag did the lab mean?",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1097795",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "H37.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X16",
+   "group": "X",
+   "title": "Tag with attributes (<span style=...>)",
+   "expect": "HOLD",
+   "reasons": [
+    "ACTIVE_CONTENT_SUSPECT"
+   ],
+   "why": "Attributes are not converter leftovers.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1105714",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X16.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X17",
+   "group": "X",
+   "title": "Script hidden behind HTML entities",
+   "expect": "HOLD",
+   "reasons": [
+    "ACTIVE_CONTENT_SUSPECT"
+   ],
+   "why": "Encoded script: ask.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1113633",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X17.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  },
+  {
+   "id": "X18",
+   "group": "X",
+   "title": "mailto autolink",
+   "expect": "HOLD",
+   "reasons": [
+    "ACTIVE_CONTENT_SUSPECT"
+   ],
+   "why": "Only https autolinks are accepted.",
+   "ctx": "brandl",
+   "eid": "brandl",
+   "canary": "26-1121552",
+   "conclusion": null,
+   "period": null,
+   "status": null,
+   "raw_cp1252": false,
+   "obs": null,
+   "times": null,
+   "provenance": [],
+   "note": null,
+   "file": "X18.md",
+   "request": {
+    "recipient": {
+     "name": "Dr. Eva Brandl",
+     "role": "Laborärztin",
+     "org": "Labor Kanalstraße"
+    },
+    "channel": "email",
+    "address": "eva.brandl@labor-kanal.example",
+    "patient_id": "maria-beispiel",
+    "doc_kind": "lab_result"
+   },
+   "uploader": {
+    "given": "Eva",
+    "family": "Brandl",
+    "birthDate": "1979-05-14"
+   }
+  }
+ ]
+}

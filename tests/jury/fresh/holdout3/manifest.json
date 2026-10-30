@@ -1,0 +1,320 @@
+{
+ "about": "Third regression set: blind holdout 3 (expectations frozen before the run, SHA-256 2d670b36…dd9bf) plus own variants Z01–Z15. Routes as in ../manifest.json.",
+ "cases": [
+  {
+   "id": "G01",
+   "file": "docs/G01.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right name+DOB, requested lab, signed by Brandl; German decimal commas, '<' comparator, unit 'mg/l FEU'."
+  },
+  {
+   "id": "G02",
+   "file": "docs/G02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient written 'BEISPIEL Maria', ISO DOB, English, LOINC table; plain CBC+CRP."
+  },
+  {
+   "id": "G03",
+   "file": "docs/G03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient ('Frau Maria Beispiel, geb. am 12. März 1961'); bullet list not table; spelling 'Kanalstrasse'; two tests without LOINC (filed as text)."
+  },
+  {
+   "id": "G04",
+   "file": "docs/G04.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient 'Beispiel Maria' + SVNR with matching DDMMYY; LOINC in test-name column; '<'/'>' ranges."
+  },
+  {
+   "id": "G05",
+   "file": "docs/G05.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient 'Maria BEISPIEL · * 12.03.1961'; one value 'folgt' (pending) – the 5 reported values should file."
+  },
+  {
+   "id": "G06",
+   "file": "docs/G06.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient 'Beispiel, Maria — geboren 12.03.1961'; two tables under ### sections; µU/ml, ng/dl, µg/dl."
+  },
+  {
+   "id": "G07",
+   "file": "docs/G07.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient; urine dipstick with qualitative 'neg.' results and a decimal-comma specific gravity '1,015' (must not become 1015)."
+  },
+  {
+   "id": "G08",
+   "file": "docs/G08.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'Beispiel Maria, 12.03.61': the two-digit year keeps it held, the card says 'Geburtsjahr zweistellig (12.03.61) – bitte prüfen'; author expected FILE"
+  },
+  {
+   "id": "G09",
+   "file": "docs/G09.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient, English, DOB '12 Mar 1961'; bullet list with bold names; '< 0.05' comparator; mm/h."
+  },
+  {
+   "id": "G10",
+   "file": "docs/G10.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient 'Name, Vorname: Beispiel, Maria | Geburtsdatum: 12.03.1961'; ISO timestamps; aligned table syntax; range '3,5 - 5,1'."
+  },
+  {
+   "id": "G11",
+   "file": "docs/G11.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient in an ALL-CAPS plain-text header 'BEISPIEL, MARIA / GEB.: 12.03.1961'; two tests without LOINC."
+  },
+  {
+   "id": "G12",
+   "file": "docs/G12.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "Right patient in dotted-leader header; cumulative report with a previous-value column (22.10.) – current column (29.10.) must be the one filed; 'sec', 'G/l'; confidentiality footer."
+  },
+  {
+   "id": "R1",
+   "file": "docs/R1.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient 'Frau Maria Beispiel, geb. 12.03.1961'; full German Entlassungsbrief with ICD diagnoses and a medication table."
+  },
+  {
+   "id": "R2",
+   "file": "docs/R2.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient 'Ms. Maria Beispiel / Date of birth: 12 March 1961'; English, no Markdown headings at all, numbered medication list."
+  },
+  {
+   "id": "R3",
+   "file": "docs/R3.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient in a key/value table ('Geburtsdatum | 12. März 1961'); assessment table with admission/discharge scores; stay '2.–23.9.2026'."
+  },
+  {
+   "id": "R4",
+   "file": "docs/R4.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient 'Pat.: Beispiel, Maria * 12.03.1961'; terse Kurzarztbrief, ISO dates, abbreviations, 'Ausführlicher Bericht folgt'."
+  },
+  {
+   "id": "R5",
+   "file": "docs/R5.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient with address; social history names her husband (no birth date) as is normal in rehab letters – a careful clinician would not hold for that."
+  },
+  {
+   "id": "R6",
+   "file": "docs/R6.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "Right patient 'BEISPIEL Maria (w), *1961-03-12'; physiotherapy discharge report from the same clinic; footer with clinic address and phone."
+  },
+  {
+   "id": "W1",
+   "file": "docs/W1.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "GP's lab overview for another patient (Herbert Pichler, 04.07.1955) attached by mistake; no Maria anywhere."
+  },
+  {
+   "id": "W2",
+   "file": "docs/W2.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Lab report (English) for Sabine Hollerer, DOB 1972-11-23 – entirely different person."
+  },
+  {
+   "id": "W3",
+   "file": "docs/W3.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Patient-typed INR self-monitoring diary of Johann Beispiel (same surname, born 02.02.1958, male) – a different person."
+  },
+  {
+   "id": "W4",
+   "file": "docs/W4.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Rehab discharge for Gertrude Lechner, geb. 30.05.1948 (knee replacement) – different patient."
+  },
+  {
+   "id": "W5",
+   "file": "docs/W5.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "English cardiac rehab summary for Mr Karl Bauer (*17.08.1959) – different patient, different sex."
+  },
+  {
+   "id": "W6",
+   "file": "docs/W6.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Same name 'Maria Beispiel' but born 15.06.1990 – day, month and year all differ: a namesake (e.g. her daughter), not Maria. HOLD would be safe but BLOCK is right."
+  },
+  {
+   "id": "N1",
+   "file": "docs/N1.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "Name right, DOB 12.03.1962 (year off by one): typo or a different woman – a clinician must decide. HOLD or BLOCK both acceptable."
+  },
+  {
+   "id": "N2",
+   "file": "docs/N2.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Given name 'Marianne' instead of Maria, DOB matches: similar name – a clinician must decide. HOLD or BLOCK acceptable. [held or blocked accepted by the author; the product BLOCKs: another person / a different given name]"
+  },
+  {
+   "id": "N3",
+   "file": "docs/N3.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "Header is Maria, but the lab notes the tube was labelled 'Beispiel, Max, 01.01.1960' – second person / possible sample mix-up. HOLD or BLOCK. [held or blocked accepted by the author; the product BLOCKs: another person / a different given name]"
+  },
+  {
+   "id": "N4",
+   "file": "docs/N4.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "Right patient, but issued and validated by a different lab (Labor Dr. Wimmer, Graz) than the one asked (Labor Kanalstraße) – sender/issuer mismatch, clinician should decide."
+  },
+  {
+   "id": "N5",
+   "file": "docs/N5.md",
+   "route": "rehab",
+   "expected": "HOLD",
+   "why": "Name right but DOB written '03/12/1961' – ambiguous (US = 12 March, AT/DE = 3 December); not FILE without a human."
+  },
+  {
+   "id": "N6",
+   "file": "docs/N6.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "Maria's report, but the medication section is headed for another named patient (Gertrude Lechner, 30.05.1948) with her drugs – copy-paste from another chart. HOLD or BLOCK. [held or blocked accepted by the author; the product BLOCKs: another person / a different given name]"
+  },
+  {
+   "id": "Z01",
+   "file": "docs/Z01.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "G04 form, SVNR encodes 01.01.60: SVNR_MISMATCH still works"
+  },
+  {
+   "id": "Z02",
+   "file": "docs/Z02.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Maria Beispiel · 12.03.1961 · SVNR 1234 120361' without labels"
+  },
+  {
+   "id": "Z03",
+   "file": "docs/Z03.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Maria – Beispiel': a spaced dash is a separator"
+  },
+  {
+   "id": "Z04",
+   "file": "docs/Z04.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "'Maria – Huber': the dash does not hide a different name"
+  },
+  {
+   "id": "Z05",
+   "file": "docs/Z05.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "'Maria Beispiel, 12.03.61' (normal order): the one past expansion equals the request (rule 9, as with 'geb.')"
+  },
+  {
+   "id": "Z06",
+   "file": "docs/Z06.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "'12.03.62': two-digit year that is not the request -> DOB_AMBIGUOUS, 'Geburtsjahr zweistellig'"
+  },
+  {
+   "id": "Z07",
+   "file": "docs/Z07.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "a row one cell short whose LOINC slid under the range: TABLE_MALFORMED, not read"
+  },
+  {
+   "id": "Z08",
+   "file": "docs/Z08.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "specific gravity 1,015 is read, but creatinine 1,015 mg/dl stays VALUE_AMBIGUOUS"
+  },
+  {
+   "id": "Z09",
+   "file": "docs/Z09.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "ISO stay '2026-09-01 – 2026-09-22'"
+  },
+  {
+   "id": "Z10",
+   "file": "docs/Z10.md",
+   "route": "rehab",
+   "expected": "FILE",
+   "why": "'Aufnahme am … · Entlassung am …', plain 'Discharge medication' / 'Follow-up' headings, signature + contact"
+  },
+  {
+   "id": "Z11",
+   "file": "docs/Z11.md",
+   "route": "rehab",
+   "expected": "BLOCK",
+   "why": "rehab course names 'Beispiel, Max, 01.01.1960' in the label form"
+  },
+  {
+   "id": "Z12",
+   "file": "docs/Z12.md",
+   "route": "lab",
+   "expected": "BLOCK",
+   "why": "lab comment 'Etikett: Gruber, Johann, 04.07.1955.'"
+  },
+  {
+   "id": "Z13",
+   "file": "docs/Z13.md",
+   "route": "lab",
+   "expected": "HOLD",
+   "why": "English identity doubt 'possible sample mix-up, please confirm the patient's identity'"
+  },
+  {
+   "id": "Z14",
+   "file": "docs/Z14.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "guard: a signature with a recent date is not a person with a birth date"
+  },
+  {
+   "id": "Z15",
+   "file": "docs/Z15.md",
+   "route": "lab",
+   "expected": "FILE",
+   "why": "guard: 'Labor Kanalstraße, Zweigstelle Süd, 12.03.2024' is a place, not a person"
+  }
+ ]
+}

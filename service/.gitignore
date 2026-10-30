@@ -1,0 +1,7 @@
+data/*.sqlite*
+data/.datakey
+data/validator.log
+# private key material: generated on first start, never committed
+data/*.pem
+data/*.key
+__pycache__/

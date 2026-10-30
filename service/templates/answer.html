@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% set step = 2 %}
+{% block head %}<script src="/static/upload.js" defer></script>{% endblock %}
+{% block body %}
+{% if notice %}<div class="stop" role="alert">{% if notice.title is defined %}<h2>{{ notice.title }}</h2><p>{{ notice.text }}</p>{% if notice.next %}<p>{{ notice.next }}</p>{% endif %}{% else %}<p>{{ notice }}</p>{% endif %}</div>{% endif %}
+{% if error %}<div class="stop" role="alert"><p>{{ error }}</p></div>{% endif %}
+<p class="pre">{{ requester_name }}{% if department %}, {{ department }},{% endif %} bittet Sie um</p>
+<h1>{{ doc_label }}</h1>
+{% if request_text %}<p class="lead">{{ request_text[:1] | upper }}{{ request_text[1:] }}</p>{% endif %}
+<dl class="rows gap">
+<div><dt>{{ patient_label }}</dt><dd><b>{{ patient_name }}</b></dd></div>
+<div><dt>Geboren</dt><dd><b>{{ patient_dob }}</b></dd></div>
+</dl>
+<form method="post" enctype="multipart/form-data" action="" class="gap">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <label for="file" class="sr">Dokument</label>
+  <div class="drop" id="drop">
+{% if photo_intake %}
+  <input id="file" name="file" type="file" required accept="image/*,application/pdf,.md,.txt" aria-describedby="file-hint">
+{% else %}
+  <input id="file" name="file" type="file" required accept=".md,.markdown,.txt,text/markdown,text/plain" aria-describedby="file-hint">
+{% endif %}
+    <span class="drop-empty"><span class="drop-t">Datei auswählen</span><span class="drop-h" id="file-hint">{% if photo_intake %}.txt oder .md, Foto oder PDF{% else %}.txt oder .md{% endif %}</span></span>
+    <span class="drop-chosen"><span id="file-name" aria-live="polite"></span><span class="drop-h">Andere Datei wählen</span></span>
+  </div>
+  <button type="submit" class="btn wide">Senden</button>
+</form>
+<p class="small muted below">Vor der Ablage prüfen wir, ob es zu {{ patient_name }} passt. Sie sehen das Ergebnis sofort.</p>
+<details class="gap">
+<summary>Nicht zuständig oder nichts vorhanden?</summary>
+<form method="post" action="decline">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <div class="field"><label for="reason">Hinweis (optional)</label>
+  <input id="reason" name="reason" maxlength="300" autocomplete="off" placeholder="z. B. letzte Abnahme 2024"></div>
+  <button type="submit" class="btn alt">Ich habe keinen passenden Befund</button>
+</form>
+</details>
+{% endblock %}
+{% block foot %}<footer class="foot">
+<p>Referenz <span class="ref">{{ r.ref_code }}</span>{% if phone %} · <span class="nw">Rückfragen {{ phone }}</span>{% endif %}</p>
+<p>Angemeldet als <b>{{ sess.given }} {{ sess.family }}</b> · bis {{ session_until }} Uhr</p>
+</footer>{% endblock %}
