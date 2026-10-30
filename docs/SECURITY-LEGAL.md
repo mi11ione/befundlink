@@ -126,7 +126,21 @@ Every period is in [`service/retention.py`](../service/retention.py), enforced b
 
 ## Production plan: detail
 
-The README's [simulated-vs-production table](../README.md#whats-simulated-and-what-plugs-in-for-production) is the full list; the pieces that need more:
+| Today | Production |
+|---|---|
+| Simulated ID Austria (signed token, PINs) | Real ID Austria via OIDC, with the health-sector bPK; EU senders via eIDAS. Matching and binding stay. |
+| Register fixtures | ÖÄK Ärzteliste and the eHealth-Verzeichnisdienst / GDA-Index behind the same `Registers` interface |
+| SMS inbox page | any SMS gateway behind the same send call |
+| Mailpit | the clinic's SMTP relay |
+| Provenance signed with the service's key | the clinic's qualified eIDAS seal (GTelG § 7) |
+| HAPI on loopback, no login | SMART on FHIR / OAuth2 or mTLS: only the service writes |
+| HTTP on localhost | TLS on the clinic's domain |
+| A first-time recipient binds on the first matching sign-in | optional `!identität` confirmation of every first identity |
+| The outside person decides on disclosure | a request field that records the patient's release (§ 54 ÄrzteG), filed in the Task |
+| Markdown and text uploads, as in the brief; photo intake via the Claude API on synthetic documents only, off by default (`PGK_EXTRACTOR=anthropic`) | the same double reading by a model inside the clinic's EU tenancy, as an Art. 28 processor |
+| Wrong filings retracted, and the audit rotated, by an operator | a bot command for `entered-in-error`, and automated rotation |
+
+The pieces that need more:
 
 - **ID Austria:** today [`service/eid.py`](../service/eid.py), whose Provenance says SIMULATION and uses `…/policy/eid-simulated`, never an eIDAS level of assurance. In production the clinic registers as an ID Austria service provider, and the IdP-signed ID token is verified against ID Austria's keys; the bound Provenance statement stays.
 - **FHIR server access:** the demo HAPI has no authentication beyond the [network limits](#security). A new version PUT by anyone on the host fails the hourly re-verification, which names the resource and alerts Dr. Hofer. AuditEvents created on the host do appear in the patient's audit search; the verifier ignores anchors without a valid MAC.

@@ -58,6 +58,23 @@ After Eva Brandl has filed an answer, send her another request and sign in as **
 
 The known Eva Brandl can answer meanwhile.
 
+### More of the demo
+
+**Request 2, rehab report by SMS:** post `!reha Kern maria-beispiel`, then `!ja`. Open the SMS inbox (http://localhost:8000/sms), click the link, sign in as **Stefan / Kern / 829022** and upload `rehab-report-maria-beispiel.md`. Element shows "📥 Entlassungsbericht abgelegt", leading with the discharge medication.
+
+**More personas:** Eva Maria Brandl `104928` (the namesake test), Maria Beispiel born 1961-03-12 `850449` (the patient herself as recipient), Maria Beispiel born 1990-06-15 `586525` (her daughter of the same name).
+
+**Your own outside person:** `!anfordern labor <Name>, <Rolle>, <Organisation>, <E-Mail oder Mobilnummer>, Patient maria-beispiel`. The send card shows "🔑 Demo: simulierte ID Austria für … – PIN …" to pass on, standing in for their ID Austria app. Patients: `maria-beispiel`, `max-beispiel`.
+
+**A held answer:** upload [`tests/jury/corpus/H03.md`](../tests/jury/corpus/H03.md) ("Marie"). Dr. Hofer gets one decision; `!ablegen <id> <Begründung>` files it with her reason.
+
+**Tamper with the chart:** set the last filed INR to 2.9 directly on the FHIR server, then re-check every filing:
+```bash
+OBS=$(curl -s "localhost:8090/fhir/Observation?code=http://loinc.org|6301-6&_sort=-_lastUpdated&_count=1&_elements=id" | python3 -c "import json,sys;print(json.load(sys.stdin)['entry'][0]['resource']['id'])")
+curl -s localhost:8090/fhir/Observation/$OBS | python3 -c "import json,sys;o=json.load(sys.stdin);o['valueQuantity']['value']=2.9;print(json.dumps(o))" | curl -s -o /dev/null -X PUT -H 'Content-Type: application/fhir+json' --data-binary @- localhost:8090/fhir/Observation/$OBS
+make verify-provenance   # names the changed Observation; Element shows "[ACHTUNG] … verändert" in Dr. Hofer's room
+```
+
 ### Bot commands
 
 German and English, for members of the PGK directory only (`!hilfe` / `!help` lists them).
@@ -253,6 +270,7 @@ The README's three gates, in detail:
 - The fuzz generator mutates the name (typo, order, umlaut, homoglyph, superset, other person), the birth date (swap, one digit, ambiguous, other), the identity (a colleague's eID), the sender line and the document type.
 - `tests/e2e/run.py` runs the corpus black-box through the live stack (email, eID with PINs, upload, HAPI, Matrix), then checks that blocked documents left no trace in HAPI, the DB, the disk, Matrix or the audit.
 - X09, the prompt injection, is blocked as `WRONG_PATIENT` and `OTHER_PATIENT_PRESENT`: no rule reads instructions.
+- **Blind documents:** three AI agents that never saw the test set or the code each wrote 30 documents in their own style and ran them live. Genuine documents filed: 7, 12, then 14 of 18 per set, the rest held for one tap; after the parser fixes each set prompted, all three pass offline. One miss, in the third set: a lab comment saying the tube carried another patient's name was filed for Maria. That pattern now blocks. All 90 are a regression set in [`tests/jury/fresh/`](../tests/jury/fresh/).
 
 ---
 
