@@ -23,7 +23,7 @@ Dr. Hofer sends the lab one link. They answer with ID Austria, and a minute late
 
 | What the brief measures | Target | Result |
 |---|---|---|
-| HL7 FHIR validator errors, every filed record | 0 | **0** (and AT Core 2.0.0) |
+| HL7 FHIR validator errors, every filed record | 0 | **0** |
 | Installs / accounts for the outside person | 0 / 0 | **0 / 0** |
 | Time from opening the email to sending | under 2 min | **46 s** (modelled) |
 | Misdeliveries caught: M1 wrong address, M2 forwarded, M3 wrong patient | 3 of 3 | **3 of 3** |
@@ -48,11 +48,11 @@ make demo        # Ctrl-C stops it
 | Mailpit: the lab's inbox | http://localhost:8025 | none |
 
 1. In Element, room "Dr. Hofer – Anforderungen", post `!labor Brandl maria-beispiel`, then `!ja`.
-2. In Mailpit, open the mail and click the link. Sign in with ID Austria (simulated) as **Eva / Brandl / 549657** and upload [`lab-result-maria-beispiel.md`](tests/jury/corpus/_scenario/).
-3. Element: "📥 Laborbefund abgelegt – Maria Beispiel", with the four values and the sender.
+2. In Mailpit, open the mail and click the link. Sign in with ID Austria (simulated) as **Eva / Brandl / 549657** and upload [`lab-result-maria-beispiel.md`](tests/jury/corpus/_scenario/lab-result-maria-beispiel.md).
+3. Element: "**Abgelegt** · Laborbefund · Maria Beispiel · 12.03.1961", with the four values and the sender.
 
 **The misdeliveries:**
-- **M1:** post `!labor Brandl maria-beispiel eva.brandl@labor-kanaI.example` (capital I). The card warns before sending.
+- **M1:** post `!labor Brandl maria-beispiel eva.brandl@labor-kanaI.example` (capital I). The card warns before sending; send anyway and sign in as **Petra / Fremd / 804560**: blocked.
 - **M2:** sign in to a fresh link as the colleague **Thomas / Huber / 677481**. Blocked; Element names him.
 - **M3:** sign in as Eva Brandl and upload `lab-result-max-beispiel.md`. It bounces, and Element raises the alarm.
 
@@ -110,7 +110,7 @@ AuditEvent ×6 steps ──► Task, Patient
 The three gates at the top. Evidence of another person blocks, and nothing is stored; a near-miss waits for one decision. [Every rule](tests/jury/RULES.md).
 
 **Q5. Where does the service run?**
-At the clinic, next to its own Matrix homeserver. No third party touches the record. FTAPI SubmitBox can be the upload front door. Clinics license it per site; senders pay nothing.
+At the clinic, next to its own Matrix homeserver, so the clinic stays the only controller of the record. FTAPI SubmitBox can be the upload front door. Clinics license Befundlink per site; senders pay nothing.
 
 ---
 

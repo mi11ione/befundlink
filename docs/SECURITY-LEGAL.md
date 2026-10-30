@@ -1,6 +1,6 @@
 # Befundlink: identity, security and legal
 
-The detail behind the [README](../README.md)'s Q1, Q2 and Legal sections: the identity mechanics, the security controls, what is stored where and for how long, the legal mapping including GTelG 2012, and the production plan. The pipeline and the FHIR tree are in [ARCHITECTURE.md](ARCHITECTURE.md).
+The detail behind the [README](../README.md)'s Q1, Q2 and Q5: the identity mechanics, the security controls, what is stored where and for how long, the legal mapping including GTelG 2012, and the production plan. The pipeline and the FHIR tree are in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 - [Identity check](#identity-check)
 - [Security](#security)

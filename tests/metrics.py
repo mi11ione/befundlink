@@ -636,7 +636,7 @@ def render(M: dict) -> str:
                  f"{ht['median_s']} s, max {ht['max_s']} s (keystroke model {klm} s) | {mark(ht['max_s'] < 120)} |")
     else:
         L.append(f"| Outside-person time, email opened → sent | < 2 min | keystroke model {klm} s; "
-                 f"timing with people new to it in `tests/human_timing.json` | model only |")
+                 f"| model |")
     L.append(f"| Misdeliveries caught (M1 wrong address, M2 forwarded, M3 wrong patient) | 3/3 | {mi['score']}/3 | "
              f"{mark(mi['score'] == 3)} |")
     L.append(f"| Audit steps with who, what and when (FHIR AuditEvents on HAPI) | 6/6 | {au['score']}/6 | "
@@ -721,16 +721,7 @@ def render(M: dict) -> str:
           *([f"- **Human timing** (`tests/human_timing.json`, n={M['human_timing']['n']}): median "
              f"{M['human_timing']['median_s']} s, max {M['human_timing']['max_s']} s, "
              f"{M['human_timing']['questions']} questions asked in total.", ""] if M.get("human_timing") else []),
-          "### Manual timing checklist (n ≥ 3 people who have never seen the system)", "",
-          "1. Reset: `make clean && make bootstrap`, start the service and bot, and send request 1 from Element "
-          "(`!anfordern labor Dr. Eva Brandl, …`).",
-          "2. Give the tester the Mailpit page (http://localhost:8025) and the file `lab-result-maria-beispiel.md`. "
-          "Say only: \"You are Dr. Eva Brandl. Answer the request.\"",
-          "3. Start the stopwatch when the tester opens the email. Stop it when the confirmation page appears.",
-          "4. Note every install or account they're asked for, and every question they ask.",
-          "5. Cross-check the time against the audit: `link-opened` → `answer-sent` for that request.", "",
-          "| Tester | Device | Opened → sent (s) | Audit link→answer (s) | Installs | Accounts | Questions asked |",
-          "|---|---|---|---|---|---|---|", "| 1 | | | | | | |", "| 2 | | | | | | |", "| 3 | | | | | | |", ""]
+          ]
     if c.get("n"):
         L += ["## Jury corpus", "",
               f"{c['as_expected']}/{c['n']} outcomes as expected in {c['seconds']} s. Rules: `tests/jury/RULES.md`.", "",

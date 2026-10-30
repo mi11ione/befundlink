@@ -52,7 +52,7 @@ Each case writes a `misdelivery caught` AuditEvent; M1 and M2 also a failed `ide
 ### The namesake walkthrough
 
 After Eva Brandl has filed an answer, send her another request and sign in as **Eva Maria / Brandl / 104928**. The name fits the request, but the ID Austria identity is new, so before anything is shown:
-- the page says "Ihre Identität wird von der anfragenden Ärztin bestätigt" and shows nothing;
+- the page says "Dr. Lena Hofer bestätigt zuerst Ihre Identität." and shows nothing;
 - Element shows "🔐 Neue ID-Austria-Identität für Dr. Eva Brandl (KB-…)" with the new person's birth year, the masked contact and the known person's history;
 - `!identität <KB-id> ja` lets her answer, filed under **her own** Practitioner; `nein` keeps her out.
 
@@ -60,11 +60,11 @@ The known Eva Brandl can answer meanwhile.
 
 ### More of the demo
 
-**Request 2, rehab report by SMS:** post `!reha Kern maria-beispiel`, then `!ja`. Open the SMS inbox (http://localhost:8000/sms), click the link, sign in as **Stefan / Kern / 829022** and upload `rehab-report-maria-beispiel.md`. Element shows "📥 Entlassungsbericht abgelegt", leading with the discharge medication.
+**Request 2, rehab report by SMS:** post `!reha Kern maria-beispiel`, then `!ja`. Open the SMS inbox (http://localhost:8000/sms), click the link, sign in as **Stefan / Kern / 829022** and upload `rehab-report-maria-beispiel.md`. Element shows "**Abgelegt** · Entlassungsbericht · Maria Beispiel", leading with the discharge medication.
 
 **More personas:** Eva Maria Brandl `104928` (the namesake test), Maria Beispiel born 1961-03-12 `850449` (the patient herself as recipient), Maria Beispiel born 1990-06-15 `586525` (her daughter of the same name).
 
-**Your own outside person:** `!anfordern labor <Name>, <Rolle>, <Organisation>, <E-Mail oder Mobilnummer>, Patient maria-beispiel`. The send card shows "🔑 Demo: simulierte ID Austria für … – PIN …" to pass on, standing in for their ID Austria app. Patients: `maria-beispiel`, `max-beispiel`.
+**Your own outside person:** `!anfordern labor <Name>, <Rolle>, <Organisation>, <E-Mail oder Mobilnummer>, Patient maria-beispiel`. The send card shows "Demo-PIN für …: … (an die Person weitergeben)", standing in for their ID Austria app. Patients: `maria-beispiel`, `max-beispiel`.
 
 **A held answer:** upload [`tests/jury/corpus/H03.md`](../tests/jury/corpus/H03.md) ("Marie"). Dr. Hofer gets one decision; `!ablegen <id> <Begründung>` files it with her reason.
 
