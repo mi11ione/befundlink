@@ -20,7 +20,7 @@
 {% else %}
   <input id="file" name="file" type="file" required accept=".md,.markdown,.txt,text/markdown,text/plain" aria-describedby="file-hint">
 {% endif %}
-    <span class="drop-empty"><span class="drop-t">Datei auswählen</span><span class="drop-h" id="file-hint">{% if photo_intake %}.txt oder .md, Foto oder PDF{% else %}.txt oder .md{% endif %}</span></span>
+    <span class="drop-empty"><span class="drop-t">{% if photo_intake %}Foto aufnehmen oder Datei wählen{% else %}Datei auswählen{% endif %}</span><span class="drop-h" id="file-hint">{% if photo_intake %}Foto, PDF oder Textdatei{% else %}.txt oder .md{% endif %}</span></span>
     <span class="drop-chosen"><span id="file-name" aria-live="polite"></span><span class="drop-h">Andere Datei wählen</span></span>
   </div>
   <button type="submit" class="btn wide">Senden</button>
